@@ -474,7 +474,7 @@ To do this you first need to have your start and end nucleotide postitions for y
 
 Below is a visual guide of what you need to change the template `Example1_ref.gff` for your purposes.
 
-![Visual Guide](https://github.com/michellejlin/RAVA/blob/master/Gff-editing-guide.png)
+![Visual Guide](bin/Gff-editing-guide.png)
 
 The color coded regions are the only portions that need to be changed. (The first two lines of the .gff files are comments and can be safely ignored.)
 
