@@ -1,0 +1,20 @@
+##gff-version 3
+##source-version geneious 9.1.7
+lava	LAVA	gene	84	1631	.	+	.	ID=gene:NP;biotype=protein_coding
+lava	LAVA	CDS	84	1631	.	+	0	ID=CDS:NP;Parent=transcript:NP;biotype=protein_coding
+lava	LAVA	transcript	84	1631	.	+	.	ID=transcript:NP;Parent=gene:NP;biotype=protein_coding
+lava	LAVA	gene	1757	3565	.	+	.	ID=gene:P;biotype=protein_coding
+lava	LAVA	CDS	1757	3565	.	+	0	ID=CDS:P;Parent=transcript:P;biotype=protein_coding
+lava	LAVA	transcript	1757	3565	.	+	.	ID=transcript:P;Parent=gene:P;biotype=protein_coding
+lava	LAVA	gene	3726	4787	.	+	.	ID=gene:M;biotype=protein_coding
+lava	LAVA	CDS	3726	4787	.	+	0	ID=CDS:M;Parent=transcript:M;biotype=protein_coding
+lava	LAVA	transcript	3726	4787	.	+	.	ID=transcript:M;Parent=gene:M;biotype=protein_coding
+lava	LAVA	gene	5045	6664	.	+	.	ID=gene:F;biotype=protein_coding
+lava	LAVA	CDS	5045	6664	.	+	0	ID=CDS:F;Parent=transcript:F;biotype=protein_coding
+lava	LAVA	transcript	5045	6664	.	+	.	ID=transcript:F;Parent=gene:F;biotype=protein_coding
+lava	LAVA	gene	6779	8491	.	+	.	ID=gene:HN;biotype=protein_coding
+lava	LAVA	CDS	6779	8491	.	+	0	ID=CDS:HN;Parent=transcript:HN;biotype=protein_coding
+lava	LAVA	transcript	6779	8491	.	+	.	ID=transcript:HN;Parent=gene:HN;biotype=protein_coding
+lava	LAVA	gene	8619	15320	.	+	.	ID=gene:L;biotype=protein_coding
+lava	LAVA	CDS	8619	15320	.	+	0	ID=CDS:L;Parent=transcript:L;biotype=protein_coding
+lava	LAVA	transcript	8619	15320	.	+	.	ID=transcript:L;Parent=gene:L;biotype=protein_coding
