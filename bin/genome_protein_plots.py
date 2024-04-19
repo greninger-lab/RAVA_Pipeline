@@ -1,4 +1,4 @@
-#!/usr/bin/env pythonw
+#!/usr/bin/env python
 
 import argparse
 import sys
@@ -34,7 +34,6 @@ from palette import color_palette
 from math import pi
 import subprocess
 import os
-
 
 # Uses info from protein.csv to shade every other protein in light green, and annotate with protein names.
 def protein_annotation(first):
@@ -76,10 +75,6 @@ def protein_annotation(first):
         for i in range(0, mat_peptides_list.shape[0]):
             x1 = mat_peptides_list.iloc[i, 1]
             x2 = mat_peptides_list.iloc[i, 2]
-            # if(i==mat_peptides_list.shape[0]-1):
-            # 	x2 = mat_peptides_list.iloc[i,2]
-            # else:
-            # 	x2 = mat_peptides_list.iloc[(i+1),1]
             genome_plot.add_layout(
                 Arrow(
                     end=VeeHead(
@@ -100,10 +95,8 @@ def protein_annotation(first):
     protein_locs2 = []
     for protein_loc in protein_locs:
         str_protein_loc = str(protein_loc)
-        ## print("old str_protein_loc" + str_protein_loc)
         if ".0" in str_protein_loc:
             str_protein_loc = str_protein_loc.split(".")[0]
-            ## print("split" + str_protein_loc)
             protein_locs2.append(int(str_protein_loc))
         else:
             protein_locs2.append(float(str_protein_loc))
@@ -114,14 +107,10 @@ def protein_annotation(first):
 # Creates the legend and configures some of the toolbar stuff.
 def configurePlot(g):
     g.legend.location = "top_right"
-    # Adjusts size of scatter points within legend.
     g.legend.glyph_width = 35
     g.legend.glyph_height = 35
-    # Adjusts visual properties of legend.
     g.legend.spacing = -10
     g.legend.background_fill_alpha = 0.5
-    ## disabled scroll wheel zooming for all plots - RCS
-    ## g.toolbar.active_scroll = g.select_one(WheelZoomTool)
 
     # Adjusts tick visualization.
     g.yaxis.axis_label_standoff = 10
@@ -717,7 +706,6 @@ if __name__ == "__main__":
         # When mousing over Bokeh plot, allele frequency updated to user input.
         if user_af != -123:
             slider_af.value = user_af
-            ## g.js_on_event(events.PlotEvent, sliderCallback(source_sample, depth_sample, slider, slider_af, syngroup))
             genome_plot.js_on_event(
                 events.MouseEnter,
                 sliderCallback(
@@ -783,10 +771,6 @@ if __name__ == "__main__":
     merged2.Sample = merged2.Sample.str.replace(".fastq.gz", "")
     merged2.Sample = merged2.Sample.str.replace(".fastq", "")
     unique_samples_cut = []
-
-    # for sample_name in unique_samples:
-    # 	sample_name_cut = sample_name.split(".fastq")[0]
-    # 	unique_samples_cut.append(sample_name_cut)
 
     for sample_name in unique_passages:
         unique_samples_cut.append(sample_name)
@@ -983,8 +967,6 @@ if __name__ == "__main__":
             # Saves output both as standalone HTML file and as a javascript element and a script tag.
             output_file("RAVA_plots.html", title=plot_title)
             print("Opening output file " + new_dir + "/" + new_dir + "_plots.html")
-            # output_file(new_dir + "/" + new_dir + "_plots.html", title=plot_title)
-            # 			## subprocess.call('cp ngls_test.html ' + new_dir + '/', shell=True)
             save(column(tabs_genomes, tabs_proteins))
 
             # Automatically opens output file, otherwise prints error message.

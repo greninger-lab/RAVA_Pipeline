@@ -60,10 +60,6 @@ with open("final.csv") as f:
         amino_num = int(re.sub("\D", "", (amino)))
         position = int(line.split(",")[2])
 
-        # position = line.split(',')[2]
-        # if position < int(start_num_list[index]):
-        #     index = index + 1
-
         mat_peptide = "-"
         # Going through and checking which mature peptide it falls under
         for mature_peptide in open("mat_peptides_additions.txt"):

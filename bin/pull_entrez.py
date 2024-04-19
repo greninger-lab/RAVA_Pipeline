@@ -31,5 +31,3 @@ h = Entrez.efetch(
 d = open("lava_ref.fasta", "w")
 d.write(h.read())
 d.close()
-
-# lava.py -q NC_039477.1 Example2_file1.fastq Example2_metadata.csv -o Example2_output
