@@ -22,7 +22,7 @@ Fastqs should be paired and trimmed before running through pipeline.
 
 1. Install [nextflow](https://www.nextflow.io/docs/latest/getstarted.html#installation).
    - Make sure you move nextflow to a directory in your PATH variable.
-2. Install [docker](https://docs.docker.com/get-docker/). The first time running this program will take a while, as the docker image will take some time to build, but this is a one time thing!
+2. Install [docker](https://docs.docker.com/get-docker/).
 3. If running on the cloud setup [nextflow tower](https://seqera.io/)
 
 ### Metadata
