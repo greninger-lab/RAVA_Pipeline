@@ -84,7 +84,7 @@ If GFF or GBK is used as input they are both passed into `--GFF` and require a f
 Run locally with standard profile with .gb file
 
 ```
-nextflow run main.nf \
+nextflow run greninger-lab/RAVA_Pipeline -r main\
 --OUTDIR example_output/ \
 --GFF Examples/Example.gb \
 --FASTA Examples/Example.fasta \
@@ -96,7 +96,7 @@ nextflow run main.nf \
 Run on cloud with .gff file
 
 ```
-nextflow run main.nf \
+nextflow run greninger-lab/RAVA_Pipeline -r main \
 --OUTDIR example_output/ \
 --GFF Examples/Example.gff \
 --FASTA Examples/Example.fasta \
@@ -110,7 +110,7 @@ nextflow run main.nf \
 Run locally with more computational power and genbank accession.
 
 ```
-nextflow run main.nf \
+nextflow run greninger-lab/RAVA_Pipeline -r main \
 --OUTDIR example_output/ \
 --GENBANK MF795094 \
 --METADATA Examples/Example_metadata.csv \
@@ -183,19 +183,19 @@ Run example workflow or use one from above
 > With gb file
 
 ```
-nextflow run main.nf --OUTDIR example_output/ --GFF Examples/Example.gb --FASTA Examples/Example.fasta   --METADATA Examples/Example_metadata.csv  -with-docker ubuntu:18.04 -profile standard 
+nextflow run greninger-lab/RAVA_Pipeline -r main --OUTDIR example_output/ --GFF Examples/Example.gb --FASTA Examples/Example.fasta   --METADATA Examples/Example_metadata.csv  -with-docker ubuntu:18.04 -profile standard 
 ```
 
 > With gff file
 
 ```
-nextflow run main.nf --OUTDIR example_output/ --GFF Examples/Example.gff --FASTA Examples/Example.fasta   --METADATA Examples/Example_metadata.csv  -with-docker ubuntu:18.04 -profile standard 
+nextflow run greninger-lab/RAVA_Pipeline -r main --OUTDIR example_output/ --GFF Examples/Example.gff --FASTA Examples/Example.fasta   --METADATA Examples/Example_metadata.csv  -with-docker ubuntu:18.04 -profile standard 
 ```
 
 > With genbank accession
 
 ```
-nextflow run main.nf --OUTDIR example_output/ --GENBANK MF795094 --METADATA Examples/Example_metadata.csv  -with-docker ubuntu:18.04 -profile standard
+nextflow run greninger-lab/RAVA_Pipeline -r main --OUTDIR example_output/ --GENBANK MF795094 --METADATA Examples/Example_metadata.csv  -with-docker ubuntu:18.04 -profile standard
 ```
 
 ## Output
