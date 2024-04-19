@@ -2,6 +2,8 @@
 
 RAVA is derived from LAVA, but for nonlongitudinal sequence data. RAVA takes FASTQ files (for every sample in your analysis), a metadata sheet (providing info on what day or passage each sample was collected), and a reference genome either by accession number or your own FASTA and GFF. Output will be displayed as an interactive graph in your web browser, and a table of all mutations of all samples.
 
+Fastqs should be paired and trimmed before running through pipeline.
+
 # Table of Contents
 - [RAVA: Reference-based Analysis of Viral Alleles](#rava-reference-based-analysis-of-viral-alleles)
 - [Table of Contents](#table-of-contents)
