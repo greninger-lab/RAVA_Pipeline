@@ -31,7 +31,7 @@ process CreateGFF {
 
 			python3 ${PULL_ENTREZ} ${GENBANK}
 			/usr/local/miniconda/bin/bwa index lava_ref.fasta
-			python3 ${WRITE_GFF}
+			python3 ${WRITE_GFF2}
 
 		else
 
@@ -143,7 +143,7 @@ process Pipeline_prep {
 	#!/bin/bash
 
 	# Creates header for final csv.
-	echo "Sample,Amino Acid Change,Position,AF,Change,Protein,NucleotideChange,LetterChange,Syn,Depth,Passage" > merged.csv
+	echo "Sample,Amino Acid Change,Position,AF,Change,Protein,NucleotideChange,LetterChange,Syn,Depth,Passage,Reverse_Complement" > merged.csv
 
 	# Creates list of protein names and locations (proteins.csv) based on GFF annotations.
 	python3 ${INITIALIZE_PROTEINS_CSV}
@@ -160,7 +160,7 @@ process Create_VCF {
 
 	input:
 		tuple file(R1), file(R1_PILEUP), file(BAM), val(PASSAGE)
-		file ANNOVAR2
+		file ANNOCAR
 		file FASTA
 		file "lava_ref.gff"
 
@@ -191,7 +191,7 @@ process Create_VCF {
 	file="!{R1}""_p.vcf"
 	convert2annovar.pl -withfreq -format vcf4old -includeinfo !{R1}_p.vcf > !{R1}.avinput
 
-	python3 ANNOVAR_Replacement.py !{R1}.avinput lava_ref.gff !{FASTA}
+	python3 annoCAR.py !{R1}.avinput lava_ref.gff !{FASTA}
 
 	mv !{R1}.exonic_variant_function !{R1}.exonic_variant_function.samp
 
@@ -229,14 +229,16 @@ process Extract_variants {
 	printf !{R1}"," > reads.csv
 	/usr/local/miniconda/bin/samtools flagstat !{BAM} | \
 	awk 'NR==1{printf $1","} NR==5{printf $1","} NR==5{print substr($5,2)}' >> reads.csv
+
 	awk -F":" '($26+0)>=1{print}' !{EXONICVARIANTS}> !{R1}.txt
+
 	grep "SNV" !{R1}.txt > a.tmp
 	grep "stop" !{R1}.txt >> a.tmp
 	mv a.tmp !{R1}.txt
 	SAMPLE="$(awk -F"," -v name=!{R1} '$1==name {print $2}' !{METADATA})"
 	echo $SAMPLE
 
-	awk -v name=!{R1} -v sample=!{PASSAGE} -F'[\t:,]' '{print name","$6" "substr($9,3)","$12","$44+0","substr($9,3)","$6","substr($8,3)","substr($8,3,1)" to "substr($8,length($8))","$2","$41","sample}' !{R1}.txt > !{R1}.csv
+	awk -v name=!{R1} -v sample=!{PASSAGE} -F'[\t:,]' '{print name","$6" "substr($9,3)","$12","$44+0","substr($9,3)","$6","substr($8,3)","substr($8,3,1)" to "substr($8,length($8))","$2","$41","sample","$(NF)}' !{R1}.txt > !{R1}.csv
 
 	'''
 

@@ -446,6 +446,7 @@ if __name__ == "__main__":
         ("Depth", "@Depth"),
         ("Mature Peptide Change", "@MatPeptide"),
         ("Protein", "@Protein"),
+        ("Reverse Complement", "@Reverse_Complement"),
     ]
     FIRST = True
 

@@ -2,6 +2,7 @@ import pandas as pd
 import io
 import os
 from Bio import SeqIO
+from Bio.Seq import Seq
 import re
 import warnings
 import argparse
@@ -256,10 +257,12 @@ for j in range(numRegions):
                     df2 = pd.DataFrame(variantFunction.loc[[k]])
                     df2.iloc[0, 1] = proteinName
 
-                    if test != 0:
+'''
+                    if test != 0 :
                         df = df.append(df2)
 
                     test = test + 1
+'''
 
 if df is not None:
     df = df.iloc[1:, :]
@@ -277,13 +280,14 @@ variantFunction.to_csv(
 
 variantFunction.insert(0, "   ", "")
 variantFunction.insert(0, "    ", "")
+variantFunction.insert(19, "     ", "")
 
 # This section annotates the type of mutation
 for l in range(len(variantFunction)):
     if (variantFunction.iloc[l, 2]) == "exonic":
         variantFunction.iloc[l, 0] = "line" + str(l + 1)
         for m in range(len(gff.index)):
-            if gff.iloc[m, 2] == "gene":
+            if gff.iloc[m, 2] == "gene":                
                 if (
                     variantFunction.iloc[l, 5] >= gff.iloc[m, 3]
                     and variantFunction.iloc[l, 5] <= gff.iloc[m, 4]
@@ -295,6 +299,13 @@ for l in range(len(variantFunction)):
                         variantFunction.iloc[l, 3] = (
                             proteinName + ":" + proteinName2 + ":exon1:c."
                         )
+                        
+                        reverseComplement = "No"
+                            
+                        if(gff.iloc[m, 6] == "-"):
+                            reverseComplement = "Yes"
+                        
+                        variantFunction.iloc[l, 19] = reverseComplement
 
                         # adds deletions and insertions, detects if frameshift or not
                         if len(variantFunction.iloc[l, 12]) > len(
@@ -360,7 +371,7 @@ for l in range(len(variantFunction)):
 
                             # checks amino acid and protein position
                             proteinNum = str(int(aminoNum / 3) + ((aminoNum % 3) > 0))
-                            aminoNum = str(aminoNum)
+                            aminoNum = str(aminoNum)                                                       
 
                             # If mutation is on first amino acid of codon
                             if (
@@ -379,7 +390,7 @@ for l in range(len(variantFunction)):
                                     if "0" in variantFunction.iloc[l, 7]:
                                         (variantFunction.iloc[l, 7]) = (
                                             variantFunction.iloc[l, 7]
-                                        ).replace("0", variantFunction.iloc[l, 12])
+                                        ).replace("0", variantFunction.iloc[l, 12])                                                                        
 
                                     before = (
                                         fasta[int(variantFunction.iloc[l, 10]) - 1]
@@ -391,29 +402,22 @@ for l in range(len(variantFunction)):
                                         + fasta[int(variantFunction.iloc[l, 10])]
                                         + fasta[int(variantFunction.iloc[l, 10] + 1)]
                                     )
+                                        
+                                    if(gff.iloc[m, 6] == "-"):
+                                        before = str(Seq(before).reverse_complement())
+                                        after = str(Seq(after).reverse_complement())  
+
 
                                     # deals with degenerative bases
                                     before = degenerative(before)
                                     after = degenerative(after)
 
                                     if len(before) == 3:
-                                        before = translate(
-                                            fasta[int(variantFunction.iloc[l, 10]) - 1]
-                                            + fasta[int(variantFunction.iloc[l, 10])]
-                                            + fasta[
-                                                int(variantFunction.iloc[l, 10] + 1)
-                                            ]
-                                        )
+                                        before = translate(before)
                                     if len(after) == 3:
-                                        after = translate(
-                                            variantFunction.iloc[l, 8]
-                                            + fasta[int(variantFunction.iloc[l, 10])]
-                                            + fasta[
-                                                int(variantFunction.iloc[l, 10] + 1)
-                                            ]
-                                        )
+                                        after = translate(after)    
 
-                                    # formats and renames output excell values of vcf
+                                    # formats and renames output excel values of vcf
                                     variantFunction.iloc[l, 3] = (
                                         proteinName
                                         + ":"
@@ -426,6 +430,8 @@ for l in range(len(variantFunction)):
                                         + before
                                         + proteinNum
                                         + after
+                                        #+ ":RC."
+                                        #+ reverseComplement
                                         + ","
                                     )
 
@@ -471,26 +477,20 @@ for l in range(len(variantFunction)):
                                         + variantFunction.iloc[l, 8]
                                         + fasta[int(variantFunction.iloc[l, 10])]
                                     )
+                                        
+                                    if(gff.iloc[m, 6] == "-"):
+                                        before = str(Seq(before).reverse_complement())
+                                        after = str(Seq(after).reverse_complement()) 
 
                                     before = degenerative(before)
                                     after = degenerative(after)
 
                                     if len(before) == 3:
-                                        before = translate(
-                                            fasta[int(variantFunction.iloc[l, 10]) - 2]
-                                            + fasta[
-                                                int(variantFunction.iloc[l, 10]) - 1
-                                            ]
-                                            + fasta[int(variantFunction.iloc[l, 10])]
-                                        )
+                                        before = translate(before)
                                     if len(after) == 3:
-                                        after = translate(
-                                            fasta[int(variantFunction.iloc[l, 10]) - 2]
-                                            + variantFunction.iloc[l, 8]
-                                            + fasta[int(variantFunction.iloc[l, 10])]
-                                        )
+                                        after = translate(after)
 
-                                    # formats and renames output excell values of vcf
+                                    # formats and renames output excel values of vcf
                                     variantFunction.iloc[l, 3] = (
                                         proteinName
                                         + ":"
@@ -503,6 +503,8 @@ for l in range(len(variantFunction)):
                                         + before
                                         + proteinNum
                                         + after
+                                        #+ ":RC."
+                                        #+ reverseComplement
                                         + ","
                                     )
 
@@ -537,7 +539,7 @@ for l in range(len(variantFunction)):
                                     if "0" in variantFunction.iloc[l, 7]:
                                         (variantFunction.iloc[l, 7]) = (
                                             variantFunction.iloc[l, 7]
-                                        ).replace("0", variantFunction.iloc[l, 12])
+                                        ).replace("0", variantFunction.iloc[l, 12])                                         
 
                                     before = (
                                         fasta[int(variantFunction.iloc[l, 10]) - 3]
@@ -549,30 +551,20 @@ for l in range(len(variantFunction)):
                                         + fasta[int(variantFunction.iloc[l, 10]) - 2]
                                         + variantFunction.iloc[l, 8]
                                     )
+                                        
+                                    if(gff.iloc[m, 6] == "-"):
+                                        before = str(Seq(before).reverse_complement())
+                                        after = str(Seq(after).reverse_complement()) 
 
                                     before = degenerative(before)
                                     after = degenerative(after)
 
                                     if len(before) == 3:
-                                        before = translate(
-                                            fasta[int(variantFunction.iloc[l, 10]) - 3]
-                                            + fasta[
-                                                int(variantFunction.iloc[l, 10]) - 2
-                                            ]
-                                            + fasta[
-                                                int(variantFunction.iloc[l, 10]) - 1
-                                            ]
-                                        )
+                                        before = translate(before)
                                     if len(after) == 3:
-                                        after = translate(
-                                            fasta[int(variantFunction.iloc[l, 10]) - 3]
-                                            + fasta[
-                                                int(variantFunction.iloc[l, 10]) - 2
-                                            ]
-                                            + variantFunction.iloc[l, 8]
-                                        )
+                                        after = translate(after)
 
-                                    # formats and renames output excell values of vcf
+                                    # formats and renames output excel values of vcf
                                     variantFunction.iloc[l, 3] = (
                                         proteinName
                                         + ":"
@@ -585,6 +577,8 @@ for l in range(len(variantFunction)):
                                         + before
                                         + proteinNum
                                         + after
+                                        #+ ":RC."
+                                        #+ reverseComplement
                                         + ","
                                     )
 

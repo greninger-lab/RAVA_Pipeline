@@ -97,7 +97,7 @@ MAT_PEPTIDE_ADDITION = file("$workflow.projectDir/bin/mat_peptide_addition.py")
 RIBOSOMAL_SLIPPAGE = file("$workflow.projectDir/bin/ribosomal_slippage.py")
 GENOME_PROTEIN_PLOTS = file("$workflow.projectDir/bin/genome_protein_plots.py")
 PALETTE = file("$workflow.projectDir/bin/palette.py")
-ANNOVAR2 = file("$workflow.projectDir/bin/ANNOVAR_Replacement.py")
+ANNOCAR = file("$workflow.projectDir/bin/annoCAR.py")
 
 // Error handling for input flags
 //if OUTDIR not set
@@ -156,7 +156,7 @@ workflow {
 
         Create_VCF (
             Align_samples.out[0],
-            ANNOVAR2,
+            ANNOCAR,
             CreateGFF.out[0],
             CreateGFF.out[1]
         )
@@ -216,7 +216,7 @@ __       /                 \\     /-   o     /-
           MM   `Mb.   A'     VML  :MM;  A'     VML
         .JMML. .JMM..AMA.   .AMMA. VF .AMA.   .AMMA.
 
-                      Version 5
+                      Version 6.0.0
     """.stripIndent()
 
 }
