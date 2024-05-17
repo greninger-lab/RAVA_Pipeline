@@ -53,7 +53,6 @@ If GFF or GBK is used as input they are both passed into `--GFF` and require a f
 | File | Notes | 
 | --- | --- |
 | .gff |  If GFF is chosen as input please see the GFF [reformating guide](#GFF-Creation-Guide) as a standard GFF file is not accepted as input. A fasta file is required for input. |
-| Genbank Accession | If a genbank accession is passed in use `--GENBANK` instead of `--GFF`, `--FASTA` is not required  |
 | .gb or .gbk| Use `--GFF` as input for your .gb file, a fasta file is required through `--FASTA`. A genbank file can be downloaded from NCBI or exported from Geneious. If exporting from Geneious click on an annotated fasta and export as .gbk file|
 
 > [!WARNING]
@@ -68,7 +67,6 @@ If GFF or GBK is used as input they are both passed into `--GFF` and require a f
 | `--OUTDIR` | Output directory |   
 | `--FASTA` | Specify a reference fasta to map samples to. This must be the same fasta as your annotation file (.gb or .gff). This option must be used with the `--GFF` flag to specify the protein annotations relative to the start of this fasta. REQUIRED IF NOT `--GENBANK` |
 | `--GFF`  |       Specify a reference gff, gb or gbk file with the protein annotations for the reference fasta supplied with the `--FASTA` flag. This option must be paired with the `--FASTA` flag. REQUIRED IF NOT `--GENBANK` |
-| `--GENBANK` | Provide a Genbank accession number to use as reference annotation and fasta. REQUIRED IF NOT `--FASTA` + `--GFF` |
 | `--NAME` | Optional flag, Change name of output html. |
 | `--ALLELE_FREQ` |  Optional flag, Specify an allele frequency percentage to cut off - with a minimum of 1 percent - in whole numbers. |       
 | `--DEDUPLICATE` | Optional flag, will perform automatic removal of PCR duplicates via DeDup. |
@@ -109,15 +107,16 @@ nextflow run greninger-lab/RAVA_Pipeline -r main \
 -with-tower 
 ```
 
-Run locally with more computational power and genbank accession.
+Run locally with more computational power
 
 ```
-nextflow run greninger-lab/RAVA_Pipeline -r main \
+nextflow run greninger-lab/RAVA_Pipeline -r main\
 --OUTDIR example_output/ \
---GENBANK MF795094 \
+--GFF Examples/Example.gb \
+--FASTA Examples/Example.fasta \
 --METADATA Examples/Example_metadata.csv \
 -with-docker ubuntu:18.04 \
--profile More
+-profile More 
 ```
 
 ## Workflow
@@ -192,12 +191,6 @@ nextflow run greninger-lab/RAVA_Pipeline -r main --OUTDIR example_output/ --GFF 
 
 ```
 nextflow run greninger-lab/RAVA_Pipeline -r main --OUTDIR example_output/ --GFF Examples/Example.gff --FASTA Examples/Example.fasta   --METADATA Examples/Example_metadata.csv  -with-docker ubuntu:18.04 -profile standard 
-```
-
-> With genbank accession
-
-```
-nextflow run greninger-lab/RAVA_Pipeline -r main --OUTDIR example_output/ --GENBANK MF795094 --METADATA Examples/Example_metadata.csv  -with-docker ubuntu:18.04 -profile standard
 ```
 
 ## Output
