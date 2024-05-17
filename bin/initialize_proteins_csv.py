@@ -14,14 +14,13 @@ import os.path
 import pandas as pd
 import sys
 
+gff_file = sys.argv[1]
+
 # Pulls protein information from GFF into proteins.csv.
 # $12 = protein name, $4 = beginning nucleotide, $5 = ending nucleotide.
 # Sorts by increasing order of numbers.
 subprocess.call(
-    'grep "ID=transcript:" '
-    "lava_ref.gff"
-    " | awk -F'[\t;:]' '{print $12 \",\" $4 \",\" $5}' | sort -t ',' -k2 -n > "
-    "proteins.csv",
+    f'grep "ID=transcript:" {gff_file} | awk -F\'[\t;:]\' \'{{print $12 \",\" $4 \",\" $5}}\' | sort -t \',\' -k2 -n > proteins.csv',
     shell=True,
 )
 

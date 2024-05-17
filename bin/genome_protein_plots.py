@@ -315,7 +315,7 @@ if __name__ == "__main__":
     parser.add_argument("-png", action="store_true")
     parser.add_argument("-nuc", action="store_true")
     parser.add_argument(
-        "-pdb", help="Provide a PDB acsession number to load into the NGL viewer"
+        "-pdb", help="Provide a PDB acession number to load into the NGL viewer"
     )
     parser.add_argument(
         "merged",
@@ -332,6 +332,8 @@ if __name__ == "__main__":
     parser.add_argument("dir", help="Dir created by main lava program")
     parser.add_argument("ptitle", help="Optional plot title specified by user.")
     parser.add_argument("-af", help="Provide a specific allele frequency to cut off.")
+    
+    parser.add_argument("-name", help="Rename Output HTML")
 
     try:
         args = parser.parse_args()
@@ -965,10 +967,14 @@ if __name__ == "__main__":
             export_png(plots_proteins, filename="Protein_Plots.png")
             export_png(plots_genomes, filename="Genome_Plots.png")
         else:
-            # Saves output both as standalone HTML file and as a javascript element and a script tag.
-            output_file("RAVA_plots.html", title=plot_title)
-            print("Opening output file " + new_dir + "/" + new_dir + "_plots.html")
+            
+            # Use args.name as the file name and plot title
+            file_name = args.name
+            plot_title = file_name
+            output_file(f"{file_name}.html", title=plot_title)
+            print(f"Opening output file {new_dir}/{file_name}.html")
             save(column(tabs_genomes, tabs_proteins))
+
 
             # Automatically opens output file, otherwise prints error message.
             try:

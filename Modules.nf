@@ -6,16 +6,14 @@ process CreateGFF {
     container "quay.io/vpeddu/lava_image:latest"
 
     input:
-		val(GENBANK)
 		file PULL_ENTREZ
 		file WRITE_GFF
-		file WRITE_GFF2
 		file FASTA
 		file GFF
 
     output:
-		file "lava_ref.fasta"
-		file "lava_ref.gff"
+		file "*.fasta"
+		file "*.gff"
 		file "ribosomal_start.txt"
 		file "mat_peptides.txt"
 
@@ -25,41 +23,32 @@ process CreateGFF {
 
     #!/bin/bash
 
-	if [[ ${FASTA} == "NO_FILE" ]]
+	sed '/^>/! s/U/T/g' ${FASTA} > lava_ref_T.fasta
+
+	if [[ ${GFF} == *.gff ]]
 
 		then
 
-			python3 ${PULL_ENTREZ} ${GENBANK}
-			/usr/local/miniconda/bin/bwa index lava_ref.fasta
-			python3 ${WRITE_GFF2}
+			grep -v "mature_peptide" ${GFF} > lava_ref.gff
+			grep "mature_peptide" ${GFF} | sed "s/,mature_peptide//g" > mat_peptides.txt
+			#Creates empty txt file
+			touch ribosomal_start.txt
+			/usr/local/miniconda/bin/bwa index ${FASTA}
 
 		else
 
-			if [[ ${GFF} == *.gff ]]
-
-				then
-
-					grep -v "mature_peptide" ${GFF} > lava_ref.gff
-					grep "mature_peptide" ${GFF} | sed "s/,mature_peptide//g" > mat_peptides.txt
-					mv ${FASTA} lava_ref.fasta
-					#Creates empty txt file
-					touch ribosomal_start.txt
-					/usr/local/miniconda/bin/bwa index lava_ref.fasta
-
-				else
-
-					mv ${FASTA} lava_ref.fasta
-					/usr/local/miniconda/bin/bwa index lava_ref.fasta
-					mv ${GFF} lava_ref.gbk
-					python3 ${WRITE_GFF2}
-			
-			fi
-
-			# Convert U to T fasta 
-			sed '/^>/! s/U/T/g' lava_ref.fasta > lava_ref_T.fasta
-			mv lava_ref_T.fasta lava_ref.fasta 
-
+			/usr/local/miniconda/bin/bwa index ${FASTA}
+			mv ${GFF} lava_ref.gbk
+			python3 ${WRITE_GFF} ${FASTA}
+	
 	fi
+
+	FASTA_BASENAME=\$(basename ${FASTA} .fasta)
+
+	# Convert U to T fasta 
+	sed '/^>/! s/U/T/g' ${FASTA} > lava_ref_T.fasta
+	mv lava_ref_T.fasta \${FASTA_BASENAME}_RAVA.fasta
+	mv lava_ref.gff \${FASTA_BASENAME}_RAVA.gff			 
 
     """
 
@@ -74,7 +63,7 @@ process Align_samples {
 
     input:
 	tuple file(R1), val(PASSAGE)
-	file "lava_ref.fasta"
+	file FASTA
 	val DEDUPLICATE
 
 	output:
@@ -88,14 +77,14 @@ process Align_samples {
 
 	#!/bin/bash
 
-	/usr/local/miniconda/bin/bwa index lava_ref.fasta
-	/usr/local/miniconda/bin/samtools faidx lava_ref.fasta
-	gatk CreateSequenceDictionary -R lava_ref.fasta --VERBOSITY ERROR --QUIET true
+	/usr/local/miniconda/bin/bwa index !{FASTA}
+	/usr/local/miniconda/bin/samtools faidx !{FASTA}
+	gatk CreateSequenceDictionary -R !{FASTA} --VERBOSITY ERROR --QUIET true
 
 	echo aligning "!{R1}"
 
 	# Align each sample to consensus fasta.
-	/usr/local/miniconda/bin/bwa mem -t !{task.cpus} -M -R \'@RG\\tID:group1\\tSM:!{R1}\\tPL:illumina\\tLB:lib1\\tPU:unit1\' -p -L [2,2] -B 6 lava_ref.fasta !{R1} > !{R1}.sam
+	/usr/local/miniconda/bin/bwa mem -t !{task.cpus} -M -R \'@RG\\tID:group1\\tSM:!{R1}\\tPL:illumina\\tLB:lib1\\tPU:unit1\' -p -L [2,2] -B 6 !{FASTA} !{R1} > !{R1}.sam
 
 	# Sorts SAM.
 	java -jar /usr/bin/picard.jar SortSam INPUT=!{R1}.sam OUTPUT=!{R1}.bam SORT_ORDER=coordinate VERBOSITY=ERROR
@@ -115,7 +104,7 @@ process Align_samples {
 	/usr/local/miniconda/bin/bedtools genomecov -d -ibam  !{R1}.bam >> !{R1}.genomecov
 
 	# Generates pileup that VCF can be called off of later.
-	/usr/local/miniconda/bin/samtools mpileup -B --max-depth 500000 -f lava_ref.fasta !{R1}.bam > !{R1}.pileup
+	/usr/local/miniconda/bin/samtools mpileup -B --max-depth 500000 -f !{FASTA} !{R1}.bam > !{R1}.pileup
 
 	'''
 
@@ -129,7 +118,7 @@ process Pipeline_prep {
 	container "quay.io/vpeddu/lava_image:latest"
 
 	input:
-		file "lava_ref.gff"
+		file GFF
 		file INITIALIZE_PROTEINS_CSV
 
 	output:
@@ -146,7 +135,7 @@ process Pipeline_prep {
 	echo "Sample,Amino Acid Change,Position,AF,Change,Protein,NucleotideChange,LetterChange,Syn,Depth,Passage,Reverse_Complement" > merged.csv
 
 	# Creates list of protein names and locations (proteins.csv) based on GFF annotations.
-	python3 ${INITIALIZE_PROTEINS_CSV}
+	python3 ${INITIALIZE_PROTEINS_CSV} ${GFF}
 
 	"""
 
@@ -162,7 +151,7 @@ process Create_VCF {
 		tuple file(R1), file(R1_PILEUP), file(BAM), val(PASSAGE)
 		file ANNOCAR
 		file FASTA
-		file "lava_ref.gff"
+		file GFF 
 
 	output:
 		file "*exonic_variant_function" optional true
@@ -191,7 +180,7 @@ process Create_VCF {
 	file="!{R1}""_p.vcf"
 	convert2annovar.pl -withfreq -format vcf4old -includeinfo !{R1}_p.vcf > !{R1}.avinput
 
-	python3 annoCAR.py !{R1}.avinput lava_ref.gff !{FASTA}
+	python3 annoCAR.py !{R1}.avinput !{GFF} !{FASTA}
 
 	mv !{R1}.exonic_variant_function !{R1}.exonic_variant_function.samp
 
@@ -302,6 +291,8 @@ process Generate_output {
 		file GENOME_PROTEIN_PLOTS
 		file PALETTE
 		file BAM
+		val(NAME)
+		file FASTA
 
 	output:
 		file "*.html"
@@ -348,8 +339,14 @@ process Generate_output {
 	cat *.reads.csv > reads.csv
 	cat *.log > complex.log
 
+	if [ "${NAME}" == "false" ]; then
+		HTML_NAME=\$(basename "${FASTA}" .fasta)
+	else
+		HTML_NAME="${NAME}"
+	fi
+
 	# TODO error handling @ line 669-683 of lava.py
-	python3 ${GENOME_PROTEIN_PLOTS} visualization.csv proteins.csv reads.csv . "Plot"
+	python3 ${GENOME_PROTEIN_PLOTS} visualization.csv proteins.csv reads.csv . "Plot" -name \${HTML_NAME} 
 	mkdir vcf_files
 	mv *.vcf vcf_files
 
