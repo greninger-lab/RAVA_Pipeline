@@ -295,7 +295,7 @@ process Generate_output {
 		file FASTA
 
 	output:
-		file "*.html"
+		file "*.html" optional true
 		file "*.log"
 		file "visualization.csv"
 		file "reads.csv"
@@ -303,6 +303,7 @@ process Generate_output {
 		file "genomecov"
 		file "all_files"
 		file "bam_files"
+
 		publishDir params.OUTDIR, mode: 'copy'
 
 	script:
@@ -346,7 +347,7 @@ process Generate_output {
 	fi
 
 	# TODO error handling @ line 669-683 of lava.py
-	python3 ${GENOME_PROTEIN_PLOTS} visualization.csv proteins.csv reads.csv . "Plot" -name \${HTML_NAME} 
+	python3 ${GENOME_PROTEIN_PLOTS} visualization.csv proteins.csv reads.csv . "Plot" -name \${HTML_NAME} -png
 	mkdir vcf_files
 	mv *.vcf vcf_files
 

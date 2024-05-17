@@ -35,6 +35,9 @@ from math import pi
 import subprocess
 import os
 
+from bokeh.io import export_png
+from bokeh.io import export_svgs
+
 # Uses info from protein.csv to shade every other protein in light green, and annotate with protein names.
 def protein_annotation(first):
     protein_locs = []
@@ -499,8 +502,6 @@ if __name__ == "__main__":
         NewCoverageVCF = pd.DataFrame(columns=["sample", "position", "cov"])
         NewCoverageVCF["sample"] = CoverageVCF["0"].values
         NewCoverageVCF["position"] = CoverageVCF["1"].values
-        # NewCoverageVCF['cov'] = CoverageVCF['7'].values
-        # NewCoverageVCF["cov"] = NewCoverageVCF["cov"].str.extract('((?<=ADP=).*(?=;WT=))')
         NewCoverageVCF["cov"] = CoverageVCF["9"].values
         NewCoverageVCF["cov"] = NewCoverageVCF["cov"].str.split(":").str[3]
 
@@ -955,31 +956,11 @@ if __name__ == "__main__":
         list2_plots.append(protein_plot)
 
     tabs_proteins = Tabs(tabs=list2_tabs)
-    plots_proteins = column(list2_plots)
-
-    # Outputs files into html or png files as requested.
-    if args.nuc:
-        # output_file(new_dir + "/" + "nucleotide_changes.html", title=plot_title)
-        output_file("nucleotide_changes.html", title=plot_title)
-        show(tabs_genomes)
-    else:
-        if args.png:
-            export_png(plots_proteins, filename="Protein_Plots.png")
-            export_png(plots_genomes, filename="Genome_Plots.png")
-        else:
-            
-            # Use args.name as the file name and plot title
-            file_name = args.name
-            plot_title = file_name
-            output_file(f"{file_name}.html", title=plot_title)
-            print(f"Opening output file {new_dir}/{file_name}.html")
-            save(column(tabs_genomes, tabs_proteins))
-
-
-            # Automatically opens output file, otherwise prints error message.
-            try:
-                show(column(tabs_genomes, tabs_proteins))
-            except:
-                print(
-                    "Automatic opening of output files has failed - however generation worked. Check out your output at the output location specified."
-                )
+    plots_proteins = column(list2_plots)                    
+                
+    # Use args.name as the file name and plot title
+    file_name = args.name
+    plot_title = file_name
+    output_file(f"{file_name}.html", title=plot_title)
+    print(f"Opening output file {new_dir}/{file_name}.html")
+    save(column(tabs_genomes, tabs_proteins))

@@ -34,12 +34,9 @@ def helpMessage() {
                         the reference fasta supplied with the --FASTA flag. This option
                         must be paired with the --FASTA flag.
         --AF            pecify an allele frequency percentage to cut off
-                        - with a minimum of 1 percent - in whole numbers. default = ' '
-        --NUC           Results are listed as nucleotide changes not amino acid
-                        changes. Do not use with -png.
+                        - with a minimum of 1 percent - in whole numbers. default = ' 
         --ALLELE_FREQ   Specify an allele frequency percentage to cut off - with a
                         minimum of 1 percent - in whole numbers.
-        --PNG           Output results as a png. Do not use with -nuc.
         --DEDUPLICATE   Optional flag, will perform automatic removal of PCR
                         duplicates via DeDup.
         --NAME          Changes graph name
