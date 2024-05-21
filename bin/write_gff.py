@@ -1,17 +1,10 @@
-import subprocess
-import argparse
 from Bio.Seq import Seq
 from Bio.Blast import NCBIWWW
 from Bio import Entrez
-import shutil
-import sys
-import time
 from datetime import datetime
 import re
-import os.path
 import pandas as pd
 import sys
-
 
 # Reads in a fasta and returns fasta name, fasta sequence with Ts instead of Us.
 def read_fasta(fasta_file_loc):
@@ -35,16 +28,13 @@ def read_fasta(fasta_file_loc):
     genome_list.append(dna_string.replace("U", "T"))
     return strain_list, genome_list
 
+fasta_file = sys.argv[1]
 
 # Reads in consensus fasta.
-ignore, genome_ref = read_fasta("lava_ref.fasta")
-g = open("consensus.fasta", "w")
-# Replaces consensus fasta header (pulled from GenBank) with >lava and writes the fasta sequence (with Ts instead of Us).
-g.write(">lava\n")
-g.write(genome_ref[0])
-g.close()
+ignore, genome_ref = read_fasta(fasta_file)
 
 gene_loc_list = []
+gene_loc_list_direction = []
 gene_product_list = []
 allow_one = False
 
@@ -59,6 +49,12 @@ for line in open("lava_ref.gbk"):
     if "CDS" in line and ".." in line:
         gene_loc_list.append(re.findall(r"\d+", line))
         allow_one = True
+        
+        if "complement" in line:
+            gene_loc_list_direction.append("-") 
+        else:
+            gene_loc_list_direction.append("+")
+            
     # Grabs protein names from CDS annotations.
     if '/product="' in line and allow_one:
         allow_one = False
@@ -140,45 +136,80 @@ for x in range(0, len(gene_product_list)):
     elif gene_name == "fusion_protein":
         gene_name = "F"
     gene_end = str(gene_end)
+    
+    dna_direction = gene_loc_list_direction[x]
 
     ## For ribosomal slippage, creates fake new protein to get the second set of values
     if len(gene_loc_list[x]) == 4 and gene_product_list[x] != "D_protein":
         g.write(
             name
             + "\tLAVA\tgene\t"
-            + str(gene_loc_list[x][2])
+            + gene_loc_list[x][0]
             + "\t"
-            + str(gene_loc_list[x][3])
-            + "\t.\t+\t.\tID=gene:"
-            + gene_product_list[x]
-            + "_ribosomal_slippage;biotype=protein_coding\n"
+            + gene_loc_list[x][1]
+            + f"\t.\t{dna_direction}\t.\tID=gene:"
+            + gene_name
+            + ";biotype=protein_coding\n"
         )
         g.write(
             name
             + "\tLAVA\tCDS\t"
-            + str(gene_loc_list[x][2])
+            + gene_loc_list[x][0]
             + "\t"
-            + str(gene_loc_list[x][3])
-            + "\t.\t+\t0\tID=CDS:"
-            + gene_product_list[x]
-            + "_ribosomal_slippage;Parent=transcript:"
-            + gene_product_list[x]
-            + "_ribosomal_slippage;biotype=protein_coding\n"
+            + gene_loc_list[x][1]
+            + f"\t.\t{dna_direction}\t0\tID=CDS:"
+            + gene_name
+            + ";Parent=transcript:"
+            + gene_name
+            + ";biotype=protein_coding\n"
         )
         g.write(
             name
             + "\tLAVA\ttranscript\t"
-            + str(gene_loc_list[x][2])
+            + gene_loc_list[x][0]
             + "\t"
-            + str(gene_loc_list[x][3])
-            + "\t.\t+\t.\tID=transcript:"
-            + gene_product_list[x]
-            + "_ribosomal_slippage;Parent=gene:"
-            + gene_product_list[x]
-            + "_ribosomal_slippage;biotype=protein_coding\n"
+            + gene_loc_list[x][1]
+            + f"\t.\t{dna_direction}\t.\tID=transcript:"
+            + gene_name
+            + ";Parent=gene:"
+            + gene_name
+            + ";biotype=protein_coding\n"
         )
 
-        slip_start = str(gene_loc_list[x][0])
+        g.write(
+            name
+            + "\tLAVA\tgene\t"
+            + gene_loc_list[x][2]
+            + "\t"
+            + gene_loc_list[x][3]
+            + f"\t.\t{dna_direction}\t.\tID=gene:"
+            + gene_name
+            + ";biotype=protein_coding\n"
+        )
+        g.write(
+            name
+            + "\tLAVA\tCDS\t"
+            + gene_loc_list[x][2]
+            + "\t"
+            + gene_loc_list[x][3]
+            + f"\t.\t{dna_direction}\t0\tID=CDS:"
+            + gene_name
+            + ";Parent=transcript:"
+            + gene_name
+            + ";biotype=protein_coding\n"
+        )
+        g.write(
+            name
+            + "\tLAVA\ttranscript\t"
+            + gene_loc_list[x][2]
+            + "\t"
+            + gene_loc_list[x][3]
+            + f"\t.\t{dna_direction}\t.\tID=transcript:"
+            + gene_name
+            + ";Parent=gene:"
+            + gene_name
+            + ";biotype=protein_coding\n"
+        )
 
     elif gene_name != "C_protein" and gene_name != "D_protein":
         g.write(
@@ -187,7 +218,7 @@ for x in range(0, len(gene_product_list)):
             + gene_start
             + "\t"
             + gene_end
-            + "\t.\t+\t.\tID=gene:"
+            + f"\t.\t{dna_direction}\t.\tID=gene:"
             + gene_name
             + ";biotype=protein_coding\n"
         )
@@ -197,7 +228,7 @@ for x in range(0, len(gene_product_list)):
             + gene_start
             + "\t"
             + gene_end
-            + "\t.\t+\t0\tID=CDS:"
+            + f"\t.\t{dna_direction}\t0\tID=CDS:"
             + gene_name
             + ";Parent=transcript:"
             + gene_name
@@ -209,7 +240,7 @@ for x in range(0, len(gene_product_list)):
             + gene_start
             + "\t"
             + gene_end
-            + "\t.\t+\t.\tID=transcript:"
+            + f"\t.\t{dna_direction}\t.\tID=transcript:"
             + gene_name
             + ";Parent=gene:"
             + gene_name

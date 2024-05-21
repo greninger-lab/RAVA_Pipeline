@@ -33,7 +33,7 @@ The input metadata file has only two inputs required
 > Passage: Sample name to be displayed on html
 
 > [!WARNING]
-> Passage cannot only contain a number for the name, it must have letters or characters to be recognized as a string or the final visualization will not generate.
+> If you want to include numbers only for the passage name, you can add quotation marks around the Passage entries. IE "1234".
 
 
 | Sample |	Passage |
@@ -53,7 +53,6 @@ If GFF or GBK is used as input they are both passed into `--GFF` and require a f
 | File | Notes | 
 | --- | --- |
 | .gff |  If GFF is chosen as input please see the GFF [reformating guide](#GFF-Creation-Guide) as a standard GFF file is not accepted as input. A fasta file is required for input. |
-| Genbank Accession | If a genbank accession is passed in use `--GENBANK` instead of `--GFF`, `--FASTA` is not required  |
 | .gb or .gbk| Use `--GFF` as input for your .gb file, a fasta file is required through `--FASTA`. A genbank file can be downloaded from NCBI or exported from Geneious. If exporting from Geneious click on an annotated fasta and export as .gbk file|
 
 > [!WARNING]
@@ -66,9 +65,8 @@ If GFF or GBK is used as input they are both passed into `--GFF` and require a f
 | ---      | ---         | 
 | `--METADATA` | Input metadata CSV |
 | `--OUTDIR` | Output directory |   
-| `--FASTA` | Specify a reference fasta to map samples to. This must be the same fasta as your annotation file (.gb or .gff). This option must be used with the `--GFF` flag to specify the protein annotations relative to the start of this fasta. REQUIRED IF NOT `--GENBANK` |
-| `--GFF`  |       Specify a reference gff, gb or gbk file with the protein annotations for the reference fasta supplied with the `--FASTA` flag. This option must be paired with the `--FASTA` flag. REQUIRED IF NOT `--GENBANK` |
-| `--GENBANK` | Provide a Genbank accession number to use as reference annotation and fasta. REQUIRED IF NOT `--FASTA` + `--GFF` |
+| `--FASTA` | Specify a reference fasta to map samples to. This must be the same fasta as your annotation file (.gb or .gff). This option must be used with the `--GFF` flag to specify the protein annotations relative to the start of this fasta.|
+| `--GFF`  |       Specify a reference gff, gb or gbk file with the protein annotations for the reference fasta supplied with the `--FASTA` flag. This option must be paired with the `--FASTA` flag.
 | `--NAME` | Optional flag, Change name of output html. |
 | `--ALLELE_FREQ` |  Optional flag, Specify an allele frequency percentage to cut off - with a minimum of 1 percent - in whole numbers. |       
 | `--DEDUPLICATE` | Optional flag, will perform automatic removal of PCR duplicates via DeDup. |
@@ -109,15 +107,16 @@ nextflow run greninger-lab/RAVA_Pipeline -r main \
 -with-tower 
 ```
 
-Run locally with more computational power and genbank accession.
+Run locally with more computational power
 
 ```
-nextflow run greninger-lab/RAVA_Pipeline -r main \
+nextflow run greninger-lab/RAVA_Pipeline -r main\
 --OUTDIR example_output/ \
---GENBANK MF795094 \
+--GFF Examples/Example.gb \
+--FASTA Examples/Example.fasta \
 --METADATA Examples/Example_metadata.csv \
 -with-docker ubuntu:18.04 \
--profile More
+-profile More 
 ```
 
 ## Workflow
@@ -192,12 +191,6 @@ nextflow run greninger-lab/RAVA_Pipeline -r main --OUTDIR example_output/ --GFF 
 
 ```
 nextflow run greninger-lab/RAVA_Pipeline -r main --OUTDIR example_output/ --GFF Examples/Example.gff --FASTA Examples/Example.fasta   --METADATA Examples/Example_metadata.csv  -with-docker ubuntu:18.04 -profile standard 
-```
-
-> With genbank accession
-
-```
-nextflow run greninger-lab/RAVA_Pipeline -r main --OUTDIR example_output/ --GENBANK MF795094 --METADATA Examples/Example_metadata.csv  -with-docker ubuntu:18.04 -profile standard
 ```
 
 ## Output
@@ -461,15 +454,9 @@ FEATURES             Location/Qualifiers
 ## GFF Creation Guide
 Perhaps the most difficult aspect of running this program is properly formatting your reference fasta and .gff files. In order to have a longitudinal analysis that makes sense, you need to specify a fasta file containing the majority consensus for the first sample. This allows you to examine minor variants in your first sample properly. If you use a fasta that is not representative of your first sample RAVA will Genbank many mutations at 100% allele frequency in your first sample. 
 
-In order to avoid this issue, we recommend using the `-q` flag to specify a GenBank record that is a reference for your samples. Assuming the selected reference has accurate annotations, RAVA will automatically assemble a working consensus sequence for your first set of reads and use this as the reference. 
-
-However, for situations that are not covered by GenBank references, you would need to manually generate your own .fasta and .gff files.
-
 **Example: Using the Template GFF**
 
-An example of something that would not be covered by GenBank references, and thus would not be recommended to use the `-q` flag, is if you wanted to analyze all Influenza A segments at once.
-
-In this case you need to use your favorite method of generating a consensus fasta for your first set of reads (we mainly use Geneious). Once this is done you need to make your .gff file. However, ANNOVAR requires a VERY strict formatting of these gff files. 
+Use your favorite method of generating a consensus fasta for your first set of reads (we mainly use Geneious). Once this is done you need to make your .gff file. However, ANNOVAR requires a VERY strict formatting of these gff files. 
 
 The easiest way of generating a new gff file is to edit gene/CDS/transcript names and locations in the provided `Example1_ref.gff`. We highly recommend this method to avoid lots of formatting issues.
 

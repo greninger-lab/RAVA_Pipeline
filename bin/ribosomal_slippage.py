@@ -16,22 +16,6 @@ import math
 correction_number = 0
 residue_correction_number = 0
 
-# # -1 for coronavirus, HIV
-# slippage_number = -1
-#
-# # Grabs the start of the CDS for the original protein before ribosomal slip
-# slippage_cd_start = open("ribosomal_start.txt").read()
-#
-# for line in open("proteins.csv"):
-#     if '_ribosomal_slippage' in line:
-#         slip_site = line.split(',')[1]
-#         residue_correction_number = int(slip_site) - int(slippage_cd_start) - slippage_number
-#
-#         # For some reason, nucleotide counting is off but residue number is correct.
-#         # For now, adding back protein start is vaguely correct.
-#         correction_number = int(slip_site) - 1
-
-
 # Ribosomal_corrected has corrected ribosomal slippage annotations.
 # Visualization is what will be fed into Bokeh, which will include old and new annotations.
 ribosomal_corrected = open("final_corrected_slippage.csv", "w")

@@ -29,19 +29,14 @@ def helpMessage() {
         --FASTA         Specify a reference fasta to map samples to. This must be the 
                         same fasta as your annotation file (.gb or .gff). This option 
                         must be used with the --GFF flag to specify the protein 
-                        annotations relative to the start of this fasta. [REQUIRED IF NOT --GENBANK]
+                        annotations relative to the start of this fasta. 
         --GFF           Specify a reference .gff, .gb or .gbk file with the protein annotations for
                         the reference fasta supplied with the --FASTA flag. This option
-                        must be paired with the --FASTA flag. [REQUIRED IF NOT GENBANK]
-        --GENBANK       Provide a Genbank accession number to use as reference annotation and fasta. 
-                        [REQUIRED IF NOT --FASTA + --GFF]
+                        must be paired with the --FASTA flag.
         --AF            pecify an allele frequency percentage to cut off
-                        - with a minimum of 1 percent - in whole numbers. default = ' '
-        --NUC           Results are listed as nucleotide changes not amino acid
-                        changes. Do not use with -png.
+                        - with a minimum of 1 percent - in whole numbers. default = ' 
         --ALLELE_FREQ   Specify an allele frequency percentage to cut off - with a
                         minimum of 1 percent - in whole numbers.
-        --PNG           Output results as a png. Do not use with -nuc.
         --DEDUPLICATE   Optional flag, will perform automatic removal of PCR
                         duplicates via DeDup.
         --NAME          Changes graph name
@@ -64,7 +59,6 @@ if (params.help){
 }
 
 params.OUTDIR= false
-params.GENBANK = 'False'
 params.GFF = 'False'
 params.FASTA = 'NO_FILE'
 params.DEDUPLICATE = 'false'
@@ -89,7 +83,6 @@ include { Generate_output } from './Modules.nf'
 // Staging python scripts
 PULL_ENTREZ = file("$workflow.projectDir/bin/pull_entrez.py")
 WRITE_GFF = file("$workflow.projectDir/bin/write_gff.py")
-WRITE_GFF2 = file("$workflow.projectDir/bin/write_gff2.py")
 
 INITIALIZE_PROTEINS_CSV = file("$workflow.projectDir/bin/initialize_proteins_csv.py")
 ANNOTATE_COMPLEX_MUTATIONS = file("$workflow.projectDir/bin/Annotate_complex_mutations.py")
@@ -97,7 +90,7 @@ MAT_PEPTIDE_ADDITION = file("$workflow.projectDir/bin/mat_peptide_addition.py")
 RIBOSOMAL_SLIPPAGE = file("$workflow.projectDir/bin/ribosomal_slippage.py")
 GENOME_PROTEIN_PLOTS = file("$workflow.projectDir/bin/genome_protein_plots.py")
 PALETTE = file("$workflow.projectDir/bin/palette.py")
-ANNOVAR2 = file("$workflow.projectDir/bin/ANNOVAR_Replacement.py")
+ANNOCAR = file("$workflow.projectDir/bin/annoCAR.py")
 
 // Error handling for input flags
 //if OUTDIR not set
@@ -135,10 +128,8 @@ workflow {
     log.info nfcoreHeader()
 
         CreateGFF (
-            params.GENBANK,
             PULL_ENTREZ,
             WRITE_GFF,
-            WRITE_GFF2,
             file(params.FASTA),
             file(params.GFF)
         )
@@ -156,7 +147,7 @@ workflow {
 
         Create_VCF (
             Align_samples.out[0],
-            ANNOVAR2,
+            ANNOCAR,
             CreateGFF.out[0],
             CreateGFF.out[1]
         )
@@ -186,7 +177,9 @@ workflow {
             RIBOSOMAL_SLIPPAGE,
             GENOME_PROTEIN_PLOTS,
             PALETTE, 
-            Align_samples.out[2].collect()
+            Align_samples.out[2].collect(),
+            params.NAME,
+            file(params.FASTA)
         )
 }
 
@@ -216,7 +209,7 @@ __       /                 \\     /-   o     /-
           MM   `Mb.   A'     VML  :MM;  A'     VML
         .JMML. .JMM..AMA.   .AMMA. VF .AMA.   .AMMA.
 
-                      Version 5
+                      Version 6.0.0
     """.stripIndent()
 
 }
