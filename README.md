@@ -33,7 +33,7 @@ The input metadata file has only two inputs required
 > Passage: Sample name to be displayed on html
 
 > [!WARNING]
-> Passage cannot only contain a number for the name, it must have letters or characters to be recognized as a string or the final visualization will not generate.
+> If you want to include numbers only for the passage name, you can add quotation marks around the Passage entries. IE "1234".
 
 
 | Sample |	Passage |
