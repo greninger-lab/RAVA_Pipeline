@@ -81,7 +81,6 @@ include { Annotate_complex } from './Modules.nf'
 include { Generate_output } from './Modules.nf'
 
 // Staging python scripts
-PULL_ENTREZ = file("$workflow.projectDir/bin/pull_entrez.py")
 WRITE_GFF = file("$workflow.projectDir/bin/write_gff.py")
 
 INITIALIZE_PROTEINS_CSV = file("$workflow.projectDir/bin/initialize_proteins_csv.py")
