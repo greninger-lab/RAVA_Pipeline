@@ -127,7 +127,6 @@ workflow {
     log.info nfcoreHeader()
 
         CreateGFF (
-            PULL_ENTREZ,
             WRITE_GFF,
             file(params.FASTA),
             file(params.GFF)

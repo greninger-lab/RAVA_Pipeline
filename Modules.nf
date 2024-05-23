@@ -6,7 +6,6 @@ process CreateGFF {
     container "quay.io/vpeddu/lava_image:latest"
 
     input:
-		file PULL_ENTREZ
 		file WRITE_GFF
 		file FASTA
 		file GFF
