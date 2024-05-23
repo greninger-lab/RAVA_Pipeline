@@ -349,6 +349,8 @@ if __name__ == "__main__":
     # Reads data from LAVA output.
     merged = pd.read_csv(args.merged, index_col=False)
 
+    merged['Passage'] = merged['Passage'].astype(str)
+    
     # combine proteins that overlap Carlos fix
 
     merged2 = merged
