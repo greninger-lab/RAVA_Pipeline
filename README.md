@@ -32,10 +32,6 @@ The input metadata file has only two inputs required
 > 
 > Passage: Sample name to be displayed on html
 
-> [!WARNING]
-> If you want to include numbers only for the passage name, you can add quotation marks around the Passage entries. IE "1234".
-
-
 | Sample |	Passage |
 | --- | --- |
 Example_fastq/SRR24099553.fastq |	SRR24099553
@@ -60,6 +56,9 @@ If GFF or GBK is used as input they are both passed into `--GFF` and require a f
 
 
 ## Options
+
+> [!WARNING]
+> The pipeline may crash on the standard nextflow config, it is recommended to use the cloud or MORE for local runs when running more computationally intensive processes.
 
 | Command  | Description |
 | ---      | ---         | 
