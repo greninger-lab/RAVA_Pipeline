@@ -214,23 +214,23 @@ for i in range(len(gff.index)):
 test = 0
 df = None
 
-# impose a strand-bias filter -- remove alt alleles where
-# >90% of alt alleles come from one strand
-strandfilter_idx = []
+# # impose a strand-bias filter -- remove alt alleles where
+# # >90% of alt alleles come from one strand
+# strandfilter_idx = []
 
-for k in range(len(variantFunction)):
-    temp_varstats = variantFunction.iloc[k, 16].split(":")
-    ADF = float(temp_varstats[12])
-    ADR = float(temp_varstats[13])
-    total_A = ADF + ADR
-    percent_ADF = ADF / total_A * 100.0
-    percent_ADR = ADR / total_A * 100.0
-    if not (percent_ADR > 90 or percent_ADF > 90):
-        strandfilter_idx.append(k)
+# for k in range(len(variantFunction)):
+#     temp_varstats = variantFunction.iloc[k, 16].split(":")
+#     ADF = float(temp_varstats[12])
+#     ADR = float(temp_varstats[13])
+#     total_A = ADF + ADR
+#     percent_ADF = ADF / total_A * 100.0
+#     percent_ADR = ADR / total_A * 100.0
+#     if not (percent_ADR > 90 or percent_ADF > 90):
+#         strandfilter_idx.append(k)
 
-strandfiltered_df = variantFunction.loc[strandfilter_idx].reset_index(drop=True)
+# strandfiltered_df = variantFunction.loc[strandfilter_idx].reset_index(drop=True)
 
-variantFunction = strandfiltered_df
+# variantFunction = strandfiltered_df
 
 # annotates the names of the protein on the section that mutated
 for j in range(numRegions):
