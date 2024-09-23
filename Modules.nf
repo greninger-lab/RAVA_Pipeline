@@ -64,6 +64,7 @@ process Align_samples {
 	tuple file(R1), val(PASSAGE)
 	file FASTA
 	val DEDUPLICATE
+	val PAIRING
 
 	output:
 	tuple file(R1), file("*.pileup"), file("*.bam"), val(PASSAGE)
@@ -83,7 +84,12 @@ process Align_samples {
 	echo aligning "!{R1}"
 
 	# Align each sample to consensus fasta.
-	/usr/local/miniconda/bin/bwa mem -t !{task.cpus} -M -R \'@RG\\tID:group1\\tSM:!{R1}\\tPL:illumina\\tLB:lib1\\tPU:unit1\' -p -L [2,2] -B 6 !{FASTA} !{R1} > !{R1}.sam
+	if !{PAIRING}
+		then
+			/usr/local/miniconda/bin/bwa mem -t !{task.cpus} -M -R \'@RG\\tID:group1\\tSM:!{R1}\\tPL:illumina\\tLB:lib1\\tPU:unit1\' -p -L [2,2] -B 6 !{FASTA} !{R1} > !{R1}.sam
+		else
+			/usr/local/miniconda/bin/bwa mem -t !{task.cpus} -M -R \'@RG\\tID:group1\\tSM:!{R1}\\tPL:illumina\\tLB:lib1\\tPU:unit1\' -L [2,2] -B 6 !{FASTA} !{R1} > !{R1}.sam
+	fi
 
 	# Sorts SAM.
 	java -jar /usr/bin/picard.jar SortSam INPUT=!{R1}.sam OUTPUT=!{R1}.bam SORT_ORDER=coordinate VERBOSITY=ERROR

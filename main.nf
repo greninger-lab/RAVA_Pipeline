@@ -37,6 +37,7 @@ def helpMessage() {
                         - with a minimum of 1 percent - in whole numbers. default = ' 
         --ALLELE_FREQ   Specify an allele frequency percentage to cut off - with a
                         minimum of 1 percent - in whole numbers.
+        --PAIRING       Optional flag for paired-end interleaved input
         --DEDUPLICATE   Optional flag, will perform automatic removal of PCR
                         duplicates via DeDup.
         --NAME          Changes graph name
@@ -63,6 +64,7 @@ params.GFF = 'False'
 params.FASTA = 'NO_FILE'
 params.DEDUPLICATE = 'false'
 params.ALLELE_FREQ = 'NO_VAL'
+params.PAIRING = false
 
 params.NAME = 'false'
 
@@ -103,6 +105,8 @@ if (!params.OUTDIR.endsWith("/")){
     params.OUTDIR = "${params.OUTDIR}/"
 }
 
+
+
 input_read_ch = Channel
     .fromPath(METADATA_FILE)
     .splitCsv(header:true)
@@ -135,7 +139,8 @@ workflow {
         Align_samples (
             input_read_ch,
             CreateGFF.out[0],
-            params.DEDUPLICATE
+            params.DEDUPLICATE,
+            params.PAIRING
         )
 
         Pipeline_prep (
