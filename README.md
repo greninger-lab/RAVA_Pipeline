@@ -2,7 +2,7 @@
 
 RAVA is derived from LAVA, but for nonlongitudinal sequence data. RAVA takes FASTQ files (for every sample in your analysis), a metadata sheet (providing info on what day or passage each sample was collected), and a reference genome either by accession number or your own FASTA and GFF. Output will be displayed as an interactive graph in your web browser, and a table of all mutations of all samples.
 
-Fastqs should be paired and trimmed before running through pipeline.
+Fastqs should be trimmed before running through the pipeline. You can use single-end reads (default) or paired-end reads (interleaved format) as input.
 
 # Table of Contents
 - [RAVA: Reference-based Analysis of Viral Alleles](#rava-reference-based-analysis-of-viral-alleles)
@@ -68,6 +68,7 @@ If GFF or GBK is used as input they are both passed into `--GFF` and require a f
 | `--GFF`  |       Specify a reference gff, gb or gbk file with the protein annotations for the reference fasta supplied with the `--FASTA` flag. This option must be paired with the `--FASTA` flag.
 | `--NAME` | Optional flag, Change name of output html. |
 | `--ALLELE_FREQ` |  Optional flag, Specify an allele frequency percentage to cut off - with a minimum of 1 percent - in whole numbers. |       
+| `--PAIRING` | Optional flag for paired-end interleaved input. |
 | `--DEDUPLICATE` | Optional flag, will perform automatic removal of PCR duplicates via DeDup. |
 | `-resume`  | nextflow will pick up where it left off if the previous command was interrupted for some reason. |
 | `-with-docker ubuntu:18.04` | Runs command with Ubuntu docker.
@@ -157,13 +158,13 @@ fasterq-dump --split-files SRR24099553
 fasterq-dump --split-files SRR24099554	
 ```
 
-Cat R1 and R2 samples together
+If you use paired-end, combine R1 and R2 reads in an interleaved format (remember to use flag '--PAIRING' when running RAVA), for example, using seqtk:
 
 ```bash
 for i in *_1.fastq
 do
 base=$(basename $i _1.fastq)
-cat ${base}_1.fastq ${base}_2.fastq > ${base}.fastq
+seqtk mergepe "${base}_1.fastq" "${base}_2.fastq" > "${base}.fastq"
 done
 ```
 
