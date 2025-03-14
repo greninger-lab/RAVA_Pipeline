@@ -1,0 +1,12 @@
+Sample,Passage
+./RAVA_input_reads/gr2a_bl_lung.fastq.gz,gr2a_bl_lung
+./RAVA_input_reads/gr2a_wh_lung.fastq.gz,gr2a_wh_lung
+./RAVA_input_reads/gr2a_yl_lung.fastq.gz,gr2a_yl_lung
+./RAVA_input_reads/gr2b_bl_lung.fastq.gz,gr2b_bl_lung
+./RAVA_input_reads/gr2b_rd_lung.fastq.gz,gr2b_rd_lung
+./RAVA_input_reads/gr2b_wh_lung.fastq.gz,gr2b_wh_lung
+./RAVA_input_reads/gr2b_yl_lung.fastq.gz,gr2b_yl_lung
+./RAVA_input_reads/gr5b_rd_lung.fastq.gz,gr5b_rd_lung
+./RAVA_input_reads/gr6a_wh_lung.fastq.gz,gr6a_wh_lung
+./RAVA_input_reads/gr6b_bl_lung.fastq.gz,gr6b_bl_lung
+./RAVA_input_reads/gr6b_rd_lung.fastq.gz,gr6b_rd_lung

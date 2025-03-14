@@ -1,0 +1,16 @@
+Sample,Amino Acid Change,Position,AF,Change,Protein,NucleotideChange,LetterChange,Syn,Depth,Passage,Reverse_Complement,NucCorrect,AminoCorrect,MatPeptide
+afg46.fastq.gz,NP R441R,1433,1.03,R441R,NP,C1321A,C to A,synonymous SNV,1748,afg46,No,C1321A,R441R,-
+afg46.fastq.gz,NP E449E,1459,1.06,E449E,NP,A1347G,A to G,synonymous SNV,1607,afg46,No,A1347G,E449E,-
+afg46.fastq.gz,NP S454S,1474,1.02,S454S,NP,T1362C,T to C,synonymous SNV,1470,afg46,No,T1362C,S454S,-
+afg46.fastq.gz,NP D457N,1481,1.02,D457N,NP,G1369A,G to A,nonsynonymous SNV,1469,afg46,No,G1369A,D457N,-
+afg46.fastq.gz,P F609F,6278,2,F609F,P,C1827T,C to T,synonymous SNV,1347,afg46,No,C1827T,F609F,-
+afg46.fastq.gz,P G707S,6570,2.01,G707S,P,G2119A,G to A,nonsynonymous SNV,1344,afg46,No,G2119A,G707S,-
+afg46.fastq.gz,F S207P,9324,99.78,S207P,F,T619C,T to C,complex,1378,afg46,No,T619C,S207P,-
+afg46.fastq.gz,F S207F,9325,99.7,S207F,F,C620T,C to T,complex,1337,afg46,No,C620T,S207F,-
+afg46.fastq.gz,F G252D,9460,99.94,G252D,F,G755A,G to A,nonsynonymous SNV,1592,afg46,No,G755A,G252D,-
+afg46.fastq.gz,glycoprotein C574R,12714,1.12,C574R,glycoprotein,T1720C,T to C,nonsynonymous SNV,1068,afg46,No,T1720C,C574R,-
+afg46.fastq.gz,L_protein L171L,13974,1.02,L171L,L_protein,T511C,T to C,synonymous SNV,980,afg46,No,T511C,L171L,-
+afg46.fastq.gz,L_protein E179K,13998,2.3,E179K,L_protein,G535A,G to A,nonsynonymous SNV,1042,afg46,No,G535A,E179K,-
+afg46.fastq.gz,L_protein T630P,15351,2.22,T630P,L_protein,A1888C,A to C,nonsynonymous SNV,1259,afg46,No,A1888C,T630P,-
+afg46.fastq.gz,L_protein A926D,16240,1.42,A926D,L_protein,C2777A,C to A,nonsynonymous SNV,1762,afg46,No,C2777A,A926D,-
+afg46.fastq.gz,L_protein I1777L,18792,2.97,I1777L,L_protein,A5329T,A to T,nonsynonymous SNV,1380,afg46,No,A5329T,I1777L,-
