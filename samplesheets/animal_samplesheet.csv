@@ -1,0 +1,7 @@
+Sample,Passage
+./path/to/trimmed/reads/kz_01_04b_4.fastq.gz,kz_01_04b_4
+./path/to/trimmed/reads/kz_01_04b_5.fastq.gz,kz_01_04b_5
+./path/to/trimmed/reads/kz_01_04b_6.fastq.gz,kz_01_04b_6
+./path/to/trimmed/reads/kz_01_24a_1.fastq.gz,kz_01_24a_1
+./path/to/trimmed/reads/kz_01_24a_2.fastq.gz,kz_01_24a_2
+./path/to/trimmed/reads/kz_01_24a_3.fastq.gz,kz_01_24a_3

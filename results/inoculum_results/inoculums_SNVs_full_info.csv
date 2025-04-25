@@ -1,0 +1,16 @@
+Sample,Amino Acid Change,Position,AF,Change,Protein,NucleotideChange,LetterChange,Syn,Depth,Passage,Reverse_Complement,NucCorrect,AminoCorrect,MatPeptide
+kz_01_04b_input_1Msubsample.fastq.gz,nonstructural_polyprotein S2338A,7088,1.55,S2338A,nonstructural_polyprotein,T7012G,T to G,nonsynonymous SNV,4066,kz_01_04b_input,No,T7012G,S2338A,NSP4: S475A; T1423G
+kz_01_04b_input_1Msubsample.fastq.gz,nonstructural_polyprotein L2395L,7259,99.76,L2395L,nonstructural_polyprotein,C7183T,C to T,synonymous SNV,4947,kz_01_04b_input,No,C7183T,L2395L,NSP4: L532L; C1594T
+kz_01_04b_input_1Msubsample.fastq.gz,structural_polyprotein A236P,8272,1.86,A236P,structural_polyprotein,G706C,G to C,nonsynonymous SNV,5100,kz_01_04b_input,No,G706C,A236P,CAPSID: A236P; G706C
+kz_01_04b_input_1Msubsample.fastq.gz,structural_polyprotein L299L,8463,99.85,L299L,structural_polyprotein,T897A,T to A,synonymous SNV,5425,kz_01_04b_input,No,T897A,L299L,E3: L38L; T114A
+kz_01_04b_input_1Msubsample.fastq.gz,structural_polyprotein H398H,8760,99.86,H398H,structural_polyprotein,C1194T,C to T,synonymous SNV,4392,kz_01_04b_input,No,C1194T,H398H,E2: H73H; C219T
+kz_01_04b_input_1Msubsample.fastq.gz,structural_polyprotein E464K,8956,1.04,E464K,structural_polyprotein,G1390A,G to A,nonsynonymous SNV,6728,kz_01_04b_input,No,G1390A,E464K,E2: E139K; G415A
+kz_01_04b_input_1Msubsample.fastq.gz,structural_polyprotein G604E,9377,8.57,G604E,structural_polyprotein,G1811A,G to A,nonsynonymous SNV,5313,kz_01_04b_input,No,G1811A,G604E,E2: G279E; G836A
+kz_01_04b_input_1Msubsample.fastq.gz,structural_polyprotein D960D,10446,99.98,D960D,structural_polyprotein,C2880T,C to T,synonymous SNV,5046,kz_01_04b_input,No,C2880T,D960D,E1: D151D; C453T
+kz_01_24a_input_1Msubsample.fastq.gz,nonstructural_polyprotein S2338A,7088,2.37,S2338A,nonstructural_polyprotein,T7012G,T to G,nonsynonymous SNV,3079,kz_01_24a_input,No,T7012G,S2338A,NSP4: S475A; T1423G
+kz_01_24a_input_1Msubsample.fastq.gz,nonstructural_polyprotein L2395L,7259,99.81,L2395L,nonstructural_polyprotein,C7183T,C to T,synonymous SNV,3631,kz_01_24a_input,No,C7183T,L2395L,NSP4: L532L; C1594T
+kz_01_24a_input_1Msubsample.fastq.gz,structural_polyprotein A236P,8272,5.31,A236P,structural_polyprotein,G706C,G to C,nonsynonymous SNV,3807,kz_01_24a_input,No,G706C,A236P,CAPSID: A236P; G706C
+kz_01_24a_input_1Msubsample.fastq.gz,structural_polyprotein L299L,8463,99.81,L299L,structural_polyprotein,T897A,T to A,synonymous SNV,4166,kz_01_24a_input,No,T897A,L299L,E3: L38L; T114A
+kz_01_24a_input_1Msubsample.fastq.gz,structural_polyprotein H398H,8760,99.82,H398H,structural_polyprotein,C1194T,C to T,synonymous SNV,3384,kz_01_24a_input,No,C1194T,H398H,E2: H73H; C219T
+kz_01_24a_input_1Msubsample.fastq.gz,structural_polyprotein G604E,9377,7.7,G604E,structural_polyprotein,G1811A,G to A,nonsynonymous SNV,3861,kz_01_24a_input,No,G1811A,G604E,E2: G279E; G836A
+kz_01_24a_input_1Msubsample.fastq.gz,structural_polyprotein D960D,10446,99.97,D960D,structural_polyprotein,C2880T,C to T,synonymous SNV,3335,kz_01_24a_input,No,C2880T,D960D,E1: D151D; C453T

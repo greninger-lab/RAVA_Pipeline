@@ -1,0 +1,3 @@
+Sample,Passage
+./path/to/trimmed/downsampled/reads/kz_01_04b_input_1Msubsample.fastq.gz,kz_01_04b_input
+./path/to/trimmed/downsampled/reads/kz_01_24a_input_1Msubsample.fastq.gz,kz_01_24a_input
