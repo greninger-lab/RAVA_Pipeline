@@ -62,3 +62,10 @@ nextflow run greninger-lab/RAVA_Pipeline -r 2024-12-09_CU_KZ_CHIKV_publication \
 ## Output files
 
 Pre-generated RAVA analysis files (RAVA interactive plots, SNV info tables, and vcf files) can be found in `results` directory.
+
+## Paper Figures
+
+The `paper_figures/` subfolder contains the Jupyter notebook used to generate the figures for the manuscript, along with all required input and output files.
+
+- *Input files*: Coverage files for all samples, generated using the RAVA pipeline (see above for details).
+- *Output files*: Figures produced by the notebook.
