@@ -1,0 +1,294 @@
+Sample,Amino Acid Change,Position,AF,Change,Protein,NucleotideChange,LetterChange,Syn,Depth,Passage,Reverse_Complement,NucCorrect,AminoCorrect,MatPeptide
+2024-07-17_VOC-O-BA4-P5a.fastq.gz,ORF1ab_polyprotein K1345R,4295,1.02,K1345R,ORF1ab_polyprotein,A4034G,A to G,nonsynonymous SNV,3417,SARS-CoV-2_VOC_omicron_BA.4,No,A4034G,K1345R,nsp3: K530R; A1589G
+2024-07-17_VOC-O-BA4-P5a.fastq.gz,ORF1ab_polyprotein A3076A,9489,1.69,A3076A,ORF1ab_polyprotein,C9228T,C to T,synonymous SNV,5332,SARS-CoV-2_VOC_omicron_BA.4,No,C9228T,A3076A,nsp4: A316A; C948T
+2024-07-17_VOC-O-BA4-P5a.fastq.gz,ORF1ab_polyprotein F3823L,11728,10.85,F3823L,ORF1ab_polyprotein,T11467C,T to C,nonsynonymous SNV,2386,SARS-CoV-2_VOC_omicron_BA.4,No,T11467C,F3823L,nsp6: F257L; T769C
+2024-07-17_VOC-O-BA4-P5a.fastq.gz,ORF1ab_polyprotein S6734F,20461,10.73,S6734F,ORF1ab_polyprotein,C20201T,C to T,nonsynonymous SNV,3943,SARS-CoV-2_VOC_omicron_BA.4,No,C20201T,S6734F,endoRNAse: S288F; C863T
+2024-07-17_VOC-O-BA4-P5a.fastq.gz,ORF1ab_polyprotein K6974R,21181,1.13,K6974R,ORF1ab_polyprotein,A20921G,A to G,nonsynonymous SNV,3443,SARS-CoV-2_VOC_omicron_BA.4,No,A20921G,K6974R,2'-O-ribose_methyltransferase: K182R; A545G
+2024-07-17_VOC-O-BA4-P5a.fastq.gz,surface_glycoprotein T20T,21600,1.17,T20T,surface_glycoprotein,C60T,C to T,synonymous SNV,4275,SARS-CoV-2_VOC_omicron_BA.4,No,C60T,T20T,-
+2024-07-17_VOC-O-BA4-P5a.fastq.gz,ORF3a_protein V244V,26087,1.9,V244V,ORF3a_protein,C732T,C to T,synonymous SNV,12933,SARS-CoV-2_VOC_omicron_BA.4,No,C732T,V244V,-
+2024-07-17_VOC-O-BA4-P5a.fastq.gz,ORF7b C12C,27754,2.3,C12C,ORF7b,C36T,C to T,synonymous SNV,8986,SARS-CoV-2_VOC_omicron_BA.4,No,C36T,C12C,-
+2024-07-17_VOC-O-BA4-P5a.fastq.gz,ORF8_protein F6F,27874,1.84,F6F,ORF8_protein,C18T,C to T,synonymous SNV,9793,SARS-CoV-2_VOC_omicron_BA.4,No,C18T,F6F,-
+P6_L_III_e_BA4_DMSO_0_2perc.fastq.gz,ORF1ab_polyprotein D1181D,3804,9.48,D1181D,ORF1ab_polyprotein,C3543T,C to T,synonymous SNV,4291,P7_L3_DMSO_0.2%,No,C3543T,D1181D,nsp3: D366D; C1098T
+P6_L_III_e_BA4_DMSO_0_2perc.fastq.gz,ORF1ab_polyprotein Y1767Y,5562,2.37,Y1767Y,ORF1ab_polyprotein,C5301T,C to T,synonymous SNV,4977,P7_L3_DMSO_0.2%,No,C5301T,Y1767Y,nsp3: Y952Y; C2856T
+P6_L_III_e_BA4_DMSO_0_2perc.fastq.gz,ORF1ab_polyprotein V2130V,6651,1,V2130V,ORF1ab_polyprotein,C6390T,C to T,synonymous SNV,4198,P7_L3_DMSO_0.2%,No,C6390T,V2130V,nsp3: V1315V; C3945T
+P6_L_III_e_BA4_DMSO_0_2perc.fastq.gz,ORF1ab_polyprotein R2694G,8341,4.85,R2694G,ORF1ab_polyprotein,C8080G,C to G,nonsynonymous SNV,2659,P7_L3_DMSO_0.2%,No,C8080G,R2694G,nsp3: R1879G; C5635G
+P6_L_III_e_BA4_DMSO_0_2perc.fastq.gz,ORF1ab_polyprotein A3076A,9489,2.23,A3076A,ORF1ab_polyprotein,C9228T,C to T,synonymous SNV,5299,P7_L3_DMSO_0.2%,No,C9228T,A3076A,nsp4: A316A; C948T
+P6_L_III_e_BA4_DMSO_0_2perc.fastq.gz,ORF1ab_polyprotein L3730F,11449,6.45,L3730F,ORF1ab_polyprotein,C11188T,C to T,nonsynonymous SNV,6441,P7_L3_DMSO_0.2%,No,C11188T,L3730F,nsp6: L164F; C490T
+P6_L_III_e_BA4_DMSO_0_2perc.fastq.gz,ORF1ab_polyprotein H4461H,13643,1.49,H4461H,ORF1ab_polyprotein,C13383T,C to T,synonymous SNV,5029,P7_L3_DMSO_0.2%,No,C13383T,H4461H,RNA-dependent_RNA_polymerase_rib_26: H75H; C225T
+P6_L_III_e_BA4_DMSO_0_2perc.fastq.gz,ORF1ab_polyprotein P4498P,13754,19.52,P4498P,ORF1ab_polyprotein,A13494G,A to G,synonymous SNV,5661,P7_L3_DMSO_0.2%,No,A13494G,P4498P,RNA-dependent_RNA_polymerase_rib_26: P112P; A336G
+P6_L_III_e_BA4_DMSO_0_2perc.fastq.gz,ORF1ab_polyprotein N4802N,14666,1.2,N4802N,ORF1ab_polyprotein,C14406T,C to T,synonymous SNV,4922,P7_L3_DMSO_0.2%,No,C14406T,N4802N,RNA-dependent_RNA_polymerase_rib_26: N416N; C1248T
+P6_L_III_e_BA4_DMSO_0_2perc.fastq.gz,ORF1ab_polyprotein K5346K,16298,3.57,K5346K,ORF1ab_polyprotein,A16038G,A to G,synonymous SNV,5260,P7_L3_DMSO_0.2%,No,A16038G,K5346K,helicase: K28K; A84G
+P6_L_III_e_BA4_DMSO_0_2perc.fastq.gz,ORF1ab_polyprotein A5370A,16370,22.19,A5370A,ORF1ab_polyprotein,T16110C,T to C,synonymous SNV,5350,P7_L3_DMSO_0.2%,No,T16110C,A5370A,helicase: A52A; T156C
+P6_L_III_e_BA4_DMSO_0_2perc.fastq.gz,ORF1ab_polyprotein T6092I,18535,1.35,T6092I,ORF1ab_polyprotein,C18275T,C to T,nonsynonymous SNV,5489,P7_L3_DMSO_0.2%,No,C18275T,T6092I,3'-to-5'_exonuclease: T173I; C518T
+P6_L_III_e_BA4_DMSO_0_2perc.fastq.gz,ORF1ab_polyprotein D6718D,20414,2.41,D6718D,ORF1ab_polyprotein,C20154T,C to T,synonymous SNV,5688,P7_L3_DMSO_0.2%,No,C20154T,D6718D,endoRNAse: D272D; C816T
+P6_L_III_e_BA4_DMSO_0_2perc.fastq.gz,ORF1ab_polyprotein A6908V,20983,21.5,A6908V,ORF1ab_polyprotein,C20723T,C to T,nonsynonymous SNV,3669,P7_L3_DMSO_0.2%,No,C20723T,A6908V,2'-O-ribose_methyltransferase: A116V; C347T
+P6_L_III_e_BA4_DMSO_0_2perc.fastq.gz,surface_glycoprotein S675S,23565,2.81,S675S,surface_glycoprotein,T2025C,T to C,synonymous SNV,5160,P7_L3_DMSO_0.2%,No,T2025C,S675S,-
+P6_L_III_e_BA4_DMSO_0_2perc.fastq.gz,surface_glycoprotein T718A,23692,3.68,T718A,surface_glycoprotein,A2152G,A to G,nonsynonymous SNV,6792,P7_L3_DMSO_0.2%,No,A2152G,T718A,-
+P6_L_III_e_BA4_DMSO_0_2perc.fastq.gz,surface_glycoprotein P1074T,24760,21.21,P1074T,surface_glycoprotein,C3220A,C to A,nonsynonymous SNV,4649,P7_L3_DMSO_0.2%,No,C3220A,P1074T,-
+P6_L_III_e_BA4_DMSO_0_2perc.fastq.gz,envelope_protein C43C,26336,4.23,C43C,envelope_protein,C129T,C to T,synonymous SNV,6289,P7_L3_DMSO_0.2%,No,C129T,C43C,-
+P6_L_III_e_BA4_DMSO_0_2perc.fastq.gz,ORF6_protein L4L,27176,1.14,L4L,ORF6_protein,C12T,C to T,synonymous SNV,5939,P7_L3_DMSO_0.2%,No,C12T,L4L,-
+P6_L_III_e_BA4_DMSO_0_2perc.fastq.gz,ORF8_protein F6F,27874,1.45,F6F,ORF8_protein,C18T,C to T,synonymous SNV,5403,P7_L3_DMSO_0.2%,No,C18T,F6F,-
+P6_L_III_e_BA4_DMSO_0_2perc.fastq.gz,ORF8_protein I9I,27883,2.53,I9I,ORF8_protein,C27T,C to T,synonymous SNV,6049,P7_L3_DMSO_0.2%,No,C27T,I9I,-
+P6_L_III_e_BA4_DMSO_0_2perc.fastq.gz,nucleocapsid_phosphoprotein Q238L,28949,2.01,Q238L,nucleocapsid_phosphoprotein,A713T,A to T,nonsynonymous SNV,5906,P7_L3_DMSO_0.2%,No,A713T,Q238L,-
+P6_L_III_e_BA4_DMSO_0_2perc.fastq.gz,nucleocapsid_phosphoprotein D412E,29472,1.98,D412E,nucleocapsid_phosphoprotein,C1236G,C to G,nonsynonymous SNV,2722,P7_L3_DMSO_0.2%,No,C1236G,D412E,-
+P6_L_III_e_BA4_DMSO_0_2perc.fastq.gz,nucleocapsid_phosphoprotein A416A,29484,19.03,A416A,nucleocapsid_phosphoprotein,C1248T,C to T,synonymous SNV,2643,P7_L3_DMSO_0.2%,No,C1248T,A416A,-
+P6_L_III_g_BA4_EIDD-3665_100uM.fastq.gz,ORF1ab_polyprotein D200A,860,2.05,D200A,ORF1ab_polyprotein,A599C,A to C,nonsynonymous SNV,1950,P7_L3_GSP-1130554_100uM,No,A599C,D200A,nsp2: D23A; A68C
+P6_L_III_g_BA4_EIDD-3665_100uM.fastq.gz,ORF1ab_polyprotein C338C,1275,6.43,C338C,ORF1ab_polyprotein,C1014T,C to T,synonymous SNV,1368,P7_L3_GSP-1130554_100uM,No,C1014T,C338C,nsp2: C161C; C483T
+P6_L_III_g_BA4_EIDD-3665_100uM.fastq.gz,ORF1ab_polyprotein N2003N,6270,2.52,N2003N,ORF1ab_polyprotein,T6009C,T to C,synonymous SNV,1828,P7_L3_GSP-1130554_100uM,No,T6009C,N2003N,nsp3: N1188N; T3564C
+P6_L_III_g_BA4_EIDD-3665_100uM.fastq.gz,ORF1ab_polyprotein Y2278Y,7095,2.67,Y2278Y,ORF1ab_polyprotein,C6834T,C to T,synonymous SNV,1459,P7_L3_GSP-1130554_100uM,No,C6834T,Y2278Y,nsp3: Y1463Y; C4389T
+P6_L_III_g_BA4_EIDD-3665_100uM.fastq.gz,ORF1ab_polyprotein R2694G,8341,3.35,R2694G,ORF1ab_polyprotein,C8080G,C to G,nonsynonymous SNV,1106,P7_L3_GSP-1130554_100uM,No,C8080G,R2694G,nsp3: R1879G; C5635G
+P6_L_III_g_BA4_EIDD-3665_100uM.fastq.gz,ORF1ab_polyprotein A3076A,9489,1.81,A3076A,ORF1ab_polyprotein,C9228T,C to T,synonymous SNV,2042,P7_L3_GSP-1130554_100uM,No,C9228T,A3076A,nsp4: A316A; C948T
+P6_L_III_g_BA4_EIDD-3665_100uM.fastq.gz,ORF1ab_polyprotein H6176Q,18788,2.26,H6176Q,ORF1ab_polyprotein,T18528G,T to G,nonsynonymous SNV,1286,P7_L3_GSP-1130554_100uM,No,T18528G,H6176Q,3'-to-5'_exonuclease: H257Q; T771G
+P6_L_III_g_BA4_EIDD-3665_100uM.fastq.gz,surface_glycoprotein L207L,22159,3.16,L207L,surface_glycoprotein,T619C,T to C,synonymous SNV,1648,P7_L3_GSP-1130554_100uM,No,T619C,L207L,-
+P6_L_III_g_BA4_EIDD-3665_100uM.fastq.gz,surface_glycoprotein A679S,23575,2.94,A679S,surface_glycoprotein,G2035T,G to T,nonsynonymous SNV,559,P7_L3_GSP-1130554_100uM,No,G2035T,A679S,-
+P6_L_III_g_BA4_EIDD-3665_100uM.fastq.gz,surface_glycoprotein G852G,24096,91.04,G852G,surface_glycoprotein,C2556A,C to A,synonymous SNV,1777,P7_L3_GSP-1130554_100uM,No,C2556A,G852G,-
+P6_L_III_g_BA4_EIDD-3665_100uM.fastq.gz,membrane_glycoprotein M91K,26757,2.69,M91K,membrane_glycoprotein,T272A,T to A,nonsynonymous SNV,2269,P7_L3_GSP-1130554_100uM,No,T272A,M91K,-
+P6_L_III_g_BA4_EIDD-3665_100uM.fastq.gz,membrane_glycoprotein P132S,26879,95.87,P132S,membrane_glycoprotein,C394T,C to T,nonsynonymous SNV,1766,P7_L3_GSP-1130554_100uM,No,C394T,P132S,-
+P6_L_III_g_BA4_EIDD-3665_100uM.fastq.gz,ORF7a_protein I3T,27364,1.01,I3T,ORF7a_protein,T8C,T to C,nonsynonymous SNV,1680,P7_L3_GSP-1130554_100uM,No,T8C,I3T,-
+P6_L_III_g_BA4_EIDD-3665_100uM.fastq.gz,ORF8_protein Y46Y,27994,8.74,Y46Y,ORF8_protein,T138C,T to C,synonymous SNV,2392,P7_L3_GSP-1130554_100uM,No,T138C,Y46Y,-
+P6_L_II_e_BA4_DMSO_0_2perc.fastq.gz,ORF1ab_polyprotein D1181D,3804,2.43,D1181D,ORF1ab_polyprotein,C3543T,C to T,synonymous SNV,5353,P7_L2_DMSO_0.2%,No,C3543T,D1181D,nsp3: D366D; C1098T
+P6_L_II_e_BA4_DMSO_0_2perc.fastq.gz,ORF1ab_polyprotein A1394A,4443,1.01,A1394A,ORF1ab_polyprotein,C4182T,C to T,synonymous SNV,4244,P7_L2_DMSO_0.2%,No,C4182T,A1394A,nsp3: A579A; C1737T
+P6_L_II_e_BA4_DMSO_0_2perc.fastq.gz,ORF1ab_polyprotein R2694G,8341,6.63,R2694G,ORF1ab_polyprotein,C8080G,C to G,nonsynonymous SNV,3273,P7_L2_DMSO_0.2%,No,C8080G,R2694G,nsp3: R1879G; C5635G
+P6_L_II_e_BA4_DMSO_0_2perc.fastq.gz,ORF1ab_polyprotein D2904D,8973,6.19,D2904D,ORF1ab_polyprotein,C8712T,C to T,synonymous SNV,5670,P7_L2_DMSO_0.2%,No,C8712T,D2904D,nsp4: D144D; C432T
+P6_L_II_e_BA4_DMSO_0_2perc.fastq.gz,ORF1ab_polyprotein A3076A,9489,2.12,A3076A,ORF1ab_polyprotein,C9228T,C to T,synonymous SNV,7172,P7_L2_DMSO_0.2%,No,C9228T,A3076A,nsp4: A316A; C948T
+P6_L_II_e_BA4_DMSO_0_2perc.fastq.gz,ORF1ab_polyprotein L3246L,9999,1.88,L3246L,ORF1ab_polyprotein,T9738G,T to G,synonymous SNV,7869,P7_L2_DMSO_0.2%,No,T9738G,L3246L,nsp4: L486L; T1458G
+P6_L_II_e_BA4_DMSO_0_2perc.fastq.gz,ORF1ab_polyprotein T3643I,11189,3.72,T3643I,ORF1ab_polyprotein,C10928T,C to T,nonsynonymous SNV,6694,P7_L2_DMSO_0.2%,No,C10928T,T3643I,nsp6: T77I; C230T
+P6_L_II_e_BA4_DMSO_0_2perc.fastq.gz,ORF1ab_polyprotein D4909H,14985,1,D4909H,ORF1ab_polyprotein,G14725C,G to C,nonsynonymous SNV,4587,P7_L2_DMSO_0.2%,No,G14725C,D4909H,RNA-dependent_RNA_polymerase_rib_26: D523H; G1567C
+P6_L_II_e_BA4_DMSO_0_2perc.fastq.gz,ORF1ab_polyprotein T5819I,17716,2.45,T5819I,ORF1ab_polyprotein,C17456T,C to T,nonsynonymous SNV,9117,P7_L2_DMSO_0.2%,No,C17456T,T5819I,helicase: T501I; C1502T
+P6_L_II_e_BA4_DMSO_0_2perc.fastq.gz,ORF1ab_polyprotein G6400S,19458,31.31,G6400S,ORF1ab_polyprotein,G19198A,G to A,nonsynonymous SNV,5829,P7_L2_DMSO_0.2%,No,G19198A,G6400S,3'-to-5'_exonuclease: G481S; G1441A
+P6_L_II_e_BA4_DMSO_0_2perc.fastq.gz,ORF1ab_polyprotein D6718D,20414,2.91,D6718D,ORF1ab_polyprotein,C20154T,C to T,synonymous SNV,8035,P7_L2_DMSO_0.2%,No,C20154T,D6718D,endoRNAse: D272D; C816T
+P6_L_II_e_BA4_DMSO_0_2perc.fastq.gz,ORF1ab_polyprotein S6734F,20461,31.38,S6734F,ORF1ab_polyprotein,C20201T,C to T,nonsynonymous SNV,6637,P7_L2_DMSO_0.2%,No,C20201T,S6734F,endoRNAse: S288F; C863T
+P6_L_II_e_BA4_DMSO_0_2perc.fastq.gz,ORF1ab_polyprotein T6883M,20908,1.76,T6883M,ORF1ab_polyprotein,C20648T,C to T,nonsynonymous SNV,6094,P7_L2_DMSO_0.2%,No,C20648T,T6883M,2'-O-ribose_methyltransferase: T91M; C272T
+P6_L_II_e_BA4_DMSO_0_2perc.fastq.gz,ORF1ab_polyprotein A6908V,20983,2.51,A6908V,ORF1ab_polyprotein,C20723T,C to T,nonsynonymous SNV,5092,P7_L2_DMSO_0.2%,No,C20723T,A6908V,2'-O-ribose_methyltransferase: A116V; C347T
+P6_L_II_e_BA4_DMSO_0_2perc.fastq.gz,ORF1ab_polyprotein N7089N,21527,2.12,N7089N,ORF1ab_polyprotein,C21267T,C to T,synonymous SNV,7393,P7_L2_DMSO_0.2%,No,C21267T,N7089N,2'-O-ribose_methyltransferase: N297N; C891T
+P6_L_II_e_BA4_DMSO_0_2perc.fastq.gz,surface_glycoprotein S668S,23544,2.13,S668S,surface_glycoprotein,T2004C,T to C,synonymous SNV,10698,P7_L2_DMSO_0.2%,No,T2004C,S668S,-
+P6_L_II_e_BA4_DMSO_0_2perc.fastq.gz,surface_glycoprotein R677Q,23570,1.64,R677Q,surface_glycoprotein,G2030A,G to A,nonsynonymous SNV,8159,P7_L2_DMSO_0.2%,No,G2030A,R677Q,-
+P6_L_II_e_BA4_DMSO_0_2perc.fastq.gz,surface_glycoprotein D1079A,24776,3.05,D1079A,surface_glycoprotein,A3236C,A to C,nonsynonymous SNV,5865,P7_L2_DMSO_0.2%,No,A3236C,D1079A,-
+P6_L_II_e_BA4_DMSO_0_2perc.fastq.gz,surface_glycoprotein I1109I,24867,28.35,I1109I,surface_glycoprotein,C3327T,C to T,synonymous SNV,5594,P7_L2_DMSO_0.2%,No,C3327T,I1109I,-
+P6_L_II_e_BA4_DMSO_0_2perc.fastq.gz,envelope_protein C43C,26336,2.44,C43C,envelope_protein,C129T,C to T,synonymous SNV,8471,P7_L2_DMSO_0.2%,No,C129T,C43C,-
+P6_L_II_e_BA4_DMSO_0_2perc.fastq.gz,membrane_glycoprotein H125Y,26858,1.23,H125Y,membrane_glycoprotein,C373T,C to T,nonsynonymous SNV,7708,P7_L2_DMSO_0.2%,No,C373T,H125Y,-
+P6_L_II_e_BA4_DMSO_0_2perc.fastq.gz,ORF6_protein L4L,27176,1.05,L4L,ORF6_protein,C12T,C to T,synonymous SNV,7654,P7_L2_DMSO_0.2%,No,C12T,L4L,-
+P6_L_II_e_BA4_DMSO_0_2perc.fastq.gz,ORF6_protein F7F,27185,20.48,F7F,ORF6_protein,T21C,T to C,synonymous SNV,7461,P7_L2_DMSO_0.2%,No,T21C,F7F,-
+P6_L_II_e_BA4_DMSO_0_2perc.fastq.gz,ORF7b C12C,27754,3.61,C12C,ORF7b,C36T,C to T,synonymous SNV,9255,P7_L2_DMSO_0.2%,No,C36T,C12C,-
+P6_L_II_e_BA4_DMSO_0_2perc.fastq.gz,ORF8_protein T11I,27888,3.29,T11I,ORF8_protein,C32T,C to T,nonsynonymous SNV,8743,P7_L2_DMSO_0.2%,No,C32T,T11I,-
+P6_L_II_e_BA4_DMSO_0_2perc.fastq.gz,ORF8_protein S24L,27927,2.21,S24L,ORF8_protein,C71T,C to T,nonsynonymous SNV,8750,P7_L2_DMSO_0.2%,No,C71T,S24L,-
+P6_L_II_e_BA4_DMSO_0_2perc.fastq.gz,nucleocapsid_phosphoprotein N4N,28248,2,N4N,nucleocapsid_phosphoprotein,T12C,T to C,synonymous SNV,7356,P7_L2_DMSO_0.2%,No,T12C,N4N,-
+P6_L_II_e_BA4_DMSO_0_2perc.fastq.gz,nucleocapsid_phosphoprotein D412E,29472,1.96,D412E,nucleocapsid_phosphoprotein,C1236G,C to G,nonsynonymous SNV,4024,P7_L2_DMSO_0.2%,No,C1236G,D412E,-
+P6_L_II_g_BA4_EIDD-3665_100uM.fastq.gz,ORF1ab_polyprotein N783N,2610,4.66,N783N,ORF1ab_polyprotein,C2349T,C to T,synonymous SNV,1587,P7_L2_GSP-1130554_100uM,No,C2349T,N783N,nsp2: N606N; C1818T
+P6_L_II_g_BA4_EIDD-3665_100uM.fastq.gz,ORF1ab_polyprotein R2694G,8341,6.53,R2694G,ORF1ab_polyprotein,C8080G,C to G,nonsynonymous SNV,1163,P7_L2_GSP-1130554_100uM,No,C8080G,R2694G,nsp3: R1879G; C5635G
+P6_L_II_g_BA4_EIDD-3665_100uM.fastq.gz,ORF1ab_polyprotein A3076A,9489,2.24,A3076A,ORF1ab_polyprotein,C9228T,C to T,synonymous SNV,2321,P7_L2_GSP-1130554_100uM,No,C9228T,A3076A,nsp4: A316A; C948T
+P6_L_II_g_BA4_EIDD-3665_100uM.fastq.gz,ORF1ab_polyprotein D4909E,14987,1.05,D4909E,ORF1ab_polyprotein,T14727A,T to A,nonsynonymous SNV,1525,P7_L2_GSP-1130554_100uM,No,T14727A,D4909E,RNA-dependent_RNA_polymerase_rib_26: D523E; T1569A
+P6_L_II_g_BA4_EIDD-3665_100uM.fastq.gz,ORF1ab_polyprotein I5694T,17341,1.48,I5694T,ORF1ab_polyprotein,T17081C,T to C,nonsynonymous SNV,2837,P7_L2_GSP-1130554_100uM,No,T17081C,I5694T,helicase: I376T; T1127C
+P6_L_II_g_BA4_EIDD-3665_100uM.fastq.gz,ORF1ab_polyprotein K6278K,19094,3.14,K6278K,ORF1ab_polyprotein,A18834G,A to G,synonymous SNV,2164,P7_L2_GSP-1130554_100uM,No,A18834G,K6278K,3'-to-5'_exonuclease: K359K; A1077G
+P6_L_II_g_BA4_EIDD-3665_100uM.fastq.gz,ORF1ab_polyprotein N6528N,19844,2.6,N6528N,ORF1ab_polyprotein,T19584C,T to C,synonymous SNV,3036,P7_L2_GSP-1130554_100uM,No,T19584C,N6528N,endoRNAse: N82N; T246C
+P6_L_II_g_BA4_EIDD-3665_100uM.fastq.gz,surface_glycoprotein N143T,21968,1.51,N143T,surface_glycoprotein,A428C,A to C,nonsynonymous SNV,1520,P7_L2_GSP-1130554_100uM,No,A428C,N143T,-
+P6_L_II_g_BA4_EIDD-3665_100uM.fastq.gz,surface_glycoprotein R677Q,23570,3.14,R677Q,surface_glycoprotein,G2030A,G to A,nonsynonymous SNV,4050,P7_L2_GSP-1130554_100uM,No,G2030A,R677Q,-
+P6_L_II_g_BA4_EIDD-3665_100uM.fastq.gz,ORF3a_protein V244V,26087,1.1,V244V,ORF3a_protein,C732T,C to T,synonymous SNV,2733,P7_L2_GSP-1130554_100uM,No,C732T,V244V,-
+P6_L_II_g_BA4_EIDD-3665_100uM.fastq.gz,membrane_glycoprotein F103L,26794,95.96,F103L,membrane_glycoprotein,T309A,T to A,nonsynonymous SNV,2252,P7_L2_GSP-1130554_100uM,No,T309A,F103L,-
+P6_L_II_g_BA4_EIDD-3665_100uM.fastq.gz,membrane_glycoprotein P132S,26879,2.58,P132S,membrane_glycoprotein,C394T,C to T,nonsynonymous SNV,2206,P7_L2_GSP-1130554_100uM,No,C394T,P132S,-
+P6_L_II_g_BA4_EIDD-3665_100uM.fastq.gz,nucleocapsid_phosphoprotein N4N,28248,96.13,N4N,nucleocapsid_phosphoprotein,T12C,T to C,synonymous SNV,2302,P7_L2_GSP-1130554_100uM,No,T12C,N4N,-
+P6_L_II_g_BA4_EIDD-3665_100uM.fastq.gz,nucleocapsid_phosphoprotein D412E,29472,2.37,D412E,nucleocapsid_phosphoprotein,C1236G,C to G,nonsynonymous SNV,1390,P7_L2_GSP-1130554_100uM,No,C1236G,D412E,-
+P6_L_II_g_BA4_EIDD-3665_100uM.fastq.gz,ORF10_protein I13M,29550,94.23,I13M,ORF10_protein,A39G,A to G,nonsynonymous SNV,1005,P7_L2_GSP-1130554_100uM,No,A39G,I13M,-
+P6_L_IV_e_BA4_DMSO_0_2perc.fastq.gz,ORF1ab_polyprotein L27F,340,6.1,L27F,ORF1ab_polyprotein,C79T,C to T,nonsynonymous SNV,2756,P7_L4_DMSO_0.2%,No,C79T,L27F,leader_protein: L27F; C79T
+P6_L_IV_e_BA4_DMSO_0_2perc.fastq.gz,ORF1ab_polyprotein H81R,503,1.72,H81R,ORF1ab_polyprotein,A242G,A to G,nonsynonymous SNV,3428,P7_L4_DMSO_0.2%,No,A242G,H81R,leader_protein: H81R; A242G
+P6_L_IV_e_BA4_DMSO_0_2perc.fastq.gz,ORF1ab_polyprotein G177G,792,1.27,G177G,ORF1ab_polyprotein,G531A,G to A,synonymous SNV,6437,P7_L4_DMSO_0.2%,No,G531A,G177G,leader_protein: G177G; G531A
+P6_L_IV_e_BA4_DMSO_0_2perc.fastq.gz,ORF1ab_polyprotein D1181D,3804,2.31,D1181D,ORF1ab_polyprotein,C3543T,C to T,synonymous SNV,5379,P7_L4_DMSO_0.2%,No,C3543T,D1181D,nsp3: D366D; C1098T
+P6_L_IV_e_BA4_DMSO_0_2perc.fastq.gz,ORF1ab_polyprotein R2694G,8341,7.73,R2694G,ORF1ab_polyprotein,C8080G,C to G,nonsynonymous SNV,3077,P7_L4_DMSO_0.2%,No,C8080G,R2694G,nsp3: R1879G; C5635G
+P6_L_IV_e_BA4_DMSO_0_2perc.fastq.gz,ORF1ab_polyprotein A3076A,9489,1.74,A3076A,ORF1ab_polyprotein,C9228T,C to T,synonymous SNV,6720,P7_L4_DMSO_0.2%,No,C9228T,A3076A,nsp4: A316A; C948T
+P6_L_IV_e_BA4_DMSO_0_2perc.fastq.gz,ORF1ab_polyprotein T3643I,11189,12.09,T3643I,ORF1ab_polyprotein,C10928T,C to T,nonsynonymous SNV,6256,P7_L4_DMSO_0.2%,No,C10928T,T3643I,nsp6: T77I; C230T
+P6_L_IV_e_BA4_DMSO_0_2perc.fastq.gz,ORF1ab_polyprotein H4461H,13643,1.44,H4461H,ORF1ab_polyprotein,C13383T,C to T,synonymous SNV,5993,P7_L4_DMSO_0.2%,No,C13383T,H4461H,RNA-dependent_RNA_polymerase_rib_26: H75H; C225T
+P6_L_IV_e_BA4_DMSO_0_2perc.fastq.gz,ORF1ab_polyprotein P5653P,17219,1.12,P5653P,ORF1ab_polyprotein,T16959A,T to A,synonymous SNV,7588,P7_L4_DMSO_0.2%,No,T16959A,P5653P,helicase: P335P; T1005A
+P6_L_IV_e_BA4_DMSO_0_2perc.fastq.gz,ORF1ab_polyprotein D6718D,20414,1.47,D6718D,ORF1ab_polyprotein,C20154T,C to T,synonymous SNV,7422,P7_L4_DMSO_0.2%,No,C20154T,D6718D,endoRNAse: D272D; C816T
+P6_L_IV_e_BA4_DMSO_0_2perc.fastq.gz,surface_glycoprotein S668S,23544,2.23,S668S,surface_glycoprotein,T2004C,T to C,synonymous SNV,9717,P7_L4_DMSO_0.2%,No,T2004C,S668S,-
+P6_L_IV_e_BA4_DMSO_0_2perc.fastq.gz,surface_glycoprotein R677Q,23570,2.25,R677Q,surface_glycoprotein,G2030A,G to A,nonsynonymous SNV,6895,P7_L4_DMSO_0.2%,No,G2030A,R677Q,-
+P6_L_IV_e_BA4_DMSO_0_2perc.fastq.gz,surface_glycoprotein R680P,23579,3.94,R680P,surface_glycoprotein,G2039C,G to C,nonsynonymous SNV,7111,P7_L4_DMSO_0.2%,No,G2039C,R680P,-
+P6_L_IV_e_BA4_DMSO_0_2perc.fastq.gz,envelope_protein C43C,26336,10.06,C43C,envelope_protein,C129T,C to T,synonymous SNV,7614,P7_L4_DMSO_0.2%,No,C129T,C43C,-
+P6_L_IV_e_BA4_DMSO_0_2perc.fastq.gz,ORF6_protein L4L,27176,5.33,L4L,ORF6_protein,C12T,C to T,synonymous SNV,7539,P7_L4_DMSO_0.2%,No,C12T,L4L,-
+P6_L_IV_e_BA4_DMSO_0_2perc.fastq.gz,ORF7b A15V,27762,1.55,A15V,ORF7b,C44T,C to T,nonsynonymous SNV,8916,P7_L4_DMSO_0.2%,No,C44T,A15V,-
+P6_L_IV_e_BA4_DMSO_0_2perc.fastq.gz,ORF8_protein F6F,27874,12.36,F6F,ORF8_protein,C18T,C to T,synonymous SNV,7067,P7_L4_DMSO_0.2%,No,C18T,F6F,-
+P6_L_IV_e_BA4_DMSO_0_2perc.fastq.gz,nucleocapsid_phosphoprotein N4N,28248,1.33,N4N,nucleocapsid_phosphoprotein,T12C,T to C,synonymous SNV,6848,P7_L4_DMSO_0.2%,No,T12C,N4N,-
+P6_L_IV_e_BA4_DMSO_0_2perc.fastq.gz,nucleocapsid_phosphoprotein V69V,28443,2.54,V69V,nucleocapsid_phosphoprotein,T207C,T to C,synonymous SNV,5664,P7_L4_DMSO_0.2%,No,T207C,V69V,-
+P6_L_IV_e_BA4_DMSO_0_2perc.fastq.gz,nucleocapsid_phosphoprotein S180P,28774,1.72,S180P,nucleocapsid_phosphoprotein,T538C,T to C,nonsynonymous SNV,6044,P7_L4_DMSO_0.2%,No,T538C,S180P,-
+P6_L_IV_e_BA4_DMSO_0_2perc.fastq.gz,nucleocapsid_phosphoprotein Q238L,28949,4.4,Q238L,nucleocapsid_phosphoprotein,A713T,A to T,nonsynonymous SNV,7337,P7_L4_DMSO_0.2%,No,A713T,Q238L,-
+P6_L_IV_e_BA4_DMSO_0_2perc.fastq.gz,nucleocapsid_phosphoprotein D412E,29472,2.81,D412E,nucleocapsid_phosphoprotein,C1236G,C to G,nonsynonymous SNV,3666,P7_L4_DMSO_0.2%,No,C1236G,D412E,-
+P6_L_IV_g_BA4_EIDD-3665_100uM.fastq.gz,ORF1ab_polyprotein N1688N,5325,1.07,N1688N,ORF1ab_polyprotein,T5064C,T to C,synonymous SNV,3371,P7_L4_GSP-1130554_100uM,No,T5064C,N1688N,nsp3: N873N; T2619C
+P6_L_IV_g_BA4_EIDD-3665_100uM.fastq.gz,ORF1ab_polyprotein R2694G,8341,6.24,R2694G,ORF1ab_polyprotein,C8080G,C to G,nonsynonymous SNV,1845,P7_L4_GSP-1130554_100uM,No,C8080G,R2694G,nsp3: R1879G; C5635G
+P6_L_IV_g_BA4_EIDD-3665_100uM.fastq.gz,ORF1ab_polyprotein A3076A,9489,2.27,A3076A,ORF1ab_polyprotein,C9228T,C to T,synonymous SNV,4052,P7_L4_GSP-1130554_100uM,No,C9228T,A3076A,nsp4: A316A; C948T
+P6_L_IV_g_BA4_EIDD-3665_100uM.fastq.gz,ORF1ab_polyprotein T3643I,11189,3.24,T3643I,ORF1ab_polyprotein,C10928T,C to T,nonsynonymous SNV,3676,P7_L4_GSP-1130554_100uM,No,C10928T,T3643I,nsp6: T77I; C230T
+P6_L_IV_g_BA4_EIDD-3665_100uM.fastq.gz,ORF1ab_polyprotein D6264A,19051,1.61,D6264A,ORF1ab_polyprotein,A18791C,A to C,nonsynonymous SNV,3847,P7_L4_GSP-1130554_100uM,No,A18791C,D6264A,3'-to-5'_exonuclease: D345A; A1034C
+P6_L_IV_g_BA4_EIDD-3665_100uM.fastq.gz,surface_glycoprotein L236L,22248,1.71,L236L,surface_glycoprotein,A708G,A to G,synonymous SNV,4269,P7_L4_GSP-1130554_100uM,No,A708G,L236L,-
+P6_L_IV_g_BA4_EIDD-3665_100uM.fastq.gz,surface_glycoprotein Q488Q,23004,1.08,Q488Q,surface_glycoprotein,A1464G,A to G,synonymous SNV,3699,P7_L4_GSP-1130554_100uM,No,A1464G,Q488Q,-
+P6_L_IV_g_BA4_EIDD-3665_100uM.fastq.gz,surface_glycoprotein R677Q,23570,5.38,R677Q,surface_glycoprotein,G2030A,G to A,nonsynonymous SNV,1473,P7_L4_GSP-1130554_100uM,No,G2030A,R677Q,-
+P6_L_IV_g_BA4_EIDD-3665_100uM.fastq.gz,membrane_glycoprotein N117S,26835,1.5,N117S,membrane_glycoprotein,A350G,A to G,nonsynonymous SNV,4656,P7_L4_GSP-1130554_100uM,No,A350G,N117S,-
+P6_L_IV_g_BA4_EIDD-3665_100uM.fastq.gz,membrane_glycoprotein S173P,27002,59.08,S173P,membrane_glycoprotein,T517C,T to C,nonsynonymous SNV,4345,P7_L4_GSP-1130554_100uM,No,T517C,S173P,-
+P6_L_IV_g_BA4_EIDD-3665_100uM.fastq.gz,membrane_glycoprotein Q185K,27038,32.86,Q185K,membrane_glycoprotein,C553A,C to A,nonsynonymous SNV,4473,P7_L4_GSP-1130554_100uM,No,C553A,Q185K,-
+P6_L_IV_g_BA4_EIDD-3665_100uM.fastq.gz,nucleocapsid_phosphoprotein N4N,28248,1.57,N4N,nucleocapsid_phosphoprotein,T12C,T to C,synonymous SNV,4769,P7_L4_GSP-1130554_100uM,No,T12C,N4N,-
+P6_L_IV_g_BA4_EIDD-3665_100uM.fastq.gz,nucleocapsid_phosphoprotein D412E,29472,1.79,D412E,nucleocapsid_phosphoprotein,C1236G,C to G,nonsynonymous SNV,2511,P7_L4_GSP-1130554_100uM,No,C1236G,D412E,-
+P6_L_I_e_BA4_DMSO_0_2perc.fastq.gz,ORF1ab_polyprotein G177G,792,1.01,G177G,ORF1ab_polyprotein,G531A,G to A,synonymous SNV,6564,P7_L1_DMSO_0.2%,No,G531A,G177G,leader_protein: G177G; G531A
+P6_L_I_e_BA4_DMSO_0_2perc.fastq.gz,ORF1ab_polyprotein T809T,2688,1.71,T809T,ORF1ab_polyprotein,C2427T,C to T,synonymous SNV,3981,P7_L1_DMSO_0.2%,No,C2427T,T809T,nsp2: T632T; C1896T
+P6_L_I_e_BA4_DMSO_0_2perc.fastq.gz,ORF1ab_polyprotein D1181D,3804,3.33,D1181D,ORF1ab_polyprotein,C3543T,C to T,synonymous SNV,4415,P7_L1_DMSO_0.2%,No,C3543T,D1181D,nsp3: D366D; C1098T
+P6_L_I_e_BA4_DMSO_0_2perc.fastq.gz,ORF1ab_polyprotein A1265A,4056,1.36,A1265A,ORF1ab_polyprotein,C3795T,C to T,synonymous SNV,4114,P7_L1_DMSO_0.2%,No,C3795T,A1265A,nsp3: A450A; C1350T
+P6_L_I_e_BA4_DMSO_0_2perc.fastq.gz,ORF1ab_polyprotein T2277T,7092,1.04,T2277T,ORF1ab_polyprotein,C6831A,C to A,synonymous SNV,4141,P7_L1_DMSO_0.2%,No,C6831A,T2277T,nsp3: T1462T; C4386A
+P6_L_I_e_BA4_DMSO_0_2perc.fastq.gz,ORF1ab_polyprotein R2694G,8341,6.57,R2694G,ORF1ab_polyprotein,C8080G,C to G,nonsynonymous SNV,2936,P7_L1_DMSO_0.2%,No,C8080G,R2694G,nsp3: R1879G; C5635G
+P6_L_I_e_BA4_DMSO_0_2perc.fastq.gz,ORF1ab_polyprotein A3076A,9489,1.82,A3076A,ORF1ab_polyprotein,C9228T,C to T,synonymous SNV,6484,P7_L1_DMSO_0.2%,No,C9228T,A3076A,nsp4: A316A; C948T
+P6_L_I_e_BA4_DMSO_0_2perc.fastq.gz,ORF1ab_polyprotein Q4283K,13108,16.63,Q4283K,ORF1ab_polyprotein,C12847A,C to A,nonsynonymous SNV,4385,P7_L1_DMSO_0.2%,No,C12847A,Q4283K,nsp10: Q36K; C106A
+P6_L_I_e_BA4_DMSO_0_2perc.fastq.gz,ORF1ab_polyprotein Y4732H,14454,1.04,Y4732H,ORF1ab_polyprotein,T14194C,T to C,nonsynonymous SNV,8153,P7_L1_DMSO_0.2%,No,T14194C,Y4732H,RNA-dependent_RNA_polymerase_rib_26: Y346H; T1036C
+P6_L_I_e_BA4_DMSO_0_2perc.fastq.gz,ORF1ab_polyprotein D5662G,17245,6.11,D5662G,ORF1ab_polyprotein,A16985G,A to G,nonsynonymous SNV,7811,P7_L1_DMSO_0.2%,No,A16985G,D5662G,helicase: D344G; A1031G
+P6_L_I_e_BA4_DMSO_0_2perc.fastq.gz,ORF1ab_polyprotein D6718D,20414,1.02,D6718D,ORF1ab_polyprotein,C20154T,C to T,synonymous SNV,7046,P7_L1_DMSO_0.2%,No,C20154T,D6718D,endoRNAse: D272D; C816T
+P6_L_I_e_BA4_DMSO_0_2perc.fastq.gz,surface_glycoprotein S668S,23544,1,S668S,surface_glycoprotein,T2004C,T to C,synonymous SNV,10222,P7_L1_DMSO_0.2%,No,T2004C,S668S,-
+P6_L_I_e_BA4_DMSO_0_2perc.fastq.gz,surface_glycoprotein R677Q,23570,1.23,R677Q,surface_glycoprotein,G2030A,G to A,nonsynonymous SNV,8839,P7_L1_DMSO_0.2%,No,G2030A,R677Q,-
+P6_L_I_e_BA4_DMSO_0_2perc.fastq.gz,surface_glycoprotein A1075A,24765,1.37,A1075A,surface_glycoprotein,C3225T,C to T,synonymous SNV,5639,P7_L1_DMSO_0.2%,No,C3225T,A1075A,-
+P6_L_I_e_BA4_DMSO_0_2perc.fastq.gz,envelope_protein S6L,26224,2.12,S6L,envelope_protein,C17T,C to T,nonsynonymous SNV,8981,P7_L1_DMSO_0.2%,No,C17T,S6L,-
+P6_L_I_e_BA4_DMSO_0_2perc.fastq.gz,envelope_protein C43C,26336,4.68,C43C,envelope_protein,C129T,C to T,synonymous SNV,6844,P7_L1_DMSO_0.2%,No,C129T,C43C,-
+P6_L_I_e_BA4_DMSO_0_2perc.fastq.gz,envelope_protein V70G,26416,1.42,V70G,envelope_protein,T209G,T to G,nonsynonymous SNV,5924,P7_L1_DMSO_0.2%,No,T209G,V70G,-
+P6_L_I_e_BA4_DMSO_0_2perc.fastq.gz,membrane_glycoprotein T130T,26875,1.45,T130T,membrane_glycoprotein,C390T,C to T,synonymous SNV,6976,P7_L1_DMSO_0.2%,No,C390T,T130T,-
+P6_L_I_e_BA4_DMSO_0_2perc.fastq.gz,ORF6_protein L4L,27176,4.23,L4L,ORF6_protein,C12T,C to T,synonymous SNV,7168,P7_L1_DMSO_0.2%,No,C12T,L4L,-
+P6_L_I_e_BA4_DMSO_0_2perc.fastq.gz,ORF7b C12C,27754,26.77,C12C,ORF7b,C36T,C to T,synonymous SNV,8586,P7_L1_DMSO_0.2%,No,C36T,C12C,-
+P6_L_I_e_BA4_DMSO_0_2perc.fastq.gz,ORF8_protein F6F,27874,2.13,F6F,ORF8_protein,C18T,C to T,synonymous SNV,6405,P7_L1_DMSO_0.2%,No,C18T,F6F,-
+P6_L_I_e_BA4_DMSO_0_2perc.fastq.gz,nucleocapsid_phosphoprotein N4N,28248,27.01,N4N,nucleocapsid_phosphoprotein,T12C,T to C,synonymous SNV,7402,P7_L1_DMSO_0.2%,No,T12C,N4N,-
+P6_L_I_e_BA4_DMSO_0_2perc.fastq.gz,nucleocapsid_phosphoprotein N29S,28322,5.05,N29S,nucleocapsid_phosphoprotein,A86G,A to G,nonsynonymous SNV,9001,P7_L1_DMSO_0.2%,No,A86G,N29S,-
+P6_L_I_e_BA4_DMSO_0_2perc.fastq.gz,nucleocapsid_phosphoprotein D412E,29472,1.9,D412E,nucleocapsid_phosphoprotein,C1236G,C to G,nonsynonymous SNV,3891,P7_L1_DMSO_0.2%,No,C1236G,D412E,-
+P6_L_I_g_BA4_EIDD-3665_100uM.fastq.gz,ORF1ab_polyprotein S546S,1899,1.72,S546S,ORF1ab_polyprotein,C1638T,C to T,synonymous SNV,15150,P7_L1_GSP-1130554_100uM,No,C1638T,S546S,nsp2: S369S; C1107T
+P6_L_I_g_BA4_EIDD-3665_100uM.fastq.gz,ORF1ab_polyprotein R2694G,8341,6.55,R2694G,ORF1ab_polyprotein,C8080G,C to G,nonsynonymous SNV,6279,P7_L1_GSP-1130554_100uM,No,C8080G,R2694G,nsp3: R1879G; C5635G
+P6_L_I_g_BA4_EIDD-3665_100uM.fastq.gz,ORF1ab_polyprotein A3076A,9489,2.48,A3076A,ORF1ab_polyprotein,C9228T,C to T,synonymous SNV,15092,P7_L1_GSP-1130554_100uM,No,C9228T,A3076A,nsp4: A316A; C948T
+P6_L_I_g_BA4_EIDD-3665_100uM.fastq.gz,ORF1ab_polyprotein T3934I,12062,1.25,T3934I,ORF1ab_polyprotein,C11801T,C to T,nonsynonymous SNV,12890,P7_L1_GSP-1130554_100uM,No,C11801T,T3934I,nsp7: T81I; C242T
+P6_L_I_g_BA4_EIDD-3665_100uM.fastq.gz,ORF1ab_polyprotein G4172C,12775,1.45,G4172C,ORF1ab_polyprotein,G12514T,G to T,nonsynonymous SNV,12065,P7_L1_GSP-1130554_100uM,No,G12514T,G4172C,nsp9: G38C; G112T
+P6_L_I_g_BA4_EIDD-3665_100uM.fastq.gz,ORF1ab_polyprotein A6970V,21169,2.05,A6970V,ORF1ab_polyprotein,C20909T,C to T,nonsynonymous SNV,10069,P7_L1_GSP-1130554_100uM,No,C20909T,A6970V,2'-O-ribose_methyltransferase: A178V; C533T
+P6_L_I_g_BA4_EIDD-3665_100uM.fastq.gz,surface_glycoprotein R677Q,23570,46.54,R677Q,surface_glycoprotein,G2030A,G to A,nonsynonymous SNV,4996,P7_L1_GSP-1130554_100uM,No,G2030A,R677Q,-
+P6_L_I_g_BA4_EIDD-3665_100uM.fastq.gz,ORF3a_protein I62I,25541,1.94,I62I,ORF3a_protein,C186T,C to T,synonymous SNV,13995,P7_L1_GSP-1130554_100uM,No,C186T,I62I,-
+P6_L_I_g_BA4_EIDD-3665_100uM.fastq.gz,membrane_glycoprotein L90W,26754,64.08,L90W,membrane_glycoprotein,T269G,T to G,nonsynonymous SNV,12347,P7_L1_GSP-1130554_100uM,No,T269G,L90W,-
+P6_L_I_g_BA4_EIDD-3665_100uM.fastq.gz,membrane_glycoprotein M91K,26757,26.93,M91K,membrane_glycoprotein,T272A,T to A,nonsynonymous SNV,13303,P7_L1_GSP-1130554_100uM,No,T272A,M91K,-
+P6_L_I_g_BA4_EIDD-3665_100uM.fastq.gz,membrane_glycoprotein H125Y,26858,62.45,H125Y,membrane_glycoprotein,C373T,C to T,nonsynonymous SNV,11720,P7_L1_GSP-1130554_100uM,No,C373T,H125Y,-
+P6_L_I_g_BA4_EIDD-3665_100uM.fastq.gz,membrane_glycoprotein R131K,26877,1.91,R131K,membrane_glycoprotein,G392A,G to A,nonsynonymous SNV,12482,P7_L1_GSP-1130554_100uM,No,G392A,R131K,-
+P6_L_I_g_BA4_EIDD-3665_100uM.fastq.gz,ORF8_protein S54P,28016,1.02,S54P,ORF8_protein,T160C,T to C,nonsynonymous SNV,15036,P7_L1_GSP-1130554_100uM,No,T160C,S54P,-
+P6_L_I_g_BA4_EIDD-3665_100uM.fastq.gz,nucleocapsid_phosphoprotein D412E,29472,2.67,D412E,nucleocapsid_phosphoprotein,C1236G,C to G,nonsynonymous SNV,8080,P7_L1_GSP-1130554_100uM,No,C1236G,D412E,-
+P6_L_VI_g_BA4_EIDD-3665_100uM.fastq.gz,ORF1ab_polyprotein L16L,309,25.7,L16L,ORF1ab_polyprotein,C48T,C to T,synonymous SNV,1284,P7_L6_GSP-1130554_100uM,No,C48T,L16L,leader_protein: L16L; C48T
+P6_L_VI_g_BA4_EIDD-3665_100uM.fastq.gz,ORF1ab_polyprotein R2694G,8341,7.92,R2694G,ORF1ab_polyprotein,C8080G,C to G,nonsynonymous SNV,1238,P7_L6_GSP-1130554_100uM,No,C8080G,R2694G,nsp3: R1879G; C5635G
+P6_L_VI_g_BA4_EIDD-3665_100uM.fastq.gz,ORF1ab_polyprotein A3076A,9489,1.95,A3076A,ORF1ab_polyprotein,C9228T,C to T,synonymous SNV,2916,P7_L6_GSP-1130554_100uM,No,C9228T,A3076A,nsp4: A316A; C948T
+P6_L_VI_g_BA4_EIDD-3665_100uM.fastq.gz,ORF1ab_polyprotein A5226A,15938,3.56,A5226A,ORF1ab_polyprotein,C15678T,C to T,synonymous SNV,2330,P7_L6_GSP-1130554_100uM,No,C15678T,A5226A,RNA-dependent_RNA_polymerase_rib_26: A840A; C2520T
+P6_L_VI_g_BA4_EIDD-3665_100uM.fastq.gz,ORF1ab_polyprotein H5938H,18074,5.61,H5938H,ORF1ab_polyprotein,T17814C,T to C,synonymous SNV,3013,P7_L6_GSP-1130554_100uM,No,T17814C,H5938H,3'-to-5'_exonuclease: H19H; T57C
+P6_L_VI_g_BA4_EIDD-3665_100uM.fastq.gz,surface_glycoprotein L577L,23271,1.11,L577L,surface_glycoprotein,T1731G,T to G,synonymous SNV,1356,P7_L6_GSP-1130554_100uM,No,T1731G,L577L,-
+P6_L_VI_g_BA4_EIDD-3665_100uM.fastq.gz,envelope_protein L19R,26263,5.98,L19R,envelope_protein,T56G,T to G,nonsynonymous SNV,4204,P7_L6_GSP-1130554_100uM,No,T56G,L19R,-
+P6_L_VI_g_BA4_EIDD-3665_100uM.fastq.gz,envelope_protein T30I,26296,2.14,T30I,envelope_protein,C89T,C to T,nonsynonymous SNV,4392,P7_L6_GSP-1130554_100uM,No,C89T,T30I,-
+P6_L_VI_g_BA4_EIDD-3665_100uM.fastq.gz,membrane_glycoprotein M91R,26757,8.57,M91R,membrane_glycoprotein,T272G,T to G,nonsynonymous SNV,3180,P7_L6_GSP-1130554_100uM,No,T272G,M91R,-
+P6_L_VI_g_BA4_EIDD-3665_100uM.fastq.gz,membrane_glycoprotein P132S,26879,49.81,P132S,membrane_glycoprotein,C394T,C to T,nonsynonymous SNV,2613,P7_L6_GSP-1130554_100uM,No,C394T,P132S,-
+P6_L_VI_g_BA4_EIDD-3665_100uM.fastq.gz,membrane_glycoprotein S173P,27002,39.41,S173P,membrane_glycoprotein,T517C,T to C,nonsynonymous SNV,2781,P7_L6_GSP-1130554_100uM,No,T517C,S173P,-
+P6_L_V_g_BA4_EIDD-3665_100uM.fastq.gz,ORF1ab_polyprotein H81Q,504,1.45,H81Q,ORF1ab_polyprotein,T243A,T to A,nonsynonymous SNV,1108,P7_L5_GSP-1130554_100uM,No,T243A,H81Q,leader_protein: H81Q; T243A
+P6_L_V_g_BA4_EIDD-3665_100uM.fastq.gz,ORF1ab_polyprotein R2694G,8341,4.77,R2694G,ORF1ab_polyprotein,C8080G,C to G,nonsynonymous SNV,1069,P7_L5_GSP-1130554_100uM,No,C8080G,R2694G,nsp3: R1879G; C5635G
+P6_L_V_g_BA4_EIDD-3665_100uM.fastq.gz,ORF1ab_polyprotein A3076A,9489,1.44,A3076A,ORF1ab_polyprotein,C9228T,C to T,synonymous SNV,2157,P7_L5_GSP-1130554_100uM,No,C9228T,A3076A,nsp4: A316A; C948T
+P6_L_V_g_BA4_EIDD-3665_100uM.fastq.gz,surface_glycoprotein Y1210Y,25170,94.2,Y1210Y,surface_glycoprotein,C3630T,C to T,synonymous SNV,1518,P7_L5_GSP-1130554_100uM,No,C3630T,Y1210Y,-
+P6_L_V_g_BA4_EIDD-3665_100uM.fastq.gz,membrane_glycoprotein Y47H,26624,94.45,Y47H,membrane_glycoprotein,T139C,T to C,nonsynonymous SNV,2164,P7_L5_GSP-1130554_100uM,No,T139C,Y47H,-
+P6_L_V_g_BA4_EIDD-3665_100uM.fastq.gz,membrane_glycoprotein M91K,26757,1.63,M91K,membrane_glycoprotein,T272A,T to A,nonsynonymous SNV,2698,P7_L5_GSP-1130554_100uM,No,T272A,M91K,-
+P6_L_V_g_BA4_EIDD-3665_100uM.fastq.gz,membrane_glycoprotein S173P,27002,2.17,S173P,membrane_glycoprotein,T517C,T to C,nonsynonymous SNV,2307,P7_L5_GSP-1130554_100uM,No,T517C,S173P,-
+P7_L_III_j_BA4_EIDD-3675_200uM.fastq.gz,ORF1ab_polyprotein S535S,1866,11.41,S535S,ORF1ab_polyprotein,A1605G,A to G,synonymous SNV,6804,P7_L3_GSP-1048127_200uM,No,A1605G,S535S,nsp2: S358S; A1074G
+P7_L_III_j_BA4_EIDD-3675_200uM.fastq.gz,ORF1ab_polyprotein V1480A,4700,54.52,V1480A,ORF1ab_polyprotein,T4439C,T to C,nonsynonymous SNV,5575,P7_L3_GSP-1048127_200uM,No,T4439C,V1480A,nsp3: V665A; T1994C
+P7_L_III_j_BA4_EIDD-3675_200uM.fastq.gz,ORF1ab_polyprotein S1531I,4853,2.53,S1531I,ORF1ab_polyprotein,G4592T,G to T,nonsynonymous SNV,5735,P7_L3_GSP-1048127_200uM,No,G4592T,S1531I,nsp3: S716I; G2147T
+P7_L_III_j_BA4_EIDD-3675_200uM.fastq.gz,ORF1ab_polyprotein F1707L,5382,1.39,F1707L,ORF1ab_polyprotein,T5121G,T to G,nonsynonymous SNV,5049,P7_L3_GSP-1048127_200uM,No,T5121G,F1707L,nsp3: F892L; T2676G
+P7_L_III_j_BA4_EIDD-3675_200uM.fastq.gz,ORF1ab_polyprotein L2081S,6503,38.23,L2081S,ORF1ab_polyprotein,T6242C,T to C,nonsynonymous SNV,5350,P7_L3_GSP-1048127_200uM,No,T6242C,L2081S,nsp3: L1266S; T3797C
+P7_L_III_j_BA4_EIDD-3675_200uM.fastq.gz,ORF1ab_polyprotein R2694G,8341,8.62,R2694G,ORF1ab_polyprotein,C8080G,C to G,nonsynonymous SNV,3005,P7_L3_GSP-1048127_200uM,No,C8080G,R2694G,nsp3: R1879G; C5635G
+P7_L_III_j_BA4_EIDD-3675_200uM.fastq.gz,ORF1ab_polyprotein A3076A,9489,2.16,A3076A,ORF1ab_polyprotein,C9228T,C to T,synonymous SNV,6479,P7_L3_GSP-1048127_200uM,No,C9228T,A3076A,nsp4: A316A; C948T
+P7_L_III_j_BA4_EIDD-3675_200uM.fastq.gz,ORF1ab_polyprotein Y3151Y,9714,1.03,Y3151Y,ORF1ab_polyprotein,T9453C,T to C,synonymous SNV,5229,P7_L3_GSP-1048127_200uM,No,T9453C,Y3151Y,nsp4: Y391Y; T1173C
+P7_L_III_j_BA4_EIDD-3675_200uM.fastq.gz,ORF1ab_polyprotein L3794L,11643,1.05,L3794L,ORF1ab_polyprotein,C11382T,C to T,synonymous SNV,7045,P7_L3_GSP-1048127_200uM,No,C11382T,L3794L,nsp6: L228L; C684T
+P7_L_III_j_BA4_EIDD-3675_200uM.fastq.gz,ORF1ab_polyprotein Y4732H,14454,11.18,Y4732H,ORF1ab_polyprotein,T14194C,T to C,nonsynonymous SNV,8557,P7_L3_GSP-1048127_200uM,No,T14194C,Y4732H,RNA-dependent_RNA_polymerase_rib_26: Y346H; T1036C
+P7_L_III_j_BA4_EIDD-3675_200uM.fastq.gz,ORF1ab_polyprotein A5781S,17601,1.59,A5781S,ORF1ab_polyprotein,G17341T,G to T,nonsynonymous SNV,6613,P7_L3_GSP-1048127_200uM,No,G17341T,A5781S,helicase: A463S; G1387T
+P7_L_III_j_BA4_EIDD-3675_200uM.fastq.gz,ORF1ab_polyprotein E5816E,17708,1.54,E5816E,ORF1ab_polyprotein,A17448G,A to G,synonymous SNV,7606,P7_L3_GSP-1048127_200uM,No,A17448G,E5816E,helicase: E498E; A1494G
+P7_L_III_j_BA4_EIDD-3675_200uM.fastq.gz,surface_glycoprotein D1252D,25296,1.93,D1252D,surface_glycoprotein,T3756C,T to C,synonymous SNV,6646,P7_L3_GSP-1048127_200uM,No,T3756C,D1252D,-
+P7_L_III_j_BA4_EIDD-3675_200uM.fastq.gz,envelope_protein S6L,26224,1.51,S6L,envelope_protein,C17T,C to T,nonsynonymous SNV,10101,P7_L3_GSP-1048127_200uM,No,C17T,S6L,-
+P7_L_III_j_BA4_EIDD-3675_200uM.fastq.gz,membrane_glycoprotein V10F,26513,10.57,V10F,membrane_glycoprotein,G28T,G to T,nonsynonymous SNV,6956,P7_L3_GSP-1048127_200uM,No,G28T,V10F,-
+P7_L_III_j_BA4_EIDD-3675_200uM.fastq.gz,membrane_glycoprotein E11A,26517,1.47,E11A,membrane_glycoprotein,A32C,A to C,nonsynonymous SNV,6666,P7_L3_GSP-1048127_200uM,No,A32C,E11A,-
+P7_L_III_j_BA4_EIDD-3675_200uM.fastq.gz,membrane_glycoprotein C64W,26677,1.63,C64W,membrane_glycoprotein,T192G,T to G,nonsynonymous SNV,8360,P7_L3_GSP-1048127_200uM,No,T192G,C64W,-
+P7_L_III_j_BA4_EIDD-3675_200uM.fastq.gz,membrane_glycoprotein L87P,26745,2.29,L87P,membrane_glycoprotein,T260C,T to C,nonsynonymous SNV,9074,P7_L3_GSP-1048127_200uM,No,T260C,L87P,-
+P7_L_III_j_BA4_EIDD-3675_200uM.fastq.gz,membrane_glycoprotein S99A,26780,15.15,S99A,membrane_glycoprotein,T295G,T to G,nonsynonymous SNV,7667,P7_L3_GSP-1048127_200uM,No,T295G,S99A,-
+P7_L_III_j_BA4_EIDD-3675_200uM.fastq.gz,membrane_glycoprotein E115D,26830,1.12,E115D,membrane_glycoprotein,A345C,A to C,nonsynonymous SNV,8055,P7_L3_GSP-1048127_200uM,No,A345C,E115D,-
+P7_L_III_j_BA4_EIDD-3675_200uM.fastq.gz,membrane_glycoprotein N117D,26834,61.61,N117D,membrane_glycoprotein,A349G,A to G,complex,7551,P7_L3_GSP-1048127_200uM,No,A349G,N117D,-
+P7_L_III_j_BA4_EIDD-3675_200uM.fastq.gz,membrane_glycoprotein N117K,26836,1.93,N117K,membrane_glycoprotein,C351A,C to A,complex,7774,P7_L3_GSP-1048127_200uM,No,C351A,N117K,-
+P7_L_III_j_BA4_EIDD-3675_200uM.fastq.gz,membrane_glycoprotein P132S,26879,2.94,P132S,membrane_glycoprotein,C394T,C to T,nonsynonymous SNV,6765,P7_L3_GSP-1048127_200uM,No,C394T,P132S,-
+P7_L_III_j_BA4_EIDD-3675_200uM.fastq.gz,nucleocapsid_phosphoprotein N4K,28248,7.55,N4K,nucleocapsid_phosphoprotein,T12A,T to A,nonsynonymous SNV,7738,P7_L3_GSP-1048127_200uM,No,T12A,N4K,-
+P7_L_III_j_BA4_EIDD-3675_200uM.fastq.gz,nucleocapsid_phosphoprotein L13L,28275,2.13,L13L,nucleocapsid_phosphoprotein,C39T,C to T,synonymous SNV,8725,P7_L3_GSP-1048127_200uM,No,C39T,L13L,-
+P7_L_III_j_BA4_EIDD-3675_200uM.fastq.gz,nucleocapsid_phosphoprotein R37C,28345,1.45,R37C,nucleocapsid_phosphoprotein,C109T,C to T,nonsynonymous SNV,8783,P7_L3_GSP-1048127_200uM,No,C109T,R37C,-
+P7_L_III_j_BA4_EIDD-3675_200uM.fastq.gz,nucleocapsid_phosphoprotein N45N,28371,1.03,N45N,nucleocapsid_phosphoprotein,T135C,T to C,synonymous SNV,9550,P7_L3_GSP-1048127_200uM,No,T135C,N45N,-
+P7_L_III_j_BA4_EIDD-3675_200uM.fastq.gz,nucleocapsid_phosphoprotein A47V,28376,2.6,A47V,nucleocapsid_phosphoprotein,C140T,C to T,nonsynonymous SNV,7540,P7_L3_GSP-1048127_200uM,No,C140T,A47V,-
+P7_L_III_j_BA4_EIDD-3675_200uM.fastq.gz,nucleocapsid_phosphoprotein S75S,28461,12.01,S75S,nucleocapsid_phosphoprotein,C225T,C to T,synonymous SNV,6060,P7_L3_GSP-1048127_200uM,No,C225T,S75S,-
+P7_L_III_j_BA4_EIDD-3675_200uM.fastq.gz,nucleocapsid_phosphoprotein P362P,29322,1.71,P362P,nucleocapsid_phosphoprotein,A1086C,A to C,synonymous SNV,6715,P7_L3_GSP-1048127_200uM,No,A1086C,P362P,-
+P7_L_III_j_BA4_EIDD-3675_200uM.fastq.gz,nucleocapsid_phosphoprotein D412E,29472,1.97,D412E,nucleocapsid_phosphoprotein,C1236G,C to G,nonsynonymous SNV,4356,P7_L3_GSP-1048127_200uM,No,C1236G,D412E,-
+P7_L_II_j_BA4_EIDD-3675_200uM.fastq.gz,ORF1ab_polyprotein G177G,792,1.32,G177G,ORF1ab_polyprotein,G531A,G to A,synonymous SNV,4919,P7_L2_GSP-1048127_200uM,No,G531A,G177G,leader_protein: G177G; G531A
+P7_L_II_j_BA4_EIDD-3675_200uM.fastq.gz,ORF1ab_polyprotein A653V,2219,1.12,A653V,ORF1ab_polyprotein,C1958T,C to T,nonsynonymous SNV,3841,P7_L2_GSP-1048127_200uM,No,C1958T,A653V,nsp2: A476V; C1427T
+P7_L_II_j_BA4_EIDD-3675_200uM.fastq.gz,ORF1ab_polyprotein G1847G,5802,1.16,G1847G,ORF1ab_polyprotein,T5541C,T to C,synonymous SNV,6199,P7_L2_GSP-1048127_200uM,No,T5541C,G1847G,nsp3: G1032G; T3096C
+P7_L_II_j_BA4_EIDD-3675_200uM.fastq.gz,ORF1ab_polyprotein P2682T,8305,2.64,P2682T,ORF1ab_polyprotein,C8044A,C to A,nonsynonymous SNV,4656,P7_L2_GSP-1048127_200uM,No,C8044A,P2682T,nsp3: P1867T; C5599A
+P7_L_II_j_BA4_EIDD-3675_200uM.fastq.gz,ORF1ab_polyprotein R2694G,8341,3.95,R2694G,ORF1ab_polyprotein,C8080G,C to G,nonsynonymous SNV,2657,P7_L2_GSP-1048127_200uM,No,C8080G,R2694G,nsp3: R1879G; C5635G
+P7_L_II_j_BA4_EIDD-3675_200uM.fastq.gz,ORF1ab_polyprotein V2700V,8361,4.69,V2700V,ORF1ab_polyprotein,A8100G,A to G,synonymous SNV,3643,P7_L2_GSP-1048127_200uM,No,A8100G,V2700V,nsp3: V1885V; A5655G
+P7_L_II_j_BA4_EIDD-3675_200uM.fastq.gz,ORF1ab_polyprotein A3076A,9489,2.33,A3076A,ORF1ab_polyprotein,C9228T,C to T,synonymous SNV,5656,P7_L2_GSP-1048127_200uM,No,C9228T,A3076A,nsp4: A316A; C948T
+P7_L_II_j_BA4_EIDD-3675_200uM.fastq.gz,ORF1ab_polyprotein V3417V,10512,71.24,V3417V,ORF1ab_polyprotein,C10251T,C to T,synonymous SNV,5733,P7_L2_GSP-1048127_200uM,No,C10251T,V3417V,3C-like_proteinase: V157V; C471T
+P7_L_II_j_BA4_EIDD-3675_200uM.fastq.gz,ORF1ab_polyprotein T4169I,12767,3.38,T4169I,ORF1ab_polyprotein,C12506T,C to T,nonsynonymous SNV,5096,P7_L2_GSP-1048127_200uM,No,C12506T,T4169I,nsp9: T35I; C104T
+P7_L_II_j_BA4_EIDD-3675_200uM.fastq.gz,ORF1ab_polyprotein A6663P,20247,1.47,A6663P,ORF1ab_polyprotein,G19987C,G to C,nonsynonymous SNV,4765,P7_L2_GSP-1048127_200uM,No,G19987C,A6663P,endoRNAse: A217P; G649C
+P7_L_II_j_BA4_EIDD-3675_200uM.fastq.gz,ORF1ab_polyprotein S6734F,20461,1.61,S6734F,ORF1ab_polyprotein,C20201T,C to T,nonsynonymous SNV,5897,P7_L2_GSP-1048127_200uM,No,C20201T,S6734F,endoRNAse: S288F; C863T
+P7_L_II_j_BA4_EIDD-3675_200uM.fastq.gz,ORF1ab_polyprotein D6891G,20932,1.11,D6891G,ORF1ab_polyprotein,A20672G,A to G,nonsynonymous SNV,4314,P7_L2_GSP-1048127_200uM,No,A20672G,D6891G,2'-O-ribose_methyltransferase: D99G; A296G
+P7_L_II_j_BA4_EIDD-3675_200uM.fastq.gz,ORF1ab_polyprotein K7041K,21383,1.02,K7041K,ORF1ab_polyprotein,A21123G,A to G,synonymous SNV,5111,P7_L2_GSP-1048127_200uM,No,A21123G,K7041K,2'-O-ribose_methyltransferase: K249K; A747G
+P7_L_II_j_BA4_EIDD-3675_200uM.fastq.gz,membrane_glycoprotein A69V,26691,2.98,A69V,membrane_glycoprotein,C206T,C to T,nonsynonymous SNV,5843,P7_L2_GSP-1048127_200uM,No,C206T,A69V,-
+P7_L_II_j_BA4_EIDD-3675_200uM.fastq.gz,membrane_glycoprotein S99A,26780,6.13,S99A,membrane_glycoprotein,T295G,T to G,nonsynonymous SNV,5795,P7_L2_GSP-1048127_200uM,No,T295G,S99A,-
+P7_L_II_j_BA4_EIDD-3675_200uM.fastq.gz,membrane_glycoprotein R131K,26877,77.87,R131K,membrane_glycoprotein,G392A,G to A,nonsynonymous SNV,4459,P7_L2_GSP-1048127_200uM,No,G392A,R131K,-
+P7_L_II_j_BA4_EIDD-3675_200uM.fastq.gz,membrane_glycoprotein P132S,26879,9.41,P132S,membrane_glycoprotein,C394T,C to T,nonsynonymous SNV,4622,P7_L2_GSP-1048127_200uM,No,C394T,P132S,-
+P7_L_II_j_BA4_EIDD-3675_200uM.fastq.gz,membrane_glycoprotein S173P,27002,2.7,S173P,membrane_glycoprotein,T517C,T to C,nonsynonymous SNV,5303,P7_L2_GSP-1048127_200uM,No,T517C,S173P,-
+P7_L_II_j_BA4_EIDD-3675_200uM.fastq.gz,ORF8_protein S69P,28061,2.97,S69P,ORF8_protein,T205C,T to C,nonsynonymous SNV,5969,P7_L2_GSP-1048127_200uM,No,T205C,S69P,-
+P7_L_II_j_BA4_EIDD-3675_200uM.fastq.gz,nucleocapsid_phosphoprotein N8N,28260,2.43,N8N,nucleocapsid_phosphoprotein,T24C,T to C,synonymous SNV,5357,P7_L2_GSP-1048127_200uM,No,T24C,N8N,-
+P7_L_II_j_BA4_EIDD-3675_200uM.fastq.gz,nucleocapsid_phosphoprotein L13L,28275,79.95,L13L,nucleocapsid_phosphoprotein,C39T,C to T,synonymous SNV,5020,P7_L2_GSP-1048127_200uM,No,C39T,L13L,-
+P7_L_II_j_BA4_EIDD-3675_200uM.fastq.gz,nucleocapsid_phosphoprotein D412E,29472,2.66,D412E,nucleocapsid_phosphoprotein,C1236G,C to G,nonsynonymous SNV,2937,P7_L2_GSP-1048127_200uM,No,C1236G,D412E,-
+P7_L_IV_j_BA4_EIDD-3675_200uM.fastq.gz,ORF1ab_polyprotein R539H,1877,1,R539H,ORF1ab_polyprotein,G1616A,G to A,nonsynonymous SNV,8123,P7_L4_GSP-1048127_200uM,No,G1616A,R539H,nsp2: R362H; G1085A
+P7_L_IV_j_BA4_EIDD-3675_200uM.fastq.gz,ORF1ab_polyprotein R2694G,8341,3.91,R2694G,ORF1ab_polyprotein,C8080G,C to G,nonsynonymous SNV,3760,P7_L4_GSP-1048127_200uM,No,C8080G,R2694G,nsp3: R1879G; C5635G
+P7_L_IV_j_BA4_EIDD-3675_200uM.fastq.gz,ORF1ab_polyprotein A3076A,9489,1.98,A3076A,ORF1ab_polyprotein,C9228T,C to T,synonymous SNV,7728,P7_L4_GSP-1048127_200uM,No,C9228T,A3076A,nsp4: A316A; C948T
+P7_L_IV_j_BA4_EIDD-3675_200uM.fastq.gz,envelope_protein V14V,26249,1.02,V14V,envelope_protein,T42A,T to A,synonymous SNV,10295,P7_L4_GSP-1048127_200uM,No,T42A,V14V,-
+P7_L_IV_j_BA4_EIDD-3675_200uM.fastq.gz,membrane_glycoprotein M91K,26757,93.97,M91K,membrane_glycoprotein,T272A,T to A,nonsynonymous SNV,8416,P7_L4_GSP-1048127_200uM,No,T272A,M91K,-
+P7_L_IV_j_BA4_EIDD-3675_200uM.fastq.gz,membrane_glycoprotein N117D,26834,92.34,N117D,membrane_glycoprotein,A349G,A to G,nonsynonymous SNV,8044,P7_L4_GSP-1048127_200uM,No,A349G,N117D,-
+P7_L_IV_j_BA4_EIDD-3675_200uM.fastq.gz,membrane_glycoprotein P132S,26879,3.53,P132S,membrane_glycoprotein,C394T,C to T,nonsynonymous SNV,7962,P7_L4_GSP-1048127_200uM,No,C394T,P132S,-
+P7_L_IV_j_BA4_EIDD-3675_200uM.fastq.gz,ORF8_protein F120F,28216,91.96,F120F,ORF8_protein,C360T,C to T,synonymous SNV,7230,P7_L4_GSP-1048127_200uM,No,C360T,F120F,-
+P7_L_IV_j_BA4_EIDD-3675_200uM.fastq.gz,nucleocapsid_phosphoprotein N189S,28802,91.47,N189S,nucleocapsid_phosphoprotein,A566G,A to G,nonsynonymous SNV,7859,P7_L4_GSP-1048127_200uM,No,A566G,N189S,-
+P7_L_IV_j_BA4_EIDD-3675_200uM.fastq.gz,nucleocapsid_phosphoprotein D412E,29472,1.99,D412E,nucleocapsid_phosphoprotein,C1236G,C to G,nonsynonymous SNV,4280,P7_L4_GSP-1048127_200uM,No,C1236G,D412E,-
+P7_L_I_j_BA4_EIDD-3675_200uM.fastq.gz,ORF1ab_polyprotein I114M,603,1.04,I114M,ORF1ab_polyprotein,A342G,A to G,nonsynonymous SNV,2313,P7_L1_GSP-1048127_200uM,No,A342G,I114M,leader_protein: I114M; A342G
+P7_L_I_j_BA4_EIDD-3675_200uM.fastq.gz,ORF1ab_polyprotein G147G,702,2.26,G147G,ORF1ab_polyprotein,C441T,C to T,synonymous SNV,4074,P7_L1_GSP-1048127_200uM,No,C441T,G147G,leader_protein: G147G; C441T
+P7_L_I_j_BA4_EIDD-3675_200uM.fastq.gz,ORF1ab_polyprotein T724T,2433,1.52,T724T,ORF1ab_polyprotein,T2172C,T to C,synonymous SNV,3296,P7_L1_GSP-1048127_200uM,No,T2172C,T724T,nsp2: T547T; T1641C
+P7_L_I_j_BA4_EIDD-3675_200uM.fastq.gz,ORF1ab_polyprotein I737I,2472,5.09,I737I,ORF1ab_polyprotein,C2211T,C to T,synonymous SNV,3224,P7_L1_GSP-1048127_200uM,No,C2211T,I737I,nsp2: I560I; C1680T
+P7_L_I_j_BA4_EIDD-3675_200uM.fastq.gz,ORF1ab_polyprotein V2418V,7515,5.78,V2418V,ORF1ab_polyprotein,C7254T,C to T,synonymous SNV,2733,P7_L1_GSP-1048127_200uM,No,C7254T,V2418V,nsp3: V1603V; C4809T
+P7_L_I_j_BA4_EIDD-3675_200uM.fastq.gz,ORF1ab_polyprotein D2640E,8181,4.12,D2640E,ORF1ab_polyprotein,T7920G,T to G,nonsynonymous SNV,3954,P7_L1_GSP-1048127_200uM,No,T7920G,D2640E,nsp3: D1825E; T5475G
+P7_L_I_j_BA4_EIDD-3675_200uM.fastq.gz,ORF1ab_polyprotein R2694G,8341,4.94,R2694G,ORF1ab_polyprotein,C8080G,C to G,nonsynonymous SNV,1904,P7_L1_GSP-1048127_200uM,No,C8080G,R2694G,nsp3: R1879G; C5635G
+P7_L_I_j_BA4_EIDD-3675_200uM.fastq.gz,ORF1ab_polyprotein V2700V,8361,38.99,V2700V,ORF1ab_polyprotein,A8100G,A to G,synonymous SNV,2358,P7_L1_GSP-1048127_200uM,No,A8100G,V2700V,nsp3: V1885V; A5655G
+P7_L_I_j_BA4_EIDD-3675_200uM.fastq.gz,ORF1ab_polyprotein A3076A,9489,2.41,A3076A,ORF1ab_polyprotein,C9228T,C to T,synonymous SNV,4072,P7_L1_GSP-1048127_200uM,No,C9228T,A3076A,nsp4: A316A; C948T
+P7_L_I_j_BA4_EIDD-3675_200uM.fastq.gz,ORF1ab_polyprotein T5422T,16526,3.29,T5422T,ORF1ab_polyprotein,T16266G,T to G,synonymous SNV,5047,P7_L1_GSP-1048127_200uM,No,T16266G,T5422T,helicase: T104T; T312G
+P7_L_I_j_BA4_EIDD-3675_200uM.fastq.gz,surface_glycoprotein V44V,21672,3.19,V44V,surface_glycoprotein,T132G,T to G,synonymous SNV,3263,P7_L1_GSP-1048127_200uM,No,T132G,V44V,-
+P7_L_I_j_BA4_EIDD-3675_200uM.fastq.gz,surface_glycoprotein M148V,21982,3.43,M148V,surface_glycoprotein,A442G,A to G,nonsynonymous SNV,2683,P7_L1_GSP-1048127_200uM,No,A442G,M148V,-
+P7_L_I_j_BA4_EIDD-3675_200uM.fastq.gz,envelope_protein A41V,26329,41.03,A41V,envelope_protein,C122T,C to T,nonsynonymous SNV,4180,P7_L1_GSP-1048127_200uM,No,C122T,A41V,-
+P7_L_I_j_BA4_EIDD-3675_200uM.fastq.gz,membrane_glycoprotein N21S,26547,12.28,N21S,membrane_glycoprotein,A62G,A to G,nonsynonymous SNV,3566,P7_L1_GSP-1048127_200uM,No,A62G,N21S,-
+P7_L_I_j_BA4_EIDD-3675_200uM.fastq.gz,membrane_glycoprotein F53I,26642,3.35,F53I,membrane_glycoprotein,T157A,T to A,nonsynonymous SNV,4448,P7_L1_GSP-1048127_200uM,No,T157A,F53I,-
+P7_L_I_j_BA4_EIDD-3675_200uM.fastq.gz,membrane_glycoprotein S99A,26780,42.9,S99A,membrane_glycoprotein,T295G,T to G,nonsynonymous SNV,4150,P7_L1_GSP-1048127_200uM,No,T295G,S99A,-
+P7_L_I_j_BA4_EIDD-3675_200uM.fastq.gz,membrane_glycoprotein N117D,26834,46.03,N117D,membrane_glycoprotein,A349G,A to G,nonsynonymous SNV,3919,P7_L1_GSP-1048127_200uM,No,A349G,N117D,-
+P7_L_I_j_BA4_EIDD-3675_200uM.fastq.gz,nucleocapsid_phosphoprotein D412E,29472,2.7,D412E,nucleocapsid_phosphoprotein,C1236G,C to G,nonsynonymous SNV,2335,P7_L1_GSP-1048127_200uM,No,C1236G,D412E,-
+P7_L_VI_j_BA4_EIDD-3675_200uM.fastq.gz,ORF1ab_polyprotein L146L,699,15.5,L146L,ORF1ab_polyprotein,T438A,T to A,synonymous SNV,4509,P7_L6_GSP-1048127_200uM,No,T438A,L146L,leader_protein: L146L; T438A
+P7_L_VI_j_BA4_EIDD-3675_200uM.fastq.gz,ORF1ab_polyprotein L1813L,5700,8.64,L1813L,ORF1ab_polyprotein,T5439C,T to C,synonymous SNV,4954,P7_L6_GSP-1048127_200uM,No,T5439C,L1813L,nsp3: L998L; T2994C
+P7_L_VI_j_BA4_EIDD-3675_200uM.fastq.gz,ORF1ab_polyprotein D2665D,8256,26.34,D2665D,ORF1ab_polyprotein,T7995C,T to C,synonymous SNV,4493,P7_L6_GSP-1048127_200uM,No,T7995C,D2665D,nsp3: D1850D; T5550C
+P7_L_VI_j_BA4_EIDD-3675_200uM.fastq.gz,ORF1ab_polyprotein D2690A,8330,30.54,D2690A,ORF1ab_polyprotein,A8069C,A to C,nonsynonymous SNV,3268,P7_L6_GSP-1048127_200uM,No,A8069C,D2690A,nsp3: D1875A; A5624C
+P7_L_VI_j_BA4_EIDD-3675_200uM.fastq.gz,ORF1ab_polyprotein R2694G,8341,6.81,R2694G,ORF1ab_polyprotein,C8080G,C to G,nonsynonymous SNV,2128,P7_L6_GSP-1048127_200uM,No,C8080G,R2694G,nsp3: R1879G; C5635G
+P7_L_VI_j_BA4_EIDD-3675_200uM.fastq.gz,ORF1ab_polyprotein A3076A,9489,1.9,A3076A,ORF1ab_polyprotein,C9228T,C to T,synonymous SNV,4569,P7_L6_GSP-1048127_200uM,No,C9228T,A3076A,nsp4: A316A; C948T
+P7_L_VI_j_BA4_EIDD-3675_200uM.fastq.gz,ORF1ab_polyprotein D6098D,18554,28.97,D6098D,ORF1ab_polyprotein,C18294T,C to T,synonymous SNV,5054,P7_L6_GSP-1048127_200uM,No,C18294T,D6098D,3'-to-5'_exonuclease: D179D; C537T
+P7_L_VI_j_BA4_EIDD-3675_200uM.fastq.gz,ORF1ab_polyprotein N6474N,19682,2.1,N6474N,ORF1ab_polyprotein,T19422C,T to C,synonymous SNV,4767,P7_L6_GSP-1048127_200uM,No,T19422C,N6474N,endoRNAse: N28N; T84C
+P7_L_VI_j_BA4_EIDD-3675_200uM.fastq.gz,surface_glycoprotein R677Q,23570,34.6,R677Q,surface_glycoprotein,G2030A,G to A,nonsynonymous SNV,6977,P7_L6_GSP-1048127_200uM,No,G2030A,R677Q,-
+P7_L_VI_j_BA4_EIDD-3675_200uM.fastq.gz,surface_glycoprotein T1004T,24552,29.58,T1004T,surface_glycoprotein,T3012C,T to C,synonymous SNV,3302,P7_L6_GSP-1048127_200uM,No,T3012C,T1004T,-
+P7_L_VI_j_BA4_EIDD-3675_200uM.fastq.gz,ORF3a_protein I35T,25459,1.13,I35T,ORF3a_protein,T104C,T to C,nonsynonymous SNV,4264,P7_L6_GSP-1048127_200uM,No,T104C,I35T,-
+P7_L_VI_j_BA4_EIDD-3675_200uM.fastq.gz,ORF3a_protein E181D,25898,1.13,E181D,ORF3a_protein,A543C,A to C,nonsynonymous SNV,5326,P7_L6_GSP-1048127_200uM,No,A543C,E181D,-
+P7_L_VI_j_BA4_EIDD-3675_200uM.fastq.gz,envelope_protein S6L,26224,1.02,S6L,envelope_protein,C17T,C to T,nonsynonymous SNV,7063,P7_L6_GSP-1048127_200uM,No,C17T,S6L,-
+P7_L_VI_j_BA4_EIDD-3675_200uM.fastq.gz,membrane_glycoprotein F53V,26642,16.63,F53V,membrane_glycoprotein,T157G,T to G,nonsynonymous SNV,5134,P7_L6_GSP-1048127_200uM,No,T157G,F53V,-
+P7_L_VI_j_BA4_EIDD-3675_200uM.fastq.gz,membrane_glycoprotein C64W,26677,18.08,C64W,membrane_glycoprotein,T192G,T to G,nonsynonymous SNV,5213,P7_L6_GSP-1048127_200uM,No,T192G,C64W,-
+P7_L_VI_j_BA4_EIDD-3675_200uM.fastq.gz,membrane_glycoprotein H125Y,26858,16.48,H125Y,membrane_glycoprotein,C373T,C to T,nonsynonymous SNV,4847,P7_L6_GSP-1048127_200uM,No,C373T,H125Y,-
+P7_L_VI_j_BA4_EIDD-3675_200uM.fastq.gz,membrane_glycoprotein R131K,26877,35.02,R131K,membrane_glycoprotein,G392A,G to A,nonsynonymous SNV,4206,P7_L6_GSP-1048127_200uM,No,G392A,R131K,-
+P7_L_VI_j_BA4_EIDD-3675_200uM.fastq.gz,membrane_glycoprotein P132S,26879,38.55,P132S,membrane_glycoprotein,C394T,C to T,nonsynonymous SNV,4208,P7_L6_GSP-1048127_200uM,No,C394T,P132S,-
+P7_L_VI_j_BA4_EIDD-3675_200uM.fastq.gz,membrane_glycoprotein Q185R,27039,26.59,Q185R,membrane_glycoprotein,A554G,A to G,nonsynonymous SNV,4600,P7_L6_GSP-1048127_200uM,No,A554G,Q185R,-
+P7_L_VI_j_BA4_EIDD-3675_200uM.fastq.gz,ORF7a_protein P84S,27606,31.21,P84S,ORF7a_protein,C250T,C to T,nonsynonymous SNV,4201,P7_L6_GSP-1048127_200uM,No,C250T,P84S,-
+P7_L_VI_j_BA4_EIDD-3675_200uM.fastq.gz,nucleocapsid_phosphoprotein L13L,28275,19.56,L13L,nucleocapsid_phosphoprotein,C39T,C to T,synonymous SNV,6094,P7_L6_GSP-1048127_200uM,No,C39T,L13L,-
+P7_L_VI_j_BA4_EIDD-3675_200uM.fastq.gz,nucleocapsid_phosphoprotein D412E,29472,2.41,D412E,nucleocapsid_phosphoprotein,C1236G,C to G,nonsynonymous SNV,2905,P7_L6_GSP-1048127_200uM,No,C1236G,D412E,-
+P7_L_V_j_BA4_EIDD-3675_200uM.fastq.gz,ORF1ab_polyprotein V303V,1170,82.75,V303V,ORF1ab_polyprotein,T909A,T to A,synonymous SNV,1629,P7_L5_GSP-1048127_200uM,No,T909A,V303V,nsp2: V126V; T378A
+P7_L_V_j_BA4_EIDD-3675_200uM.fastq.gz,ORF1ab_polyprotein C2449C,7608,5.85,C2449C,ORF1ab_polyprotein,T7347C,T to C,synonymous SNV,2170,P7_L5_GSP-1048127_200uM,No,T7347C,C2449C,nsp3: C1634C; T4902C
+P7_L_V_j_BA4_EIDD-3675_200uM.fastq.gz,ORF1ab_polyprotein R2694G,8341,4.22,R2694G,ORF1ab_polyprotein,C8080G,C to G,nonsynonymous SNV,1303,P7_L5_GSP-1048127_200uM,No,C8080G,R2694G,nsp3: R1879G; C5635G
+P7_L_V_j_BA4_EIDD-3675_200uM.fastq.gz,ORF1ab_polyprotein A3076A,9489,1.44,A3076A,ORF1ab_polyprotein,C9228T,C to T,synonymous SNV,2785,P7_L5_GSP-1048127_200uM,No,C9228T,A3076A,nsp4: A316A; C948T
+P7_L_V_j_BA4_EIDD-3675_200uM.fastq.gz,ORF1ab_polyprotein T6092K,18535,1.14,T6092K,ORF1ab_polyprotein,C18275A,C to A,nonsynonymous SNV,3159,P7_L5_GSP-1048127_200uM,No,C18275A,T6092K,3'-to-5'_exonuclease: T173K; C518A
+P7_L_V_j_BA4_EIDD-3675_200uM.fastq.gz,envelope_protein V14V,26249,9.09,V14V,envelope_protein,T42A,T to A,synonymous SNV,3315,P7_L5_GSP-1048127_200uM,No,T42A,V14V,-
+P7_L_V_j_BA4_EIDD-3675_200uM.fastq.gz,membrane_glycoprotein N117D,26834,99.77,N117D,membrane_glycoprotein,A349G,A to G,nonsynonymous SNV,2556,P7_L5_GSP-1048127_200uM,No,A349G,N117D,-
+P7_L_V_j_BA4_EIDD-3675_200uM.fastq.gz,nucleocapsid_phosphoprotein G5R,28249,2.34,G5R,nucleocapsid_phosphoprotein,G13A,G to A,nonsynonymous SNV,2395,P7_L5_GSP-1048127_200uM,No,G13A,G5R,-
+P7_L_V_j_BA4_EIDD-3675_200uM.fastq.gz,nucleocapsid_phosphoprotein D412E,29472,1.51,D412E,nucleocapsid_phosphoprotein,C1236G,C to G,nonsynonymous SNV,1324,P7_L5_GSP-1048127_200uM,No,C1236G,D412E,-
