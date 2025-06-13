@@ -1,4 +1,4 @@
-# ARTICLE PLACEHOLDER
+# Chikungunya virus persists in joint associated macrophages and promotes chronic disease
 This repository contains the code and data used in the publication **"Chikungunya virus persists in joint associated macrophages and promotes chronic disease"** by **Zarrella** et al. (2025).
 
 ## What is RAVA?
