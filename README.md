@@ -1,5 +1,5 @@
-# ARTICLE PLACEHOLDER
-This repository contains the code and data used in the publication **"XXX"** by **XXX** et al. (**XXXXYear**).
+# Identification and Characterization of Novel Chikungunya Virus Polymerase Inhibitors
+This repository contains the code and data used in the publication **"Identification and Characterization of Novel Chikungunya Virus Polymerase Inhibitors"** by **Yin** et al. (2025).
 
 ## What is RAVA?
 RAVA is derived from [LAVA](https://www.biorxiv.org/content/10.1101/2019.12.17.879320v1). RAVA takes FASTQ files (for every sample in your analysis), a metadata sheet (providing info on what day or passage each sample was collected), and a reference genome (your own FASTA and GeneBank files). RAVA outputs an interactive graph (viewable in a web browser), a SNV table for all analyzed samples, and intermediate analysis files.
