@@ -1,5 +1,5 @@
-# A Fusion Protein’s Weak Link: Disrupting the Post-Fusion Conformation of the Parainfluenza Virus Fusion Protein 
-This repository contains the code and data used in the publication **"A Fusion Protein’s Weak Link: Disrupting the Post-Fusion Conformation of the Parainfluenza Virus Fusion Protein "** by **Crosby** et al. (**2025**).
+# A fusion protein’s weak link: functional constraints revealed by inhibitory peptide interaction with the parainfluenza fusion protein 
+This repository contains the code and data used in the publication **"A fusion protein’s weak link: functional constraints revealed by inhibitory peptide interaction with the parainfluenza fusion protein"** by **Crosby** et al. (**2025**).
 
 ## What is RAVA?
 RAVA is derived from [LAVA](https://www.biorxiv.org/content/10.1101/2019.12.17.879320v1). RAVA takes FASTQ files (for every sample in your analysis), a metadata sheet (providing info on what day or passage each sample was collected), and a reference genome (your own FASTA and GeneBank files). RAVA outputs an interactive graph (viewable in a web browser), a SNV table for all analyzed samples, and intermediate analysis files.
