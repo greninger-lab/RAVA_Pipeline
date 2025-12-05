@@ -1,6 +1,6 @@
-# Effects of 4’-Fluorouridine Resistance on Fitness and Treatment Outcomes for Venezuelan Equine Encephalitis Virus
+# Impact of Mutations Affecting 4’-Fluorouridine Susceptibility on Fitness and Treatment Outcomes for Venezuelan Equine Encephalitis Virus
 
-This repository contains the code and data used in the publication **"Effects of 4’-Fluorouridine Resistance on Fitness and Treatment Outcomes for Venezuelan Equine Encephalitis Virus"** by **Wong** et al. (2025).
+This repository contains the code and data used in the publication **"Impact of Mutations Affecting 4’-Fluorouridine Susceptibility on Fitness and Treatment Outcomes for Venezuelan Equine Encephalitis Virus"** by **Wong** et al. (2026).
 
 ## What is RAVA?
 
