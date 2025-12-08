@@ -50,3 +50,7 @@ Example command:
 ```bash
 positional_nuc_profiler my_file_sorted_indexed.bam . 6139 6261 6274
 ```
+
+## Notes
+
+Folder `selected_ooutput_files` contains full lists of detected SNVs across all samples as well as SNV metadata.
