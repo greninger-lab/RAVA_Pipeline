@@ -8,10 +8,10 @@ import warnings
 import argparse
 import sys
 
-# warning surpressor for debugging
+
 warnings.simplefilter(action="ignore", category=FutureWarning)
 
-# function used to open vcf
+
 def read_vcf(path):
     with open(path, "r") as f:
         lines = [l for l in f if not l.startswith("##")]
@@ -30,73 +30,25 @@ def read_vcf(path):
         sep="\t",
     ).rename(columns={"#CHROM": "CHROM"})
 
-# Function used to translated codons into proteins
+
 def translate(seq):
     table = {
-        "ATA": "I",
-        "ATC": "I",
-        "ATT": "I",
-        "ATG": "M",
-        "ACA": "T",
-        "ACC": "T",
-        "ACG": "T",
-        "ACT": "T",
-        "AAC": "N",
-        "AAT": "N",
-        "AAA": "K",
-        "AAG": "K",
-        "AGC": "S",
-        "AGT": "S",
-        "AGA": "R",
-        "AGG": "R",
-        "CTA": "L",
-        "CTC": "L",
-        "CTG": "L",
-        "CTT": "L",
-        "CCA": "P",
-        "CCC": "P",
-        "CCG": "P",
-        "CCT": "P",
-        "CAC": "H",
-        "CAT": "H",
-        "CAA": "Q",
-        "CAG": "Q",
-        "CGA": "R",
-        "CGC": "R",
-        "CGG": "R",
-        "CGT": "R",
-        "GTA": "V",
-        "GTC": "V",
-        "GTG": "V",
-        "GTT": "V",
-        "GCA": "A",
-        "GCC": "A",
-        "GCG": "A",
-        "GCT": "A",
-        "GAC": "D",
-        "GAT": "D",
-        "GAA": "E",
-        "GAG": "E",
-        "GGA": "G",
-        "GGC": "G",
-        "GGG": "G",
-        "GGT": "G",
-        "TCA": "S",
-        "TCC": "S",
-        "TCG": "S",
-        "TCT": "S",
-        "TTC": "F",
-        "TTT": "F",
-        "TTA": "L",
-        "TTG": "L",
-        "TAC": "Y",
-        "TAT": "Y",
-        "TAA": "*",
-        "TAG": "*",
-        "TGC": "C",
-        "TGT": "C",
-        "TGA": "*",
-        "TGG": "W",
+        "ATA": "I", "ATC": "I", "ATT": "I", "ATG": "M",
+        "ACA": "T", "ACC": "T", "ACG": "T", "ACT": "T",
+        "AAC": "N", "AAT": "N", "AAA": "K", "AAG": "K",
+        "AGC": "S", "AGT": "S", "AGA": "R", "AGG": "R",
+        "CTA": "L", "CTC": "L", "CTG": "L", "CTT": "L",
+        "CCA": "P", "CCC": "P", "CCG": "P", "CCT": "P",
+        "CAC": "H", "CAT": "H", "CAA": "Q", "CAG": "Q",
+        "CGA": "R", "CGC": "R", "CGG": "R", "CGT": "R",
+        "GTA": "V", "GTC": "V", "GTG": "V", "GTT": "V",
+        "GCA": "A", "GCC": "A", "GCG": "A", "GCT": "A",
+        "GAC": "D", "GAT": "D", "GAA": "E", "GAG": "E",
+        "GGA": "G", "GGC": "G", "GGG": "G", "GGT": "G",
+        "TCA": "S", "TCC": "S", "TCG": "S", "TCT": "S",
+        "TTC": "F", "TTT": "F", "TTA": "L", "TTG": "L",
+        "TAC": "Y", "TAT": "Y", "TAA": "*", "TAG": "*",
+        "TGC": "C", "TGT": "C", "TGA": "*", "TGG": "W",
     }
     protein = ""
     if len(seq) % 3 == 0:
@@ -105,82 +57,194 @@ def translate(seq):
             protein += table[codon]
     return protein
 
-# Function checks if degenerative bases have possible translations
+
 def degenerative(codon):
-    # must use or to make phrase 4 characters to not make it codon anymore
+    standard_bases = set("ACGT")
+    if all(c in standard_bases for c in codon):
+        return codon
+
     if "R" in codon:
-        codon = codonReplace(codon, "R", "G", "A")
+        return codonReplace_recursive(codon, "R", ["G", "A"])
     elif "Y" in codon:
-        codon = codonReplace(codon, "Y", "C", "T")
+        return codonReplace_recursive(codon, "Y", ["C", "T"])
     elif "K" in codon:
-        codon = codonReplace(codon, "K", "G", "T")
+        return codonReplace_recursive(codon, "K", ["G", "T"])
     elif "M" in codon:
-        codon = codonReplace(codon, "M", "A", "C")
+        return codonReplace_recursive(codon, "M", ["A", "C"])
     elif "W" in codon:
-        codon = codonReplace(codon, "W", "A", "T")
+        return codonReplace_recursive(codon, "W", ["A", "T"])
     elif "S" in codon:
-        codon = codonReplace(codon, "S", "G", "C")
+        return codonReplace_recursive(codon, "S", ["G", "C"])
     elif "B" in codon:
-        codon = codonReplace2(codon, "B", "G", "T", "C")
+        return codonReplace_recursive(codon, "B", ["G", "T", "C"])
     elif "D" in codon:
-        codon = codonReplace2(codon, "D", "G", "A", "T")
+        return codonReplace_recursive(codon, "D", ["G", "A", "T"])
     elif "H" in codon:
-        codon = codonReplace2(codon, "H", "A", "C", "T")
+        return codonReplace_recursive(codon, "H", ["A", "C", "T"])
     elif "V" in codon:
-        codon = codonReplace2(codon, "V", "G", "C", "A")
+        return codonReplace_recursive(codon, "V", ["G", "C", "A"])
     elif "N" in codon:
-        codon = codonReplace3(codon, "N", "A", "G", "C", "T")
+        return codonReplace_recursive(codon, "N", ["A", "G", "C", "T"])
+
     return codon
 
-# if degen base has two options
-def codonReplace(codon, degen, aminoA, aminoB):
-    codonOne = codon.replace(degen, aminoA)
-    codonTwo = codon.replace(degen, aminoB)
 
-    codonOne = translate(codonOne)
-    codonTwo = translate(codonTwo)
+def codonReplace_recursive(codon, degen, options):
+    translations = set()
+    for base in options:
+        resolved = codon.replace(degen, base, 1)
+        resolved = degenerative(resolved)
+        if len(resolved) == 3 and all(c in "ACGT" for c in resolved):
+            resolved = translate(resolved)
+        translations.add(resolved)
 
-    if codonOne == codonTwo:
-        codon = codonOne
+    if len(translations) == 1:
+        return translations.pop()
     else:
-        codon = aminoA + "or" + aminoB
+        return "or".join(sorted(translations))
 
-    return codon
 
-# if degen base has three options
-def codonReplace2(codon, degen, aminoA, aminoB, aminoC):
-    codonOne = codon.replace(degen, aminoA)
-    codonTwo = codon.replace(degen, aminoB)
-    codonThree = codon.replace(degen, aminoC)
+def extract_gene_name(attr_string):
+    attr = str(attr_string).strip()
+    for field in attr.split(";"):
+        field = field.strip()
+        if field.startswith("ID=gene:"):
+            return field.replace("ID=gene:", "")
+        elif field.startswith("ID=CDS:"):
+            return field.replace("ID=CDS:", "")
+    if "ID=" in attr:
+        id_part = attr.split("ID=")[1].split(";")[0]
+        if ":" in id_part:
+            return id_part.split(":")[-1]
+        return id_part
+    return attr
 
-    codonOne = translate(codonOne)
-    codonTwo = translate(codonTwo)
-    codonThree = translate(codonThree)
 
-    if codonOne == codonTwo and codonOne == codonThree:
-        codon = codonOne
-    else:
-        codon = aminoA + "or" + aminoB + "or" + aminoC
-    return codon
+def build_gene_cds_map(gff):
+    gene_cds = {}
+    gene_strand = {}
+    gene_coords = {}
 
-# if degen base has four options
-def codonReplace3(codon, degen, aminoA, aminoB, aminoC, aminoD):
-    codonOne = codon.replace(degen, aminoA)
-    codonTwo = codon.replace(degen, aminoB)
-    codonThree = codon.replace(degen, aminoC)
-    codonFour = codon.replace(degen, aminoD)
+    for i in range(len(gff.index)):
+        if pd.isnull(gff.iloc[i, 2]):
+            continue
+        if gff.iloc[i, 2] == "CDS":
+            cds_start = int(gff.iloc[i, 3])
+            cds_end = int(gff.iloc[i, 4])
+            cds_attr = str(gff.iloc[i, 8]).strip()
+            gene_name = extract_gene_name(cds_attr)
+            if gene_name not in gene_cds:
+                gene_cds[gene_name] = []
+            gene_cds[gene_name].append((cds_start, cds_end))
 
-    codonOne = translate(codonOne)
-    codonTwo = translate(codonTwo)
-    codonThree = translate(codonThree)
-    codonFour = translate(codonFour)
+    for i in range(len(gff.index)):
+        if pd.isnull(gff.iloc[i, 2]):
+            continue
+        if gff.iloc[i, 2] == "gene":
+            gene_attr = str(gff.iloc[i, 8]).strip()
+            gene_name = extract_gene_name(gene_attr)
+            gene_strand[gene_name] = gff.iloc[i, 6]
+            start = int(gff.iloc[i, 3])
+            end = int(gff.iloc[i, 4])
+            if gene_name in gene_coords:
+                old_start, old_end = gene_coords[gene_name]
+                gene_coords[gene_name] = (min(old_start, start), max(old_end, end))
+            else:
+                gene_coords[gene_name] = (start, end)
 
-    if codonOne == codonTwo and codonOne == codonThree and codonOne == codonFour:
-        codon = codonOne
-    else:
-        codon = aminoA + "or" + aminoB + "or" + aminoC + "or" + aminoD
+    for gene_name in gene_cds:
+        gene_cds[gene_name].sort(key=lambda x: x[0])
 
-    return codon
+    return gene_cds, gene_strand, gene_coords
+
+
+def get_cds_offset_with_slippage(variant_pos, cds_exons):
+    containing_idx = -1
+    for idx, (exon_start, exon_end) in enumerate(cds_exons):
+        if variant_pos >= exon_start and variant_pos <= exon_end:
+            containing_idx = idx
+            break
+
+    if containing_idx == -1:
+        return -1
+
+    cumulative = 0
+    for idx in range(containing_idx):
+        exon_start, exon_end = cds_exons[idx]
+        next_start = cds_exons[idx + 1][0]
+        slippage = next_start - exon_end
+
+        if slippage >= 1:
+            cumulative += (exon_end - exon_start + 1)
+        elif slippage == 0:
+            cumulative += (exon_end - exon_start)
+        else:
+            cumulative += (exon_end - exon_start + 1 + slippage)
+
+    offset_in_exon = variant_pos - cds_exons[containing_idx][0]
+    return cumulative + offset_in_exon
+
+
+def build_spliced_cds_with_slippage(fasta_seq, cds_exons):
+    """
+    Build the spliced CDS nucleotide sequence from genomic FASTA.
+    fasta_seq: plain Python string (the full genome sequence)
+    cds_exons: list of (start, end) tuples, 1-based inclusive
+    """
+    spliced = ""
+
+    for idx, (exon_start, exon_end) in enumerate(cds_exons):
+        if idx == len(cds_exons) - 1:
+            spliced += fasta_seq[exon_start - 1 : exon_end]
+        else:
+            next_start = cds_exons[idx + 1][0]
+            slippage = next_start - exon_end
+
+            if slippage >= 1:
+                spliced += fasta_seq[exon_start - 1 : exon_end]
+            elif slippage == 0:
+                spliced += fasta_seq[exon_start - 1 : exon_end - 1]
+            else:
+                effective_length = (exon_end - exon_start + 1) + slippage
+                spliced += fasta_seq[exon_start - 1 : exon_start - 1 + effective_length]
+
+    return spliced
+
+
+def get_codon_and_position(cds_offset, spliced_cds, alt_base, strand):
+    codon_position = cds_offset % 3
+    codon_start = cds_offset - codon_position
+
+    ref_codon = spliced_cds[codon_start : codon_start + 3]
+
+    alt_codon = list(ref_codon)
+    alt_codon[codon_position] = alt_base
+    alt_codon = "".join(alt_codon)
+
+    if strand == "-":
+        ref_codon = str(Seq(ref_codon).reverse_complement())
+        alt_codon = str(Seq(alt_codon).reverse_complement())
+
+    protein_position = (codon_start // 3) + 1
+
+    return ref_codon, alt_codon, codon_position, protein_position
+
+
+def get_exon_number(variant_pos, cds_exons):
+    for idx, (exon_start, exon_end) in enumerate(cds_exons):
+        if variant_pos >= exon_start and variant_pos <= exon_end:
+            return idx + 1
+    return 1
+
+
+def is_valid_codon(codon):
+    valid_bases = set("ACGTRYKMSWHBVDN")
+    return len(codon) == 3 and all(c.upper() in valid_bases for c in codon)
+
+
+# =============================================================================
+# ARGUMENT PARSING AND FILE LOADING
+# =============================================================================
 
 parser = argparse.ArgumentParser()
 parser.add_argument("avinput")
@@ -198,8 +262,12 @@ variantFunctionName = os.path.basename(variantFunctionName)
 
 variantFunctionName = re.sub(".fastq.avinput", "", str(variantFunctionName))
 
+# Load FASTA and convert to plain string for reliable slicing
 for fasta in SeqIO.parse(args.FASTA, "fasta"):
     print("")
+
+fasta_sequence = str(fasta.seq)
+
 variantFunction.insert(0, "", "")
 variantFunction.insert(0, " ", "")
 
@@ -214,25 +282,10 @@ for i in range(len(gff.index)):
 test = 0
 df = None
 
-# # impose a strand-bias filter -- remove alt alleles where
-# # >90% of alt alleles come from one strand
-# strandfilter_idx = []
+# =============================================================================
+# FIRST PASS: Annotate variants as "exonic" and assign gene names
+# =============================================================================
 
-# for k in range(len(variantFunction)):
-#     temp_varstats = variantFunction.iloc[k, 16].split(":")
-#     ADF = float(temp_varstats[12])
-#     ADR = float(temp_varstats[13])
-#     total_A = ADF + ADR
-#     percent_ADF = ADF / total_A * 100.0
-#     percent_ADR = ADR / total_A * 100.0
-#     if not (percent_ADR > 90 or percent_ADF > 90):
-#         strandfilter_idx.append(k)
-
-# strandfiltered_df = variantFunction.loc[strandfilter_idx].reset_index(drop=True)
-
-# variantFunction = strandfiltered_df
-
-# annotates the names of the protein on the section that mutated
 for j in range(numRegions):
     if gff.iloc[j, 2] == "CDS":
         for k in range(len(variantFunction)):
@@ -246,7 +299,6 @@ for j in range(numRegions):
             ) and variantFunction.iloc[k, 8] <= int(gff.iloc[j, 4]):
                 if variantFunction.iloc[k, 0] == "":
                     variantFunction.iloc[k, 0] = "exonic"
-
                     variantFunction.iloc[k, 1] = proteinName
 
                 elif variantFunction.iloc[k, 0] != "":
@@ -254,20 +306,13 @@ for j in range(numRegions):
                         df = pd.DataFrame(variantFunction.loc[[k]])
                         df.iloc[0, 1] = proteinName
 
-                    df2 = pd.DataFrame(variantFunction.loc[[k]])
-                    df2.iloc[0, 1] = proteinName
-
-'''
-                    if test != 0 :
-                        df = df.append(df2)
-
-                    test = test + 1
-'''
+                        df2 = pd.DataFrame(variantFunction.loc[[k]])
+                        df2.iloc[0, 1] = proteinName
 
 if df is not None:
     df = df.iloc[1:, :]
 
-    variantFunction = pd.concat([variantFunction, df])
+variantFunction = pd.concat([variantFunction, df])
 
 variantFunction.to_csv("varriantfunction.csv", index=False, header=False)
 variantFunction.to_csv(
@@ -282,329 +327,158 @@ variantFunction.insert(0, "   ", "")
 variantFunction.insert(0, "    ", "")
 variantFunction.insert(19, "     ", "")
 
-# This section annotates the type of mutation
+# =============================================================================
+# SECOND PASS: Annotate mutation type, amino acid change, protein position
+# =============================================================================
+
+gene_cds_map, gene_strand_map, gene_coords_map = build_gene_cds_map(gff)
+
 for l in range(len(variantFunction)):
-    if (variantFunction.iloc[l, 2]) == "exonic":
-        variantFunction.iloc[l, 0] = "line" + str(l + 1)
-        for m in range(len(gff.index)):
-            if gff.iloc[m, 2] == "gene":                
-                if (
-                    variantFunction.iloc[l, 5] >= gff.iloc[m, 3]
-                    and variantFunction.iloc[l, 5] <= gff.iloc[m, 4]
-                ):
-                    proteinName = variantFunction.iloc[l, 3]
-                    proteinName2 = proteinName.replace("gene:", "transcript:")
+    if variantFunction.iloc[l, 2] != "exonic":
+        continue
 
-                    if variantFunction.iloc[l, 3] in gff.iloc[m, 8]:
-                        variantFunction.iloc[l, 3] = (
-                            proteinName + ":" + proteinName2 + ":exon1:c."
-                        )
-                        
-                        reverseComplement = "No"
-                            
-                        if(gff.iloc[m, 6] == "-"):
-                            reverseComplement = "Yes"
-                        
-                        variantFunction.iloc[l, 19] = reverseComplement
+    variantFunction.iloc[l, 0] = "line" + str(l + 1)
 
-                        # adds deletions and insertions, detects if frameshift or not
-                        if len(variantFunction.iloc[l, 12]) > len(
-                            variantFunction.iloc[l, 13]
-                        ):
-                            if len(variantFunction.iloc[l, 7]) % 3 == 0:
-                                variantFunction.iloc[l, 1] = "nonframeshift deletion"
-                            else:
-                                variantFunction.iloc[l, 1] = "frameshift deletion"
+    proteinName = variantFunction.iloc[l, 3]
+    proteinName2 = proteinName.replace("gene:", "transcript:")
 
-                        if len(variantFunction.iloc[l, 12]) < len(
-                            variantFunction.iloc[l, 13]
-                        ):
-                            if len(variantFunction.iloc[l, 8]) % 3 == 0:
-                                variantFunction.iloc[l, 1] = "nonframeshift insertion"
-                            else:
-                                variantFunction.iloc[l, 1] = "frameshift insertion"
+    gene_name = proteinName.replace("gene:", "").strip()
 
-                        if len(variantFunction.iloc[l, 12]) == len(
-                            variantFunction.iloc[l, 13]
-                        ):
-                            aminoNum = (
-                                int(variantFunction.iloc[l, 10])
-                                + 1
-                                - int(gff.iloc[m, 3])
-                            )
+    if gene_name not in gene_strand_map:
+        continue
 
-                            for o in range(len(gff.index)):
-                                if gff.iloc[o, 2] == "gene":
-                                    if (gff.iloc[o, 3] < gff.iloc[m, 3]) and (
-                                        gff.iloc[o, 8] == gff.iloc[m, 8]
-                                    ):
-                                        slipageNum = int(gff.iloc[m, 3]) - int(
-                                            gff.iloc[o, 4]
-                                        )
+    strand = gene_strand_map[gene_name]
+    gene_start, gene_end = gene_coords_map.get(gene_name, (None, None))
 
-                                        if slipageNum > 1:
-                                            aminoNum = int(aminoNum) + (
-                                                int(gff.iloc[o, 4])
-                                                - int(gff.iloc[o, 3])
-                                            )
+    if gene_start is None:
+        continue
 
-                                        if slipageNum == 0:
-                                            aminoNum = (
-                                                int(aminoNum)
-                                                + (
-                                                    int(gff.iloc[o, 4])
-                                                    - int(gff.iloc[o, 3])
-                                                )
-                                                + 1
-                                            )
+    reverseComplement = "Yes" if strand == "-" else "No"
+    variantFunction.iloc[l, 19] = reverseComplement
 
-                                        if slipageNum < 0:
-                                            aminoNum = (
-                                                int(aminoNum)
-                                                + (
-                                                    int(gff.iloc[o, 4])
-                                                    - int(gff.iloc[o, 3])
-                                                )
-                                                + 1
-                                                + slipageNum
-                                            )
+    cds_exons = gene_cds_map.get(gene_name, None)
+    if cds_exons is None:
+        cds_exons = [(gene_start, gene_end)]
 
-                            # checks amino acid and protein position
-                            proteinNum = str(int(aminoNum / 3) + ((aminoNum % 3) > 0))
-                            aminoNum = str(aminoNum)                                                       
+    # --- Handle indels ---
+    ref_allele = str(variantFunction.iloc[l, 12]).strip()
+    alt_allele = str(variantFunction.iloc[l, 13]).strip()
 
-                            # If mutation is on first amino acid of codon
-                            if (
-                                int(variantFunction.iloc[l, 10]) - int(gff.iloc[m, 3])
-                            ) % 3 == 0:
-                                if (
-                                    variantFunction.iloc[l, 8] != "-"
-                                    and fasta[int(variantFunction.iloc[l, 10])] != "-"
-                                    and fasta[int(variantFunction.iloc[l, 10] + 1)]
-                                    != "-"
-                                ):
-                                    if "0" in variantFunction.iloc[l, 8]:
-                                        variantFunction.iloc[l, 8] = (
-                                            variantFunction.iloc[l, 8]
-                                        ).replace("0", variantFunction.iloc[l, 13])
-                                    if "0" in variantFunction.iloc[l, 7]:
-                                        (variantFunction.iloc[l, 7]) = (
-                                            variantFunction.iloc[l, 7]
-                                        ).replace("0", variantFunction.iloc[l, 12])                                                                        
+    if len(ref_allele) > len(alt_allele):
+        deleted_len = len(ref_allele) - len(alt_allele)
+        if deleted_len % 3 == 0:
+            variantFunction.iloc[l, 1] = "nonframeshift deletion"
+        else:
+            variantFunction.iloc[l, 1] = "frameshift deletion"
+        continue
 
-                                    before = (
-                                        fasta[int(variantFunction.iloc[l, 10]) - 1]
-                                        + fasta[int(variantFunction.iloc[l, 10])]
-                                        + fasta[int(variantFunction.iloc[l, 10] + 1)]
-                                    )
-                                    after = (
-                                        variantFunction.iloc[l, 8]
-                                        + fasta[int(variantFunction.iloc[l, 10])]
-                                        + fasta[int(variantFunction.iloc[l, 10] + 1)]
-                                    )
-                                        
-                                    if(gff.iloc[m, 6] == "-"):
-                                        before = str(Seq(before).reverse_complement())
-                                        after = str(Seq(after).reverse_complement())  
+    if len(ref_allele) < len(alt_allele):
+        inserted_len = len(alt_allele) - len(ref_allele)
+        if inserted_len % 3 == 0:
+            variantFunction.iloc[l, 1] = "nonframeshift insertion"
+        else:
+            variantFunction.iloc[l, 1] = "frameshift insertion"
+        continue
+
+    # --- Handle SNVs ---
+    variant_pos = int(variantFunction.iloc[l, 10])
+
+    ref_base_check = str(variantFunction.iloc[l, 12]).strip().upper()
+    if ref_base_check == "N" or ref_base_check == "0":
+        continue
+
+    exon_number = get_exon_number(variant_pos, cds_exons)
+
+    cds_offset = get_cds_offset_with_slippage(variant_pos, cds_exons)
+
+    if cds_offset < 0:
+        continue
+
+    # Use plain string fasta_sequence for reliable slicing
+    spliced_cds = build_spliced_cds_with_slippage(fasta_sequence, cds_exons)
+
+    codon_position = cds_offset % 3
+    codon_start = cds_offset - codon_position
+
+    if codon_start + 3 > len(spliced_cds):
+        continue
+
+    # Handle "0" placeholders
+    if "0" in str(variantFunction.iloc[l, 8]):
+        variantFunction.iloc[l, 8] = str(variantFunction.iloc[l, 8]).replace(
+            "0", str(variantFunction.iloc[l, 13])
+        )
+    if "0" in str(variantFunction.iloc[l, 7]):
+        variantFunction.iloc[l, 7] = str(variantFunction.iloc[l, 7]).replace(
+            "0", str(variantFunction.iloc[l, 12])
+        )
+
+    alt_base = str(variantFunction.iloc[l, 8]).strip()
+
+    if alt_base == "-":
+        continue
+
+    ref_codon_seq = spliced_cds[codon_start : codon_start + 3]
+    if "-" in ref_codon_seq:
+        continue
+
+    ref_codon, alt_codon, codon_pos, protein_position = get_codon_and_position(
+        cds_offset, spliced_cds, alt_base, strand
+    )
+
+    if not is_valid_codon(ref_codon):
+        continue
+    if not is_valid_codon(alt_codon):
+        continue
+
+    aminoNum = str(cds_offset + 1)
+    proteinNum = str(protein_position)
+
+    before = degenerative(ref_codon)
+    after = degenerative(alt_codon)
+
+    if len(before) == 3 and all(c in "ACGT" for c in before):
+        before = translate(before)
+    if len(after) == 3 and all(c in "ACGT" for c in after):
+        after = translate(after)
+
+    variantFunction.iloc[l, 3] = (
+        proteinName
+        + ":"
+        + proteinName2
+        + ":exon"
+        + str(exon_number)
+        + ":c."
+        + str(variantFunction.iloc[l, 7])
+        + aminoNum
+        + str(variantFunction.iloc[l, 8])
+        + ":p."
+        + before
+        + proteinNum
+        + after
+        + ","
+    )
+
+    if before == after:
+        variantFunction.iloc[l, 1] = "synonymous SNV"
+    elif after == "*" and before != "*":
+        variantFunction.iloc[l, 1] = "stopgain"
+    elif before == "*" and after != "*":
+        variantFunction.iloc[l, 1] = "stoploss"
+    else:
+        variantFunction.iloc[l, 1] = "nonsynonymous SNV"
 
 
-                                    # deals with degenerative bases
-                                    before = degenerative(before)
-                                    after = degenerative(after)
+# =============================================================================
+# OUTPUT
+# =============================================================================
 
-                                    if len(before) == 3:
-                                        before = translate(before)
-                                    if len(after) == 3:
-                                        after = translate(after)    
-
-                                    # formats and renames output excel values of vcf
-                                    variantFunction.iloc[l, 3] = (
-                                        proteinName
-                                        + ":"
-                                        + proteinName2
-                                        + ":exon1:c."
-                                        + variantFunction.iloc[l, 7]
-                                        + aminoNum
-                                        + variantFunction.iloc[l, 8]
-                                        + ":p."
-                                        + before
-                                        + proteinNum
-                                        + after
-                                        #+ ":RC."
-                                        #+ reverseComplement
-                                        + ","
-                                    )
-
-                                    # checks change to annotate type of mutation
-                                    if before == after:
-                                        variantFunction.iloc[l, 1] = "synonymous SNV"
-
-                                    if before != after:
-                                        variantFunction.iloc[l, 1] = "nonsynonymous SNV"
-
-                                    if after == "*" and before != "*":
-                                        variantFunction.iloc[l, 1] = "stopgain"
-
-                                    if before == "*" and after != "*":
-                                        variantFunction.iloc[l, 1] = "stoploss"
-
-                            # If mutation is on second amino acid of codon
-                            if (
-                                int(variantFunction.iloc[l, 10]) - int(gff.iloc[m, 3])
-                            ) % 3 == 1:
-                                if (
-                                    variantFunction.iloc[l, 8] != "-"
-                                    and fasta[int(variantFunction.iloc[l, 10] - 2)]
-                                    != "-"
-                                    and fasta[int(variantFunction.iloc[l, 10])] != "-"
-                                ):
-                                    if "0" in variantFunction.iloc[l, 8]:
-                                        variantFunction.iloc[l, 8] = (
-                                            variantFunction.iloc[l, 8]
-                                        ).replace("0", variantFunction.iloc[l, 13])
-                                    if "0" in variantFunction.iloc[l, 7]:
-                                        (variantFunction.iloc[l, 7]) = (
-                                            variantFunction.iloc[l, 7]
-                                        ).replace("0", variantFunction.iloc[l, 12])
-
-                                    before = (
-                                        fasta[int(variantFunction.iloc[l, 10]) - 2]
-                                        + fasta[int(variantFunction.iloc[l, 10]) - 1]
-                                        + fasta[int(variantFunction.iloc[l, 10])]
-                                    )
-                                    after = (
-                                        fasta[int(variantFunction.iloc[l, 10]) - 2]
-                                        + variantFunction.iloc[l, 8]
-                                        + fasta[int(variantFunction.iloc[l, 10])]
-                                    )
-                                        
-                                    if(gff.iloc[m, 6] == "-"):
-                                        before = str(Seq(before).reverse_complement())
-                                        after = str(Seq(after).reverse_complement()) 
-
-                                    before = degenerative(before)
-                                    after = degenerative(after)
-
-                                    if len(before) == 3:
-                                        before = translate(before)
-                                    if len(after) == 3:
-                                        after = translate(after)
-
-                                    # formats and renames output excel values of vcf
-                                    variantFunction.iloc[l, 3] = (
-                                        proteinName
-                                        + ":"
-                                        + proteinName2
-                                        + ":exon1:c."
-                                        + variantFunction.iloc[l, 7]
-                                        + aminoNum
-                                        + variantFunction.iloc[l, 8]
-                                        + ":p."
-                                        + before
-                                        + proteinNum
-                                        + after
-                                        #+ ":RC."
-                                        #+ reverseComplement
-                                        + ","
-                                    )
-
-                                    # checks change to annotate type of mutation
-                                    if before == after:
-                                        variantFunction.iloc[l, 1] = "synonymous SNV"
-
-                                    if before != after:
-                                        variantFunction.iloc[l, 1] = "nonsynonymous SNV"
-
-                                    if after == "*" and before != "*":
-                                        variantFunction.iloc[l, 1] = "stopgain"
-
-                                    if before == "*" and after != "*":
-                                        variantFunction.iloc[l, 1] = "stoploss"
-
-                            # If mutation is on third amino acid of codon
-                            if (
-                                int(variantFunction.iloc[l, 10]) - int(gff.iloc[m, 3])
-                            ) % 3 == 2:
-                                if (
-                                    variantFunction.iloc[l, 8] != "-"
-                                    and fasta[int(variantFunction.iloc[l, 10] - 2)]
-                                    != "-"
-                                    and fasta[int(variantFunction.iloc[l, 10] - 3)]
-                                    != "-"
-                                ):
-                                    if "0" in variantFunction.iloc[l, 8]:
-                                        variantFunction.iloc[l, 8] = (
-                                            variantFunction.iloc[l, 8]
-                                        ).replace("0", variantFunction.iloc[l, 13])
-                                    if "0" in variantFunction.iloc[l, 7]:
-                                        (variantFunction.iloc[l, 7]) = (
-                                            variantFunction.iloc[l, 7]
-                                        ).replace("0", variantFunction.iloc[l, 12])                                         
-
-                                    before = (
-                                        fasta[int(variantFunction.iloc[l, 10]) - 3]
-                                        + fasta[int(variantFunction.iloc[l, 10]) - 2]
-                                        + fasta[int(variantFunction.iloc[l, 10]) - 1]
-                                    )
-                                    after = (
-                                        fasta[int(variantFunction.iloc[l, 10]) - 3]
-                                        + fasta[int(variantFunction.iloc[l, 10]) - 2]
-                                        + variantFunction.iloc[l, 8]
-                                    )
-                                        
-                                    if(gff.iloc[m, 6] == "-"):
-                                        before = str(Seq(before).reverse_complement())
-                                        after = str(Seq(after).reverse_complement()) 
-
-                                    before = degenerative(before)
-                                    after = degenerative(after)
-
-                                    if len(before) == 3:
-                                        before = translate(before)
-                                    if len(after) == 3:
-                                        after = translate(after)
-
-                                    # formats and renames output excel values of vcf
-                                    variantFunction.iloc[l, 3] = (
-                                        proteinName
-                                        + ":"
-                                        + proteinName2
-                                        + ":exon1:c."
-                                        + variantFunction.iloc[l, 7]
-                                        + aminoNum
-                                        + variantFunction.iloc[l, 8]
-                                        + ":p."
-                                        + before
-                                        + proteinNum
-                                        + after
-                                        #+ ":RC."
-                                        #+ reverseComplement
-                                        + ","
-                                    )
-
-                                    # checks change to annotate type of mutation
-                                    if before == after:
-                                        variantFunction.iloc[l, 1] = "synonymous SNV"
-
-                                    if before != after:
-                                        variantFunction.iloc[l, 1] = "nonsynonymous SNV"
-
-                                    if after == "*" and before != "*":
-                                        variantFunction.iloc[l, 1] = "stopgain"
-
-                                    if before == "*" and after != "*":
-                                        variantFunction.iloc[l, 1] = "stoploss"
-
-# remove any proteins that are not exonic
 variantFunction = variantFunction[variantFunction.iloc[:, 2] == "exonic"]
-
 variantFunction.drop(variantFunction.columns[2], axis=1, inplace=True)
 
-# renaming
 variantFunctionName = re.sub(".avinput", "", str(variantFunctionName))
 variantFunction.to_csv("varriantfunction_exonic.csv", index=False, header=False)
 
-# produces file name the same if fastq gzipped or not
 if ".fastq" in variantFunctionName:
     variantFunction.to_csv(
         variantFunctionName + ".exonic_variant_function",
@@ -613,7 +487,6 @@ if ".fastq" in variantFunctionName:
         encoding="utf-8",
         header=False,
     )
-
 else:
     variantFunction.to_csv(
         variantFunctionName + ".fastq.exonic_variant_function",
