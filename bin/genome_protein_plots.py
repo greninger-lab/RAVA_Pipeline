@@ -46,9 +46,7 @@ def protein_annotation(first):
 
     # Shades in every other protein region. Provides warning if proteins overlap.
     for i in range(0, proteins.shape[0]):
-        if i == 0:
-            x1 = 0
-        elif (proteins.iloc[i, 1] < proteins.iloc[i - 1, 2]) and first:
+        if i > 0 and (proteins.iloc[i, 1] < proteins.iloc[i - 1, 2]) and first:
             print(
                 "WARNING: Protein-"
                 + str(proteins.iloc[i, 0])
@@ -61,10 +59,7 @@ def protein_annotation(first):
             x1 = proteins.iloc[i, 1]
         else:
             x1 = proteins.iloc[i, 1]
-        if i == proteins.shape[0] - 1:
-            x2 = proteins.iloc[i, 2]
-        else:
-            x2 = proteins.iloc[(i + 1), 1]
+        x2 = proteins.iloc[i, 2]
         if i % 2 == 0:
             genome_plot.add_layout(
                 BoxAnnotation(left=x1, right=x2, fill_alpha=0.1, fill_color="green")
@@ -421,12 +416,40 @@ if __name__ == "__main__":
                 proteins.iloc[j, 1] = min(proteins.iloc[i, 1], proteins.iloc[j, 1])
                 proteins.iloc[j, 2] = max(proteins.iloc[i, 2], proteins.iloc[j, 2])
 
-    proteins = proteins.drop_duplicates()
+    proteins = proteins.drop_duplicates().sort_values(by=1).reset_index(drop=True)
+
+    # Stitches CDSs together: removes UTRs and intergenic gaps from the x-axis.
+    # Each CDS is shifted left by the total gap preceding it (overlaps count as no gap).
+
+    # 1. generate per-CDS coordinate shifts
+    cds_starts = proteins.iloc[:, 1].to_numpy()
+    cds_ends = proteins.iloc[:, 2].to_numpy()
+    cds_shifts = np.zeros(len(cds_starts), dtype=int)
+    cds_shifts[0] = cds_starts[0] - 1
+    prev_end = cds_ends[0]
+    for i in range(1, len(cds_starts)):
+        cds_shifts[i] = cds_shifts[i - 1] + max(0, cds_starts[i] - prev_end - 1)
+        prev_end = max(prev_end, cds_ends[i])
+
+    # 2. create new column for display X coordinates that are shifted by CDS shifts
+    def to_plot_coords(pos):
+        idx = np.clip(np.searchsorted(cds_starts, pos, side="right") - 1, 0, None)
+        return pos - cds_shifts[idx]
+
+    merged2["PlotPosition"] = to_plot_coords(merged2["Position"].to_numpy())
+    proteins.iloc[:, 1] = to_plot_coords(cds_starts)
+    proteins.iloc[:, 2] = cds_ends - cds_shifts
 
     # Reads in mature peptides locations
     if os.stat("mat_peptides_additions.txt").st_size != 0:
         mat_peptides_list = pd.read_csv(
             "mat_peptides_additions.txt", index_col=False, header=None
+        )
+        mat_peptides_list.iloc[:, 1] = to_plot_coords(
+            mat_peptides_list.iloc[:, 1].to_numpy()
+        )
+        mat_peptides_list.iloc[:, 2] = to_plot_coords(
+            mat_peptides_list.iloc[:, 2].to_numpy()
         )
 
     source = ColumnDataSource(merged2)
@@ -449,6 +472,7 @@ if __name__ == "__main__":
     TOOLTIPS = [
         ("Amino Acid Change", "@AminoCorrect"),
         ("Nucleotide Change", "@NucCorrect"),
+        ("Genome Position", "@Position"),
         ("Allele Frequency", "@AF" + "%"),
         ("Depth", "@Depth"),
         ("Mature Peptide Change", "@MatPeptide"),
@@ -534,6 +558,7 @@ if __name__ == "__main__":
 
         # Creates a graph with x-axis being genome length (based on protein csv).
         ## Took out active_scroll = "wheel_zoom" -RCS
+        plot_end = proteins.iloc[:, 2].max()
         genome_plot = figure(
             plot_width=1600,
             plot_height=800,
@@ -541,16 +566,16 @@ if __name__ == "__main__":
             title=name_from_passage,
             sizing_mode="scale_width",
             x_range=DataRange1d(
-                bounds=(0, proteins.iloc[proteins.shape[0] - 1, 2]),
+                bounds=(0, plot_end),
                 start=0,
-                end=proteins.iloc[proteins.shape[0] - 1, 2],
+                end=plot_end,
             ),
         )
 
         # Plots by nucleotide letter change.
         if args.nuc:
             genome_plot.circle(
-                x="Position",
+                x="PlotPosition",
                 y=jitter("AF", width=2, range=genome_plot.y_range),
                 size=15,
                 alpha=0.6,
@@ -575,7 +600,7 @@ if __name__ == "__main__":
         # Plots by amino acid change type.
         else:
             genome_plot.circle(
-                x="Position",
+                x="PlotPosition",
                 y=jitter("AF", width=2, range=genome_plot.y_range),
                 size=15,
                 alpha=0.6,
