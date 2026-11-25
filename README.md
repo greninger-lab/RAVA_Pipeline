@@ -1,4 +1,4 @@
-# ARTICLE PLACEHOLDER
+# Identification and characterization of two structurally distinct small-molecule SARS-CoV-2 assembly inhibitors
 This repository contains the code and data used in the publication **"Identification and characterization of two structurally distinct small-molecule SARS-CoV-2 assembly inhibitors"** by **Karimi** et al.
 
 ## What is RAVA?
